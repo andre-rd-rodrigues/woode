@@ -1,0 +1,43 @@
+@import "styles/mixins";
+
+.slider {
+  & div[id="slider-div"] {
+    background: no-repeat no-repeat center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    & h1 {
+      @include heading-1;
+    }
+    &[class="row"] {
+      height: 85vh;
+    }
+    &[class="col"] {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  & svg {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &[id="arrow-next"] {
+      right: 20px;
+      top: 40%;
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+    &[id="arrow-prev"] {
+      left: 20px;
+      top: 40%;
+      &:hover {
+        transform: translateX(-5px) rotate(-180deg);
+      }
+    }
+  }
+}

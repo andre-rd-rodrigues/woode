@@ -1,0 +1,32 @@
+.colDiv {
+  min-height: 180px;
+  background: no-repeat no-repeat center;
+  background-size: cover;
+  color: white;
+  padding: 20px 30px;
+  transition: 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    background-position-x: -40px;
+    div {
+      width: 140px;
+    }
+  }
+  & p {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+  & div {
+    transition: 0.4s ease;
+    width: 110px;
+    height: 1px;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .colDiv {
+    margin-bottom: 50px;
+  }
+}

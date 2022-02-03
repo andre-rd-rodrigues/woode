@@ -1,0 +1,11 @@
+@mixin heading-1 {
+  font-weight: bold;
+  font-size: 10vmin;
+}
+
+@mixin button {
+  background-color: transparent;
+  border: none;
+  padding: 5px 15px;
+  color: white;
+}
