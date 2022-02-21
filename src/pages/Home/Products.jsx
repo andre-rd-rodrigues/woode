@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./products.module.scss";
 import FeatherIcon from "feather-icons-react";
-import { motion } from "framer-motion";
+import ItemModal from "components/ItemModal/ItemModal";
+
 function Products() {
+  const [itemModalShow, setItemModalShow] = useState(false);
+  const [currentItem, setCurrentItem] = useState({
+    id: 1,
+    name: "Cupholder",
+    category: "decoration",
+    price: 45.0,
+    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/shop-img15.jpg"
+  });
+
   const items = [
     {
       id: 1,
@@ -66,18 +76,23 @@ function Products() {
       <div className={styles.title}>
         <p>BROWSE OUR ITEMS</p>
         <h2>Ideal for your home</h2>
-
         <hr />
       </div>
       <div>
         <div className={styles.row}>
           {items.map((item) => (
-            <div className={styles.productCol}>
+            <div className={styles.productCol} key={item.id}>
               <div id="productImageDiv">
                 <img src={item.src} alt="Woode product" />
                 <div id="productHoverDiv">
                   <FeatherIcon icon="shopping-bag" />
-                  <FeatherIcon icon="search" />
+                  <FeatherIcon
+                    icon="search"
+                    onClick={() => {
+                      setCurrentItem(item);
+                      setItemModalShow(true);
+                    }}
+                  />
                 </div>
               </div>
               <div id="productDiv">
@@ -89,6 +104,11 @@ function Products() {
           ))}
         </div>
       </div>
+      <ItemModal
+        item={currentItem}
+        show={itemModalShow}
+        onClose={() => setItemModalShow(false)}
+      />
     </>
   );
 }
