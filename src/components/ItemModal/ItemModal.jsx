@@ -1,13 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
 import styles from "./itemmodal.module.scss";
 
-function ItemModal({ item, show, onClose }) {
+function ItemModal({ item, show, onClose, action }) {
   const [amount, setAmount] = useState(1);
 
   const { category, name, price, src } = item;
 
+  //Redux
+  const { dispatch, addedItem } = action;
+
+  //Add to cart
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return dispatch(addedItem({ item: { ...item, amount } }));
+  };
   return (
     <Modal
       centered
@@ -33,14 +40,16 @@ function ItemModal({ item, show, onClose }) {
               commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             </p>
-            <div className="item-modal-actions">
+            <form onSubmit={handleSubmit} className="item-modal-actions">
               <input
                 type="number"
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                min={1}
+                max={10}
+                onChange={(e) => setAmount(parseInt(e.target.value))}
               />
-              <button>Add to cart</button>
-            </div>
+              <button type="submit">Add to cart</button>
+            </form>
             <div className="item-modal-additional-info">
               <p>SKU: 030</p>
               <p>CATEGORY: {category}</p>

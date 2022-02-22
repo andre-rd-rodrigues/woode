@@ -13,8 +13,7 @@ const Footer = () => (
           <h5>Woode</h5>
           <p>
             Welcome to a place of refinement and beauty. This is Woode, a
-            furniture e-commerce gem, where elegant design and sustainable
-            furniture meets.
+            furniture e-commerce store, where elegance and sustainability meet.
           </p>
         </Col>
         <Col>

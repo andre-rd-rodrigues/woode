@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "assets/images/logo.png";
 import FeatherIcon from "feather-icons-react";
 import styles from "./navbar.module.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function AppNavbar() {
+function AppNavbar({ cart }) {
+  const [amount, setAmount] = useState(0);
+
+  useEffect(() => {
+    setAmount(cart.amount);
+  }, [cart]);
   return (
     <Navbar expand="lg" fixed="top" className={styles.navbar}>
       <Container>
@@ -33,8 +39,7 @@ function AppNavbar() {
           </Nav>
         </Navbar.Collapse>
         <Nav.Link as={Link} href="/shoppingCart" to="/shoppingCart">
-          <FeatherIcon icon="shopping-bag" />
-          Cart
+          Cart <FeatherIcon icon="shopping-bag" /> {amount}
         </Nav.Link>
         <Nav.Link as={Link} href="/login" to="/login">
           <FeatherIcon icon="user" /> Login
@@ -44,4 +49,8 @@ function AppNavbar() {
   );
 }
 
-export default AppNavbar;
+const mapStateToProps = (state) => {
+  return { cart: state.entities.cart };
+};
+
+export default connect(mapStateToProps)(AppNavbar);

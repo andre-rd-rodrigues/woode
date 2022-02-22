@@ -9,7 +9,7 @@ function Button() {
           d="M 120 18.75 A 61.25 61.25 0 1 1 30.45 44.00"
           fill="none"
           stroke="white"
-          stroke-width="3"
+          strokeWidth="3"
         ></path>
       </svg>
       <button>View More</button>
