@@ -10,6 +10,12 @@ const isAlreadyAdded = (state, payload) => {
   const index = state.items.findIndex((item) => item.id === payload.item.id);
   return index >= 0 ? true : false;
 };
+const updatedTotalPrice = (state) =>
+  state.items.reduce(
+    (prevValue, currentValue) =>
+      prevValue + currentValue.amount * currentValue.price,
+    0
+  );
 
 //Slice
 const slice = createSlice({
@@ -29,16 +35,29 @@ const slice = createSlice({
       } else {
         cart.items.push(payload.item);
       }
-      //Update cart amount
+      //Update cart amount & total
       cart.amount = updateAmountTotal(cart);
+      cart.totalPrice = updatedTotalPrice(cart);
     },
-    updatedItemAmount: (cart, { payload }) => {
+    updatedAmount: (cart, { payload }) => {
       const index = cart.items.findIndex((item) => item.id === payload.id);
-      return payload.amount >= 0 && cart.items[index].amount;
+      if (payload.amount >= 0) {
+        cart.items[index].amount = payload.amount;
+        //Update cart amount & total
+        cart.amount = updateAmountTotal(cart);
+        cart.totalPrice = updatedTotalPrice(cart);
+      }
+    },
+    removedItem: (cart, { payload }) => {
+      const index = cart.items.findIndex((item) => item.id === payload.id);
+      cart.items.splice(index, 1);
+      //Update cart amount & total
+      cart.amount = updateAmountTotal(cart);
+      cart.totalPrice = updatedTotalPrice(cart);
     }
   }
 });
 
-export const { addedItem, updatedItemAmount } = slice.actions;
+export const { addedItem, updatedAmount, removedItem } = slice.actions;
 
 export default slice.reducer;

@@ -1,2 +1,107 @@
+@import "styles/mixins.scss";
+
 .shoppingCart {
+  margin-top: 100px;
+  & div[id="cart-title-background"] {
+    background-color: #e7e1d8;
+    top: 0;
+    height: 190px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  & table {
+    border: 1px solid #a3a3a3;
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+    & tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+      padding: 40px;
+    }
+    & tr {
+      border-bottom: 1px solid #a3a3a3;
+    }
+    & th {
+      font-weight: 300;
+      font-size: 14px;
+    }
+    & td {
+      font-weight: 500;
+    }
+    & td[id="product-cell"] {
+      display: flex;
+      align-items: center;
+      & p {
+        font-weight: 500;
+      }
+      & svg {
+        cursor: pointer;
+      }
+      & img {
+        max-width: 90px;
+        margin: 0 20px;
+      }
+    }
+
+    & input {
+      max-width: 70px;
+      padding-left: 20px;
+      margin-right: 20px;
+      font-weight: 500;
+    }
+  }
+
+  & div[id="cart-total"] {
+    margin-top: 80px;
+    max-width: 500px;
+    & h4 {
+      margin-bottom: 40px;
+    }
+    & div[id="cart-total-box"] {
+      border: 1px solid #a3a3a3;
+      & p {
+        font-weight: 500;
+      }
+      & p[class="cart-total-titles"] {
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+    & div[class="align-items-center row"] {
+      padding: 20px 30px;
+      & p {
+        margin: 0;
+      }
+    }
+    & hr {
+      width: 88%;
+      margin: auto;
+      height: 1px;
+    }
+    & div[class="form-check"] {
+      margin-bottom: 15px;
+      & input,
+      label {
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+  & button[id="checkout-button"] {
+    @include squared-button(black);
+    margin-top: 40px;
+  }
+
+  & div[id="cart-no-items"] {
+    text-align: center;
+    margin-top: 140px;
+    & button {
+      @include squared-button(black);
+    }
+  }
 }
