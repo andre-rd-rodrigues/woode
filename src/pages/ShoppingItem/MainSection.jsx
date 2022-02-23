@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Col, Modal, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addedItem } from "store/entities/cart";
-import styles from "./itemmodal.module.scss";
+import styles from "./mainsection.module.scss";
 
-function ItemModal({ item, show, onClose }) {
-  const [amount, setAmount] = useState(1);
+const MainSection = ({ item }) => {
+  const [inputValue, setInputValue] = useState(1);
 
   const { category, name, price, src } = item;
 
@@ -15,25 +15,19 @@ function ItemModal({ item, show, onClose }) {
   //Add to cart
   const handleSubmit = (e) => {
     e.preventDefault();
-    return dispatch(addedItem({ item: { ...item, amount } }));
+    return dispatch(addedItem({ item: { ...item, amount: inputValue } }));
   };
+
   return (
-    <Modal
-      centered
-      size="lg"
-      show={show}
-      onHide={onClose}
-      className={styles.itemModal}
-    >
-      <Row sm={1} md={2}>
+    <div className={styles.mainSection}>
+      <Row xs={1} sm={1} md={2}>
         <Col>
-          <div
-            className="item-modal-image-col"
-            style={{ backgroundImage: `url(${src})` }}
-          />
+          <div className="item-image-col">
+            <img src={src} alt="" />
+          </div>
         </Col>
         <Col>
-          <div className="item-modal-body-col">
+          <div className="item-body-col">
             <h1>{name}</h1>
             <p>{`$ ${price}`}</p>
             <hr />
@@ -42,17 +36,18 @@ function ItemModal({ item, show, onClose }) {
               commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             </p>
-            <form onSubmit={handleSubmit} className="item-modal-actions">
+            <form onSubmit={handleSubmit} className="item-actions">
               <input
-                type="number"
-                value={amount}
                 min={1}
                 max={10}
-                onChange={(e) => setAmount(parseInt(e.target.value))}
+                required
+                type="number"
+                defaultValue={inputValue}
+                onChange={(e) => setInputValue(parseInt(e.target.value))}
               />
               <button type="submit">Add to cart</button>
             </form>
-            <div className="item-modal-additional-info">
+            <div className="item-additional-info">
               <p>SKU: 030</p>
               <p>CATEGORY: {category}</p>
               <p>
@@ -62,8 +57,8 @@ function ItemModal({ item, show, onClose }) {
           </div>
         </Col>
       </Row>
-    </Modal>
+    </div>
   );
-}
+};
 
-export default ItemModal;
+export default MainSection;

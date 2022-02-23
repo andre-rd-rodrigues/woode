@@ -1,0 +1,47 @@
+@import "styles/mixins.scss";
+
+.mainSection {
+  position: relative;
+  margin-top: 90px;
+  & div[class="item-image-col"] {
+    position: relative;
+    & img {
+      width: 100%;
+      max-height: 546px;
+    }
+  }
+  & div[class="item-body-col"] {
+    margin: 80px 0;
+    & p:first-of-type {
+      font-size: 25px;
+      font-weight: 400;
+    }
+    & hr {
+      width: 93px;
+    }
+    & p {
+      line-height: 30px;
+      margin: 30px 0;
+    }
+    & form[class="item-actions"] {
+      & input {
+        max-width: 70px;
+        padding-left: 20px;
+        margin-right: 20px;
+      }
+      & button {
+        @include squared-button(black);
+      }
+    }
+    & div[class="item-additional-info"] {
+      & p {
+        line-height: 0px;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      & a {
+        color: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.additionalInfo {
+  margin-top: 80px;
+  & div[id="head"] {
+    display: flex;
+    & h4 {
+      margin-right: 80px;
+      font-size: 16px;
+      padding-bottom: 10px;
+      cursor: pointer;
+    }
+  }
+  & div[id="body"] {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  & hr {
+    margin: 0;
+    transform: translateY(-8px);
+    height: 0.9px !important;
+  }
+  & div[class="info-row"] {
+    display: flex;
+    & div {
+      margin-right: 20px;
+    }
+    & p {
+      font-size: 12px;
+    }
+  }
+}

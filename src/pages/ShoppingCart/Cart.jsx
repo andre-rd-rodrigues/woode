@@ -33,7 +33,7 @@ function Cart({ cart }) {
     <div className={styles.shoppingCart}>
       <div id="cart-title-background" />
       <Container>
-        <h1>Your cart:</h1>
+        <h1>Your cart</h1>
 
         {cart.items.length > 0 ? (
           <>
@@ -93,20 +93,20 @@ function Cart({ cart }) {
                         type="radio"
                         label="Free shipping"
                         name="form-shipping-radio"
-                        id={`form-freeShipping`}
+                        id="form-freeShipping"
                         defaultChecked
                       />
                       <Form.Check
                         type="radio"
                         label="Flat rate"
                         name="form-shipping-radio"
-                        id={`form-freeRate`}
+                        id="form-freeRate"
                       />
                       <Form.Check
                         type="radio"
                         label="Local pickup"
                         name="form-shipping-radio"
-                        id={`form-local`}
+                        id="form-local"
                       />
                     </Form>
                   </Col>
