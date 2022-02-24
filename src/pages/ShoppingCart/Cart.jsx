@@ -2,14 +2,11 @@ import React from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import FeatherIcon from "feather-icons-react";
 import { connect } from "react-redux";
-import styles from "./cart.module.scss";
-import { useDispatch } from "react-redux";
 import { removedItem, updatedAmount } from "store/entities/cart";
 import { Link } from "react-router-dom";
+import styles from "./cart.module.scss";
 
-function Cart({ cart }) {
-  const dispatch = useDispatch();
-
+function Cart({ cart, removeItem, updateAmount }) {
   const NoItems = () => (
     <div id="cart-no-items">
       <p>Your cart is currently empty.</p>
@@ -22,12 +19,10 @@ function Cart({ cart }) {
   const handleChangeAmount = (e, item) => {
     const amount = parseInt(e.target.value);
     if (amount > 0)
-      return dispatch(
-        updatedAmount({
-          id: item.id,
-          amount
-        })
-      );
+      return updateAmount({
+        id: item.id,
+        amount
+      });
   };
   return (
     <div className={styles.shoppingCart}>
@@ -52,7 +47,7 @@ function Cart({ cart }) {
                     <td id="product-cell">
                       <FeatherIcon
                         icon="x"
-                        onClick={() => dispatch(removedItem({ id: item.id }))}
+                        onClick={() => removeItem({ id: item.id })}
                       />
                       <img src={item.src} alt="Woode furniture" />
                       <p>{item.name}</p>
@@ -137,4 +132,11 @@ const mapStateToProps = (state) => {
   return { cart: state.entities.cart };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeItem: (obj) => dispatch(removedItem(obj)),
+    updateAmount: (obj) => dispatch(updatedAmount(obj))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

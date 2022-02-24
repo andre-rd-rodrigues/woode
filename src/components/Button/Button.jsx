@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./button.module.scss";
 
 function Button() {
@@ -12,7 +13,9 @@ function Button() {
           strokeWidth="3"
         ></path>
       </svg>
-      <button>View More</button>
+      <Link to="/shop">
+        <button>View More</button>
+      </Link>
     </div>
   );
 }

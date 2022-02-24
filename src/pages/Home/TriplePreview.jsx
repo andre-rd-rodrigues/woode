@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import styles from "./triplepreview.module.scss";
 
 function TriplePreview() {
@@ -26,15 +27,17 @@ function TriplePreview() {
   return (
     <Row className="my-5" sm={1} md={3}>
       {content.map((item) => (
-        <Col>
-          <div
-            className={styles.colDiv}
-            style={{ backgroundImage: `url(${item.src})` }}
-          >
-            <p>{item.label.toUpperCase()}</p>
-            <h4>{item.title}</h4>
-            <div></div>
-          </div>
+        <Col className={styles.col}>
+          <Link to="/shop">
+            <div
+              className={styles.colDiv}
+              style={{ backgroundImage: `url(${item.src})` }}
+            >
+              <p>{item.label.toUpperCase()}</p>
+              <h4>{item.title}</h4>
+              <div></div>
+            </div>
+          </Link>
         </Col>
       ))}
     </Row>

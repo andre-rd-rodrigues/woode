@@ -1,3 +1,9 @@
+.col {
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 .colDiv {
   min-height: 180px;
   background: no-repeat no-repeat center;
