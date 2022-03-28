@@ -1,5 +1,6 @@
 import Footer from "components/Footer/Footer";
 import Navbar from "components/Navbar/Navbar";
+import Notification from "components/Notification/Notification";
 import Home from "pages/Home/Home";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/ShoppingCart/Cart";
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Notification />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/shop" element={<Shop />} />

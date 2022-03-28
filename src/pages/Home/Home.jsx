@@ -1,7 +1,7 @@
 import ImagesRow from "components/ImagesRow/ImagesRow";
 import Team from "pages/Team/Team";
 import React from "react";
-import Products from "./Products";
+import Products from "components/ProductsSection/ProductsSection";
 import Slider from "./Slider";
 import TriplePreview from "./TriplePreview";
 

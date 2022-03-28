@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ItemModal from "components/ItemModal/ItemModal";
+import Product from "components/Product/Product";
 import products from "mocks/products";
 import styles from "./products.module.scss";
-import Product from "components/Product/Product";
 
-function Products() {
+function ProductsSection() {
   const [itemModalShow, setItemModalShow] = useState(false);
   const [items, setItems] = useState(undefined);
   const [currentItem, setCurrentItem] = useState({
@@ -48,4 +48,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductsSection;
