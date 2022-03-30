@@ -3,20 +3,33 @@ const { createSlice } = require("@reduxjs/toolkit");
 const slice = createSlice({
   name: "notifications",
   initialState: {
-    active: false,
-    message: ""
+    topNotification: {
+      active: false,
+      message: ""
+    },
+    newsletterNotification: {
+      active: false
+    }
   },
   reducers: {
-    fireNotification: (state, { payload }) => {
-      state.active = true;
-      state.message = payload.message;
+    fireNotification: ({ topNotification }, { payload }) => {
+      topNotification.active = true;
+      topNotification.message = payload.message;
     },
-    hideNotification: (state, action) => {
-      state.active = false;
+    hideNotification: ({ topNotification }) => {
+      topNotification.active = false;
+    },
+    checkNewsletterNotification: ({ newsletterNotification }, { payload }) => {
+      newsletterNotification.active = payload.checkValue;
+      localStorage.setItem("notificationNewsletterActive", payload.checkValue);
     }
   }
 });
 
-export const { fireNotification, hideNotification } = slice.actions;
+export const {
+  fireNotification,
+  hideNotification,
+  checkNewsletterNotification
+} = slice.actions;
 
 export default slice.reducer;

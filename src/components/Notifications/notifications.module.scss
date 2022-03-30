@@ -1,0 +1,77 @@
+@import "styles/mixins.scss";
+
+.notification {
+  width: 100%;
+  padding: 15px 0;
+  position: sticky;
+  top: 63px;
+  border: 1px solid black;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+}
+.newsletterNotification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  background-color: white;
+  padding: 29px 50px 33px 37px;
+  border: 1px solid #000001;
+  max-width: 450px;
+  & form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    & input {
+      padding-bottom: 5px;
+      border: none;
+      resize: none;
+      outline: none;
+      &::placeholder {
+        font-weight: 100;
+        color: black;
+      }
+    }
+    & button {
+      @include squared-button(black);
+      border: none;
+      margin: 0;
+      padding: 0;
+      &:hover {
+        background-color: white;
+        color: black;
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+.newsletterBody {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  & img {
+    margin-right: 30px;
+  }
+}
+.preventNewsletter {
+  display: flex;
+  align-items: center;
+  & input {
+    margin-right: 10px;
+  }
+  & label {
+    font-size: 14px;
+  }
+}
