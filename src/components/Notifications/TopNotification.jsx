@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { hideNotification } from "store/ui/notifications";
-import styles from "./notification.module.scss";
+import styles from "./notifications.module.scss";
 
-function Notification({ notificationState, hideNotificationAction }) {
+function TopNotification({ notificationState, hideNotificationAction }) {
   useEffect(() => {
     if (notificationState.active)
       return setTimeout(() => {
         hideNotificationAction();
       }, 2000);
-  });
+  }, [notificationState.active]);
 
   if (notificationState.active)
     return (
@@ -19,7 +19,7 @@ function Notification({ notificationState, hideNotificationAction }) {
 }
 const mapStateToProps = (state) => {
   return {
-    notificationState: state.ui.notifications
+    notificationState: state.ui.notifications.topNotification
   };
 };
 
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
     hideNotificationAction: () => dispatch(hideNotification())
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Notification);
+export default connect(mapStateToProps, mapDispatchToProps)(TopNotification);
