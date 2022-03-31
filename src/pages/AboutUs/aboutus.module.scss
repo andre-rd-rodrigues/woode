@@ -1,0 +1,41 @@
+.aboutUs {
+  & div[id="aboutUs_first_section"] {
+    margin: 90px 0;
+  }
+  & div[id="aboutUs_first_section_text"] {
+    padding: 0 110px;
+    & h5 {
+      font-weight: 500;
+    }
+    & h6 {
+      color: #464646;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 2.15em;
+      text-transform: uppercase;
+    }
+    & p {
+      line-height: 1.66em;
+      margin-top: 15px;
+    }
+  }
+  & img {
+    max-width: 650px;
+  }
+}
+
+%div-with-background-image {
+  height: 750px;
+  background-size: cover;
+}
+.jumbotron {
+  @extend %div-with-background-image;
+  background: url("https://umea.qodeinteractive.com/wp-content/uploads/2021/03/p1-title-area-img.jpg")
+    no-repeat no-repeat center fixed;
+}
+.video {
+  @extend %div-with-background-image;
+  background: url("https://umea.qodeinteractive.com/wp-content/uploads/2021/01/h1-parallax-img.jpg")
+    no-repeat no-repeat center fixed;
+}
