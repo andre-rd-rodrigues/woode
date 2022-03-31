@@ -24,7 +24,6 @@
     max-width: 650px;
   }
 }
-
 %div-with-background-image {
   height: 750px;
   background-size: cover;
@@ -36,6 +35,23 @@
 }
 .video {
   @extend %div-with-background-image;
+  height: 600px;
   background: url("https://umea.qodeinteractive.com/wp-content/uploads/2021/01/h1-parallax-img.jpg")
     no-repeat no-repeat center fixed;
+}
+.comments {
+  position: relative;
+  & img {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    max-width: 100px;
+  }
+}
+.slider {
+  margin-top: 100px;
+  text-align: center;
+  & p {
+    text-transform: uppercase;
+  }
 }
