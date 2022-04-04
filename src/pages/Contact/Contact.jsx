@@ -15,23 +15,19 @@ const Contact = () => {
         <Row>
           <Col className="contact_first_layer_col">
             <form onSubmit={handleSubmit}>
-              <textarea name="" id="" cols="30" rows="10" />
+              <textarea
+                data-testid="contact_textarea"
+                required
+                name="contact_textarea"
+                cols="30"
+                rows="10"
+              />
               <Row>
                 <Col>
-                  <input
-                    required
-                    aria-required
-                    type="text"
-                    placeholder="Your Name"
-                  />
+                  <input required type="text" placeholder="Your Name" />
                 </Col>
                 <Col>
-                  <input
-                    required
-                    aria-required
-                    type="email"
-                    placeholder="Your Email"
-                  />
+                  <input required type="email" placeholder="Your Email" />
                 </Col>
               </Row>
               <button type="submit">Submit</button>

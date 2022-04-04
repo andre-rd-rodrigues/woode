@@ -7,7 +7,7 @@ function ImagesRow({ images = [] }) {
     <Container>
       <Row className={styles.imagesRow}>
         {images.map((image) => (
-          <Col className="text-center">
+          <Col className="text-center" key={image.id}>
             <img src={image.src} alt={image.alt} />
           </Col>
         ))}

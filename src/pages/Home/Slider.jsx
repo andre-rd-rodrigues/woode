@@ -37,7 +37,11 @@ function Slider() {
       nextArrow={<ArrowIcon id="arrow-next" />}
     >
       {content.map((slide) => (
-        <div id="slider-div" style={{ backgroundImage: `url(${slide.src})` }}>
+        <div
+          id="slider-div"
+          style={{ backgroundImage: `url(${slide.src})` }}
+          key={slide.title}
+        >
           <Container>
             <Row>
               <Col>

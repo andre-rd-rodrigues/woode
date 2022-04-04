@@ -63,9 +63,9 @@ function AboutUs() {
   return (
     <div className={styles.aboutUs}>
       <div className={styles.jumbotron}></div>
-      {content.map((item) => (
-        <Container>
-          <Row id="aboutUs_first_section">
+      <Container>
+        {content.map((item) => (
+          <Row id="aboutUs_first_section" key={item.id}>
             <Col
               className="text-center"
               sm={orderSection(item).image}
@@ -88,16 +88,16 @@ function AboutUs() {
               </div>
             </Col>
           </Row>
-        </Container>
-      ))}
+        ))}
+      </Container>
       <div className={styles.video}></div>
       <div className={styles.comments}>
         <Fade autoplay arrows={false} duration={2000} className={styles.slider}>
           {sliderContent.map((slide) => (
-            <>
+            <div key={slide.id}>
               <p>{slide.subtitle}</p>
               <h3>{slide.title}</h3>
-            </>
+            </div>
           ))}
         </Fade>
         <img src={quotes} alt="Best comments" />
