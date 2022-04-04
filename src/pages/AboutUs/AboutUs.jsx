@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Fade } from "react-slideshow-image";
 import Button from "components/Button/Button";
+import quotes from "assets/images/quotes.png";
 import styles from "./aboutus.module.scss";
 
 function AboutUs() {
@@ -27,6 +29,27 @@ function AboutUs() {
       src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-3.jpg"
     }
   ];
+  let sliderContent = [
+    {
+      id: 1,
+      subtitle: "Kevin Sundström",
+      title:
+        "Scelerisque viverra mauris in aliquam sem. Ornareusisa suspendisse sed nis."
+    },
+    {
+      id: 2,
+      subtitle: "Otto Pettersson",
+      title:
+        "Urnanuque cursrra meturis in aliquam sem. Ornareusisa suspendisse eleifend."
+    },
+    {
+      id: 3,
+      subtitle: "Georgia Longdenberg",
+      title:
+        "Ornareusisa maece mauris in blandit sem. Oramesacisa turpisedisse ege sed."
+    }
+  ];
+
   let orderSection = (item) => {
     return {
       image: {
@@ -68,6 +91,17 @@ function AboutUs() {
         </Container>
       ))}
       <div className={styles.video}></div>
+      <div className={styles.comments}>
+        <Fade autoplay arrows={false} duration={2000} className={styles.slider}>
+          {sliderContent.map((slide) => (
+            <>
+              <p>{slide.subtitle}</p>
+              <h3>{slide.title}</h3>
+            </>
+          ))}
+        </Fade>
+        <img src={quotes} alt="Best comments" />
+      </div>
     </div>
   );
 }
