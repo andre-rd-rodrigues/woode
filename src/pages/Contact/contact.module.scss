@@ -1,0 +1,40 @@
+@import "styles/mixins.scss";
+
+.contact {
+  & div[class="contact_first_layer_col col"] {
+    align-items: center;
+    padding: 0 30px;
+  }
+  & h1 {
+    margin: 120px 0 100px 0;
+    text-align: center;
+    font-size: 3em;
+  }
+  & form {
+    max-width: 700px;
+    & textarea {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+    & input {
+      @include input;
+      border-bottom: 1px solid black;
+      margin: 30px 0;
+      width: 100%;
+    }
+    & button {
+      display: block;
+      margin-top: 20px;
+      @include squared-button(black);
+    }
+  }
+}
+.contactInfoRow {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  & p {
+    margin: 0 0 0 10px;
+  }
+}

@@ -36,14 +36,7 @@
     margin-top: 10px;
     border-bottom: 1px solid;
     & input {
-      padding-bottom: 5px;
-      border: none;
-      resize: none;
-      outline: none;
-      &::placeholder {
-        font-weight: 100;
-        color: black;
-      }
+      @include input;
     }
     & button {
       @include squared-button(black);
