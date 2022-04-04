@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import uuid from "react-uuid";
 import styles from "./team.module.scss";
 
 function Team() {
@@ -7,22 +8,26 @@ function Team() {
     {
       name: "Nicolette Ritonni",
       job: "fine ceramics",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-4.jpg"
+      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-4.jpg",
+      id: uuid()
     },
     {
       name: "Juliette Massé",
       job: "store manager",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-3.jpg"
+      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-3.jpg",
+      id: uuid()
     },
     {
       name: "Nicolas Waller",
       job: "arquitect",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-2.jpg"
+      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-2.jpg",
+      id: uuid()
     },
     {
       name: "Yeung Ngai",
       job: "designer",
-      src: "	https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-1.jpg"
+      src: "	https://umea.qodeinteractive.com/wp-content/uploads/2020/11/team-img-1.jpg",
+      id: uuid()
     }
   ];
 
@@ -36,7 +41,7 @@ function Team() {
       <Container>
         <Row className={styles.teamRow} sm={1} md={4}>
           {teamMembers.map((member) => (
-            <Col>
+            <Col key={member.id}>
               <div style={{ backgroundImage: `url(${member.src})` }}></div>
               <h4>{member.name}</h4>
               <p>{member.job.toUpperCase()}</p>

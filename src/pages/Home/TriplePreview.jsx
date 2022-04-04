@@ -27,7 +27,7 @@ function TriplePreview() {
   return (
     <Row className="my-5" sm={1} md={3}>
       {content.map((item) => (
-        <Col className={styles.col}>
+        <Col className={styles.col} key={item.id}>
           <Link to="/shop">
             <div
               className={styles.colDiv}

@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About renders correctly 1`] = `
+<div
+  className="aboutUs"
+>
+  <div
+    className="jumbotron"
+  />
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+      id="aboutUs_first_section"
+    >
+      <div
+        className="text-center order-lg-1 order-md-1 order-sm-1 col"
+      >
+        <img
+          alt="Experience Woode"
+          src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-1.jpg"
+        />
+      </div>
+      <div
+        className="d-flex justify-content-center flex-column align-items-center order-lg-2 order-md-2 order-sm-2 col"
+      >
+        <div
+          id="aboutUs_first_section_text"
+        >
+          <h6>
+            ABOUT OUR COLLECTIONS
+          </h6>
+          <h2>
+            Experience new way of designing
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+      id="aboutUs_first_section"
+    >
+      <div
+        className="text-center order-lg-2 order-md-2 order-sm-2 col"
+      >
+        <img
+          alt="Experience Woode"
+          src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-2.jpg"
+        />
+      </div>
+      <div
+        className="d-flex justify-content-center flex-column align-items-center order-lg-1 order-md-1 order-sm-1 col"
+      >
+        <div
+          id="aboutUs_first_section_text"
+        >
+          <h6>
+            ABOUT OUR SHOP
+          </h6>
+          <h2>
+            Experience the shop
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+      id="aboutUs_first_section"
+    >
+      <div
+        className="text-center order-lg-1 order-md-1 order-sm-1 col"
+      >
+        <img
+          alt="Experience Woode"
+          src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-3.jpg"
+        />
+      </div>
+      <div
+        className="d-flex justify-content-center flex-column align-items-center order-lg-2 order-md-2 order-sm-2 col"
+      >
+        <div
+          id="aboutUs_first_section_text"
+        >
+          <h6>
+            ABOUT USED MATERIALS
+          </h6>
+          <h2>
+            Experience wood-work items
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="video"
+  />
+  <div
+    className="comments"
+  >
+    <div
+      aria-roledescription="carousel"
+      className="slider"
+      dir="ltr"
+    >
+      <div
+        className="react-slideshow-container"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="react-slideshow-fade-wrapper "
+        >
+          <div
+            className="react-slideshow-fade-images-wrap"
+          >
+            <div
+              aria-hidden="false"
+              aria-roledescription="slide"
+              data-index={0}
+              style={
+                Object {
+                  "opacity": "1",
+                  "zIndex": "1",
+                }
+              }
+            >
+              <div>
+                <p>
+                  Kevin Sundström
+                </p>
+                <h3>
+                  Scelerisque viverra mauris in aliquam sem. Ornareusisa suspendisse sed nis.
+                </h3>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              aria-roledescription="slide"
+              data-index={1}
+              style={
+                Object {
+                  "opacity": "0",
+                  "zIndex": "0",
+                }
+              }
+            >
+              <div>
+                <p>
+                  Otto Pettersson
+                </p>
+                <h3>
+                  Urnanuque cursrra meturis in aliquam sem. Ornareusisa suspendisse eleifend.
+                </h3>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              aria-roledescription="slide"
+              data-index={2}
+              style={
+                Object {
+                  "opacity": "0",
+                  "zIndex": "0",
+                }
+              }
+            >
+              <div>
+                <p>
+                  Georgia Longdenberg
+                </p>
+                <h3>
+                  Ornareusisa maece mauris in blandit sem. Oramesacisa turpisedisse ege sed.
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      alt="Best comments"
+      src="quotes.png"
+    />
+  </div>
+</div>
+`;
