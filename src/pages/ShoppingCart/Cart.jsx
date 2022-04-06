@@ -43,7 +43,7 @@ function Cart({ cart, removeItem, updateAmount }) {
               </thead>
               <tbody>
                 {cart.items.map((item) => (
-                  <tr>
+                  <tr key={item.id}>
                     <td id="product-cell">
                       <FeatherIcon
                         icon="x"
@@ -59,6 +59,7 @@ function Cart({ cart, removeItem, updateAmount }) {
                         type="number"
                         defaultValue={item.amount}
                         onChange={(e) => handleChangeAmount(e, item)}
+                        data-testid="cart_amount_input"
                       />
                     </td>
                     <td>${item.price * item.amount}</td>
