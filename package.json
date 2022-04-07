@@ -1,4 +1,9 @@
 {
+  "homepage": "https://andre-rd-rodrigues.github.io/woode",
+  "author": {
+    "name" : "Andre Rodrigues",
+    "url" : "https://andre-rd-rodrigues.github.io/portfolio"
+  },
   "name": "woode",
   "version": "0.1.0",
   "private": true,
