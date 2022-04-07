@@ -1,4 +1,4 @@
-# Woode - Leasing Car Simulator 🎨
+# Woode - Where Furniture and Art meet 🎨
 
 This project was meant to practice React, React Router, and Redux integration, including Unit Testing and Integration Testing.
 Essentially, Woode is a furniture e-commerce website, where you can navigate, interact, add to your shopping cart and finish purchases. The project has basic website pages like About Us, Contact, etc, to mimic a typical e-commerce platform, but some of them are not available, because they didn't fall inside the project objectives scope.
