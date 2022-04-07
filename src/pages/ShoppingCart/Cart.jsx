@@ -113,7 +113,7 @@ function Cart({ cart, removeItem, updateAmount }) {
                     <p className="cart-total-titles">TOTAL</p>
                   </Col>
                   <Col>
-                    <p>${cart.totalPrice}</p>
+                    <p data-testid="cart_total">${cart.totalPrice}</p>
                   </Col>
                 </Row>
               </div>

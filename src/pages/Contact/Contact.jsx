@@ -1,13 +1,18 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import ContactInfoRow from "./ContactInfoRow";
+import { fireNotification } from "store/ui/notifications";
+import { connect } from "react-redux";
 import styles from "./contact.module.scss";
 
-const Contact = () => {
+const Contact = ({ fireNotification }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Submited!");
+    fireNotification({
+      message: "Message sent successfully! Our team will get to you soon :)"
+    });
   };
+
   return (
     <div className={styles.contact}>
       <h1>Contact us</h1>
@@ -53,5 +58,10 @@ const Contact = () => {
     </div>
   );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fireNotification: (obj) => dispatch(fireNotification(obj))
+  };
+};
 
-export default Contact;
+export default connect(null, mapDispatchToProps)(Contact);

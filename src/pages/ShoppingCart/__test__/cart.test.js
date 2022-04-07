@@ -1,9 +1,9 @@
 import React from "react";
 import Cart from "../Cart";
-import { render, fireEvent } from "utils/test-utils";
+import { render, fireEvent, initialState } from "utils/test-utils";
 
 describe("Shopping cart", () => {
-  let props, initialState;
+  let props;
 
   props = {
     cart: {
@@ -13,27 +13,6 @@ describe("Shopping cart", () => {
     },
     removeItem: jest.fn(),
     updateAmount: jest.fn()
-  };
-
-  initialState = {
-    entities: {
-      cart: {
-        items: [],
-        amount: 0,
-        totalPrice: 0
-      }
-    },
-    ui: {
-      notifications: {
-        topNotification: {
-          active: false,
-          message: ""
-        },
-        newsletterNotification: {
-          active: false
-        }
-      }
-    }
   };
 
   it("should first render be with no items", () => {
@@ -76,5 +55,45 @@ describe("Shopping cart", () => {
     fireEvent.change(inputElement, { target: { value: "23" } });
 
     expect(inputElement.value).toBe("23");
+  });
+
+  it("should show correct price and total", () => {
+    let newState = {
+      ...initialState,
+      entities: {
+        ...initialState.entities,
+        cart: {
+          items: [
+            {
+              id: 2,
+              name: "Water Pot",
+              category: "decoration",
+              price: 75,
+              src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/shop-img22.jpg",
+              amount: 1,
+              weight: "5 kg",
+              dimensions: "10 x 10 x 10 cm",
+              sizes: "L- 450x550cm, M- 330x550cm, S- 220x330cm"
+            }
+          ],
+          amount: 1,
+          totalPrice: 75
+        }
+      }
+    };
+
+    const { getByTestId, getByText } = render(<Cart {...props} />, {
+      initialState: newState
+    });
+
+    const inputElement = getByTestId("cart_amount_input");
+
+    fireEvent.change(inputElement, { target: { value: "2" } });
+
+    const price = getByText("$75");
+    const total = getByTestId("cart_total");
+
+    expect(price).toBeInTheDocument();
+    expect(total).toHaveTextContent("$150");
   });
 });

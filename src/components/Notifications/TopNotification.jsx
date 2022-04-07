@@ -13,7 +13,9 @@ function TopNotification({ notificationState, hideNotificationAction }) {
 
   if (notificationState.active)
     return (
-      <div className={styles.notification}>{notificationState.message}</div>
+      <div className={styles.notification} data-testid="top_notification">
+        {notificationState.message}
+      </div>
     );
   return null;
 }
