@@ -4,14 +4,13 @@ import styles from "./notifications.module.scss";
 import { connect } from "react-redux";
 import {
   checkNewsletterNotification,
-  fireNotification,
-  hideNotification
+  fireNotification
 } from "store/ui/notifications";
 
-function NotificationNewsletter({
+const NotificationNewsletter = ({
   checkNewsletterNotification,
   fireNotification
-}) {
+}) => {
   const [show, setShow] = useState(true);
 
   const handleSubmit = (e) => {
@@ -85,7 +84,7 @@ function NotificationNewsletter({
       </div>
     )
   );
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

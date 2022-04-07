@@ -1,30 +1,30 @@
 import React from "react";
 import Contact from "../Contact";
 import renderer from "react-test-renderer";
-import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { render, ConnectedComponent } from "utils/test-utils";
 
-it("Contact renders correctly", () => {
-  const wrapper = renderer.create(<Contact />);
-  expect(wrapper).toMatchSnapshot();
-});
+describe("Contact us", () => {
+  it("should render correctly", () => {
+    const wrapper = renderer.create(ConnectedComponent(<Contact />));
 
-it("Contact form submits correctly", async () => {
-  const alertMock = jest.spyOn(window, "alert").mockImplementation();
-  const { getByTestId, getByPlaceholderText, getByText, getByRole } = render(
-    <Contact />
-  );
-  window.alert = () => {};
+    expect(wrapper).toMatchSnapshot();
+  });
 
-  const textarea = getByTestId("contact_textarea");
-  const nameInput = getByPlaceholderText(/Your Name/i);
-  const emailInput = getByPlaceholderText(/Your Email/i);
-  const submitButton = getByText(/Submit/i);
+  it("should show notification when submit is successfull", async () => {
+    const { getByTestId, getByPlaceholderText, getByText, findByTestId } =
+      render(<Contact />);
 
-  userEvent.type(textarea, "Something");
-  userEvent.type(nameInput, "My name");
-  userEvent.type(emailInput, "email@example.com");
-  userEvent.click(submitButton);
+    const textarea = getByTestId("contact_textarea");
+    const nameInput = getByPlaceholderText(/Your Name/i);
+    const emailInput = getByPlaceholderText(/Your Email/i);
+    const submitButton = getByText(/Submit/i);
 
-  expect(alertMock).toHaveBeenCalledTimes(1);
+    userEvent.type(textarea, "Something");
+    userEvent.type(nameInput, "My name");
+    userEvent.type(emailInput, "email@example.com");
+    userEvent.click(submitButton);
+
+    expect(await findByTestId("top_notification")).toBeInTheDocument();
+  });
 });
