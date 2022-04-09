@@ -5,7 +5,7 @@ on:
     types:
       - completed
   pull_request:
-    branches: [main]
+    types: [closed]
 jobs:
   build-and-deploy:
     needs: run-test
