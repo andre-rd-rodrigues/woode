@@ -37,6 +37,7 @@ function Home() {
 
   return (
     <>
+      <h1>YOU ARE AMAZING!</h1>
       <Slider />
       <div className="mx-3">
         <TriplePreview />
