@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/woode/static/css/main.7d817e0a.css",
-    "main.js": "/woode/static/js/main.f1c483fd.js",
+    "main.js": "/woode/static/js/main.f79d1d66.js",
     "static/js/787.dc7a4cc7.chunk.js": "/woode/static/js/787.dc7a4cc7.chunk.js",
     "static/media/quotes.png": "/woode/static/media/quotes.7594c73e7aab42b03b02.png",
     "static/media/logo.png": "/woode/static/media/logo.199f9030a0e7de0e8daa.png",
     "index.html": "/woode/index.html",
     "main.7d817e0a.css.map": "/woode/static/css/main.7d817e0a.css.map",
-    "main.f1c483fd.js.map": "/woode/static/js/main.f1c483fd.js.map",
+    "main.f79d1d66.js.map": "/woode/static/js/main.f79d1d66.js.map",
     "787.dc7a4cc7.chunk.js.map": "/woode/static/js/787.dc7a4cc7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d817e0a.css",
-    "static/js/main.f1c483fd.js"
+    "static/js/main.f79d1d66.js"
   ]
 }
