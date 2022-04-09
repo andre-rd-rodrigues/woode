@@ -11,7 +11,7 @@ This project is composed by:
 
 - 8 pages (main components);
 
-Redux store:
+Redux:
 
 - 3 reducers: entitiesReducer, uiReducer, rootReducer
 - 1 middleware: activateNotifications
