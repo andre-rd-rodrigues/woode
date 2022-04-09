@@ -16,7 +16,7 @@ describe("Shopping cart", () => {
   };
 
   it("should first render be with no items", () => {
-    const { getByText } = render(<Cart {...props} />, { initialState });
+    const { getByText } = render(<Cart {...props} />, { initialStatee });
 
     expect(getByText(/Your cart is currently empty./i)).toBeInTheDocument();
   });
