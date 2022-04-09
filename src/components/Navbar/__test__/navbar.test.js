@@ -1,38 +1,17 @@
-const { render } = require("utils/test-utils");
+const { render, initialState } = require("utils/test-utils");
 const { default: Navbar } = require("../Navbar");
 
 describe("Navbar", () => {
-  let initialState;
-
-  initialState = {
-    entities: {
-      cart: {
-        items: [],
-        amount: 0,
-        totalPrice: 0
-      }
-    },
-    ui: {
-      notifications: {
-        topNotification: {
-          active: false,
-          message: ""
-        },
-        newsletterNotification: {
-          active: false
-        }
-      }
-    }
-  };
+  let newState;
 
   it("should render correctly", () => {
-    const { getByText } = render(<Navbar />, { initialState });
+    const { getByText } = render(<Navbar />);
 
     expect(getByText(/home/i)).toBeInTheDocument();
   });
 
   it("should show cart items according to amount", () => {
-    let newState = {
+    newState = {
       ...initialState,
       entities: {
         ...initialState.entities,
@@ -42,7 +21,7 @@ describe("Navbar", () => {
         }
       }
     };
-    const { getByText } = render(<Navbar />, { initialState: newState });
+    const { getByText } = render(<Navbar />, { newState });
 
     expect(getByText(/2/i)).toBeInTheDocument();
   });

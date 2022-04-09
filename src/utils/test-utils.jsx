@@ -41,8 +41,11 @@ const ConnectedComponent = (children) => {
   );
 };
 
-function render(ui, { initialState, ...renderOptions } = {}) {
+function render(ui, { newState, ...renderOptions } = {}) {
   const Wrapper = ({ children }) => {
+    if (newState) {
+      store = createStore(reducer, newState);
+    }
     return (
       <MemoryRouter>
         <Provider store={store}>{children}</Provider>
