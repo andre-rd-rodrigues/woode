@@ -17,11 +17,11 @@ jobs:
       - run: npm test
 
   eslint:
+    needs: run-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install npm 🔧
         run: npm ci
-      - run: npm start
       - name: Run ESLint 🔮
         run: eslint . --ext .js,.jsx,.ts,.tsx
