@@ -1,14 +1,24 @@
 name: Build & Deploy
-on:
-  workflow_run:
-    workflows: ["Unit Testing"]
-    types:
-      - completed
-  pull_request:
-    types: [closed]
+on: [workflow_dispatch]
+
 jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests 🧪
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm test
+
   build-and-deploy:
-    needs: run-test
+    needs: run-tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
