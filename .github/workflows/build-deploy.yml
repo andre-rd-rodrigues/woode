@@ -1,13 +1,7 @@
-name: Build & Deploy
-on:
-  workflow_dispatch:
-  workflow_run:
-    workflows: ["Unit Testing"]
-    types:
-      - completed
-
+name: Build and Deploy
+on: [workflow_dispatch]
 jobs:
-  build-and-deploy:
+  build-test-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -17,7 +11,7 @@ jobs:
         run: |
           npm ci
           npm run build
-
+          npm test
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
