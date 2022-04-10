@@ -47,7 +47,7 @@ describe("Shopping cart", () => {
     };
 
     const { getByTestId } = render(<Cart {...props} />, {
-      newState
+      newStat
     });
 
     const inputElement = getByTestId("cart_amount_input");
