@@ -17,12 +17,14 @@ jobs:
       - run: npm test
 
   eslint:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      # - run: npm ci
+      - run: npm ci
+      - name: Run eslint 🔮
       - uses: sibiraj-s/action-eslint@v2
         with:
           eslint-args: "--ignore-path=.gitignore --quiet"
