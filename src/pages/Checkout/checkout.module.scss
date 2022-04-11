@@ -1,0 +1,136 @@
+@import "styles/mixins.scss";
+
+.checkout {
+  min-height: 100vh;
+  & h2 {
+    margin: 50px 0 30px;
+  }
+}
+
+.jumbotron {
+  margin-top: 100px;
+  height: 228px;
+  background-size: cover;
+  background: url("https://umea.qodeinteractive.com/wp-content/uploads/2021/01/checkout-title-img.jpg")
+    no-repeat no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.billingAddressForm {
+  & label,
+  legend {
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 2.15em;
+  }
+  & input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 10px 25px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  & select,
+  option,
+  input::placeholder,
+  textarea::placeholder {
+    font-weight: 300;
+    color: #686868;
+  }
+
+  & button[id="checkout-button"] {
+    @include squared-button(black);
+    margin-top: 40px;
+    & a {
+      text-decoration: none;
+    }
+  }
+}
+
+div[id="checkout-order"] {
+  margin-top: 80px;
+  max-width: 500px;
+  & h4 {
+    margin-bottom: 40px;
+  }
+  & div[id="checkout-box"] {
+    border: 1px solid #a3a3a3;
+    & p {
+      font-weight: 500;
+    }
+    & p[class="checkout-titles"] {
+      font-size: 12px;
+      font-weight: 300;
+    }
+    & p[class="checkout-product-name"] {
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  & div[class="align-items-center row"] {
+    padding: 20px 30px;
+    & p {
+      margin: 0;
+    }
+  }
+  & hr {
+    width: 88%;
+    margin: auto;
+    height: 1px;
+  }
+  & div[class="form-check"] {
+    margin-bottom: 15px;
+    & input,
+    label {
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
+div[id="checkout-payment"] {
+  padding: 20px 30px;
+  & div[class="form-check"] {
+    & input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & label {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-left: 10px;
+      transform: translateY(-5px);
+      text-transform: none;
+      letter-spacing: normal;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+button[id="order-button"] {
+  @include squared-button(black);
+  & a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+p[id="checkout-data-security"] {
+  margin: 40px 0;
+  line-height: 1.66em;
+  font-size: 14px;
+}

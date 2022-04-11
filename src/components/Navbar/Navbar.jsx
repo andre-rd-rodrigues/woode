@@ -38,7 +38,7 @@ function AppNavbar({ cart }) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Link as={Link} href="/shoppingCart" to="/shoppingCart">
+        <Nav.Link as={Link} href="/shopping-cart" to="/shopping-cart">
           Cart <FeatherIcon icon="shopping-bag" /> {amount}
         </Nav.Link>
         <Nav.Link as={Link} href="/login" to="/login">

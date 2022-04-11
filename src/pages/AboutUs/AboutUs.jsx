@@ -1,54 +1,11 @@
 import React from "react";
 import quotes from "assets/images/quotes.png";
+import { about_content, about_reviews } from "mocks/local_data";
 import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
 import styles from "./aboutus.module.scss";
 
 function AboutUs() {
-  let content = [
-    {
-      id: 1,
-      subtitle: "ABOUT OUR COLLECTIONS",
-      title: "Experience new way of designing",
-      body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-1.jpg"
-    },
-    {
-      id: 2,
-      subtitle: "ABOUT OUR SHOP",
-      title: "Experience the shop",
-      body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-2.jpg"
-    },
-    {
-      id: 3,
-      subtitle: "ABOUT USED MATERIALS",
-      title: "Experience wood-work items",
-      body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
-      src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-3.jpg"
-    }
-  ];
-  let sliderContent = [
-    {
-      id: 1,
-      subtitle: "Kevin Sundström",
-      title:
-        "Scelerisque viverra mauris in aliquam sem. Ornareusisa suspendisse sed nis."
-    },
-    {
-      id: 2,
-      subtitle: "Otto Pettersson",
-      title:
-        "Urnanuque cursrra meturis in aliquam sem. Ornareusisa suspendisse eleifend."
-    },
-    {
-      id: 3,
-      subtitle: "Georgia Longdenberg",
-      title:
-        "Ornareusisa maece mauris in blandit sem. Oramesacisa turpisedisse ege sed."
-    }
-  ];
-
   let orderSection = (item) => {
     return {
       image: {
@@ -63,7 +20,7 @@ function AboutUs() {
     <div className={styles.aboutUs}>
       <div className={styles.jumbotron}></div>
       <Container>
-        {content.map((item) => (
+        {about_content.map((item) => (
           <Row id="aboutUs_first_section" key={item.id}>
             <Col
               className="text-center"
@@ -92,7 +49,7 @@ function AboutUs() {
       <div className={styles.video}></div>
       <div className={styles.comments}>
         <Fade autoplay arrows={false} duration={2000} className={styles.slider}>
-          {sliderContent.map((slide) => (
+          {about_reviews.map((slide) => (
             <div key={slide.id}>
               <p>{slide.subtitle}</p>
               <h3>{slide.title}</h3>

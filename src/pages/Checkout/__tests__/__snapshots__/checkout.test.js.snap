@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div
+  className="checkout"
+>
+  <div
+    className="jumbotron"
+  >
+    <h1>
+      Checkout
+    </h1>
+  </div>
+  <div
+    className="container"
+  >
+    <h2>
+      Billing details
+    </h2>
+    <form
+      className="billingAddressForm"
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <label
+            htmlFor="checkout_first_name"
+          >
+            FIRST NAME*
+          </label>
+          <input
+            id="checkout_first_name"
+            name="firstname"
+            required={true}
+            type="text"
+          />
+          <label
+            htmlFor="checkout_last_name"
+          >
+            LAST NAME*
+          </label>
+          <input
+            id="checkout_last_name"
+            name="lastname"
+            required={true}
+            type="text"
+          />
+          <label
+            htmlFor="checkout_company"
+          >
+            company name (optional)
+          </label>
+          <input
+            id="checkout_company"
+            name="company"
+            type="text"
+          />
+          <label
+            htmlFor="checkout_company"
+          >
+            country / region *
+          </label>
+          <select
+            id="checkout_company"
+            name="checkout_country"
+            required={true}
+          >
+            <option
+              value="portugal"
+            >
+              Portugal
+            </option>
+            <option
+              value="india"
+            >
+              India
+            </option>
+          </select>
+          <fieldset>
+            <legend>
+              street address*
+            </legend>
+            <input
+              name="checkout_address_1"
+              placeholder="House number and street name"
+              required={true}
+              type="text"
+            />
+            <input
+              name="checkout_address_2"
+              placeholder="Apartment, suite, unit, etc. (optional)"
+              type="text"
+            />
+          </fieldset>
+          <label
+            htmlFor="checkout_town"
+          >
+            town / city*
+          </label>
+          <input
+            id="checkout_town"
+            required={true}
+            type="text"
+          />
+          <label
+            htmlFor="checkout_email"
+          >
+            email address*
+          </label>
+          <input
+            id="checkout_email"
+            required={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="col"
+        >
+          <label
+            htmlFor="checkout_notes"
+          >
+            order notes (optional)
+          </label>
+          <textarea
+            cols="30"
+            id="checkout_notes"
+            name="checkout_notes"
+            placeholder="Notes about your order, eg. special notes for delivery"
+            rows="10"
+          />
+        </div>
+      </div>
+      <div
+        id="checkout-order"
+      >
+        <h4>
+          Your order
+        </h4>
+        <div
+          id="checkout-box"
+        >
+          <div
+            className="align-items-center row"
+          >
+            <div
+              className="col"
+            >
+              <p
+                className="checkout-titles"
+              >
+                PRODUCT(S)
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div
+            className="align-items-center row"
+          >
+            <div
+              className="col"
+            >
+              <p
+                className="checkout-titles"
+              >
+                SUBTOTAL
+              </p>
+            </div>
+            <div
+              className="col"
+            >
+              <p>
+                $
+                0
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div
+            className="align-items-center row"
+          >
+            <div
+              className="col"
+            >
+              <p
+                className="checkout-titles"
+              >
+                SHIPPING
+              </p>
+            </div>
+            <div
+              className="col"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  defaultChecked={true}
+                  disabled={false}
+                  id="form-contact-freeShipping"
+                  name="form-shipping-radio"
+                  type="radio"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="form-contact-freeShipping"
+                  title=""
+                >
+                  Free shipping
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  id="form-contact-freeRate"
+                  name="form-shipping-radio"
+                  type="radio"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="form-contact-freeRate"
+                  title=""
+                >
+                  Flat rate
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  id="form-contact-local"
+                  name="form-shipping-radio"
+                  type="radio"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="form-contact-local"
+                  title=""
+                >
+                  Local pickup
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            className="align-items-center row"
+          >
+            <div
+              className="col"
+            >
+              <p
+                className="checkout-titles"
+              >
+                TOTAL
+              </p>
+            </div>
+            <div
+              className="col"
+            >
+              <p
+                data-testid="cart_total"
+              >
+                $
+                0
+              </p>
+            </div>
+          </div>
+          <div
+            id="checkout-payment"
+          >
+            <div
+              className="form-check"
+            >
+              <input
+                className="form-check-input"
+                defaultChecked={true}
+                disabled={false}
+                id="form-checkout-bank"
+                name="form-shipping-radio"
+                type="radio"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="form-checkout-bank"
+                title=""
+              >
+                Direct bank transfer
+              </label>
+            </div>
+            <div
+              className="form-check"
+            >
+              <input
+                className="form-check-input"
+                disabled={false}
+                id="form-checkout-check"
+                name="form-shipping-radio"
+                type="radio"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="form-checkout-check"
+                title=""
+              >
+                Check payment
+              </label>
+            </div>
+            <div
+              className="form-check"
+            >
+              <input
+                className="form-check-input"
+                disabled={false}
+                id="form-checkout-cash"
+                name="form-shipping-radio"
+                type="radio"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="form-checkout-cash"
+                title=""
+              >
+                Cash on delivery
+              </label>
+            </div>
+          </div>
+        </div>
+        <p
+          id="checkout-data-security"
+        >
+          Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+        </p>
+      </div>
+      <button
+        id="order-button"
+        type="submit"
+      >
+        Place order
+      </button>
+    </form>
+  </div>
+</div>
+`;
