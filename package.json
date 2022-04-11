@@ -43,7 +43,7 @@
     "deploy": "gh-pages -b gh-pages -d build",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "precommit": "npm run lint"
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
