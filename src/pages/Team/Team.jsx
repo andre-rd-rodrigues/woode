@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { team_members } from "mocks/local_data";
+import { Col, Container, Row } from "react-bootstrap";
 import styles from "./team.module.scss";
 
 function Team() {

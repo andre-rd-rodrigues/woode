@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
-import styles from "./notifications.module.scss";
 import { connect } from "react-redux";
 import {
   checkNewsletterNotification,
   fireNotification
 } from "store/ui/notifications";
+import styles from "./notifications.module.scss";
 
 const NotificationNewsletter = ({
   checkNewsletterNotification,
@@ -46,6 +46,7 @@ const NotificationNewsletter = ({
   useEffect(() => {
     getStateFromLocalStorage();
   }, []);
+
   return (
     show && (
       <div className={styles.newsletterNotification}>

@@ -1,12 +1,16 @@
+@import "styles/mixins";
+
 .additionalInfo {
   margin-top: 80px;
   & div[id="head"] {
     display: flex;
-    & h4 {
-      margin-right: 80px;
-      font-size: 16px;
-      padding-bottom: 10px;
-      cursor: pointer;
+    & button {
+      @include reset-button;
+      & h4 {
+        margin-right: 80px;
+        font-size: 16px;
+        padding-bottom: 10px;
+      }
     }
   }
   & div[id="body"] {

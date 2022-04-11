@@ -32,6 +32,7 @@ function ProductsSection() {
           {items &&
             items.map((item) => (
               <Product
+                key={item.id}
                 item={item}
                 changeItemModal={(value) => setItemModalShow(value)}
                 changeCurrentItemSelected={(item) => setCurrentItem(item)}

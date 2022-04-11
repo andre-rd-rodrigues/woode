@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "assets/images/logo.png";
 import FeatherIcon from "feather-icons-react";
-import styles from "./navbar.module.scss";
-import { Link } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import styles from "./navbar.module.scss";
 
 function AppNavbar({ cart }) {
   const [amount, setAmount] = useState(0);

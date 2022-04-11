@@ -1,7 +1,7 @@
 import React from "react";
+import { triple_view_content } from "mocks/local_data";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { triple_view_content } from "mocks/local_data";
 import styles from "./triplepreview.module.scss";
 
 function TriplePreview() {

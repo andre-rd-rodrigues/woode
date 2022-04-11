@@ -1,8 +1,7 @@
 import React from "react";
+import quotes from "assets/images/quotes.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
-import Button from "components/Button/Button";
-import quotes from "assets/images/quotes.png";
 import styles from "./aboutus.module.scss";
 
 function AboutUs() {

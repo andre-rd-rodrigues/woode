@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import productsJSON from "mocks/products";
-import Product from "components/Product/Product";
 import ItemModal from "components/ItemModal/ItemModal";
+import Product from "components/Product/Product";
+import productsJSON from "mocks/products";
 import styles from "./relatedproducts.module.scss";
 
 function RelatedProducts() {

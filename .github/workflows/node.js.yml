@@ -16,7 +16,7 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  eslint:
+  run-eslint:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
@@ -24,4 +24,4 @@ jobs:
       - name: Install npm 🔧
         run: npm ci
       - name: Run ESLint 🔮
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npm run lint

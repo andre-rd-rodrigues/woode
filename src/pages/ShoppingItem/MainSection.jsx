@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
 import styles from "./mainsection.module.scss";
 
@@ -51,7 +52,7 @@ const MainSection = ({ item }) => {
               <p>SKU: 030</p>
               <p>CATEGORY: {category}</p>
               <p>
-                TAG: <a href="#">Accessories</a>
+                TAG: <Link to="/shop">Accessories</Link>
               </p>
             </div>
           </div>

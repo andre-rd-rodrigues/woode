@@ -1,13 +1,13 @@
-const { render, initialState } = require("utils/test-utils");
+const { render, initialState, screen } = require("utils/test-utils");
 const { default: Navbar } = require("../Navbar");
 
 describe("Navbar", () => {
   let newState;
 
   it("should render correctly", () => {
-    const { getByText } = render(<Navbar />);
+    render(<Navbar />);
 
-    expect(getByText(/home/i)).toBeInTheDocument();
+    expect(screen.getByText(/home/i)).toBeInTheDocument();
   });
 
   it("should show cart items according to amount", () => {
@@ -21,8 +21,8 @@ describe("Navbar", () => {
         }
       }
     };
-    const { getByText } = render(<Navbar />, { newState });
+    render(<Navbar />, { newState });
 
-    expect(getByText(/2/i)).toBeInTheDocument();
+    expect(screen.getByText(/2/i)).toBeInTheDocument();
   });
 });

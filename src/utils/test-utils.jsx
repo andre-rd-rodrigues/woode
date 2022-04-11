@@ -2,12 +2,11 @@
 import React from "react";
 import { render as rtlRender } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router";
 import { createStore } from "redux";
 
 // Import your own reducer
 import reducer from "store/rootReducer";
-import activateNotification from "store/middleware/activateNotification";
-import { MemoryRouter } from "react-router";
 
 let store, initialState;
 

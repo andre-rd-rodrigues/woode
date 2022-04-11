@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
 import styles from "./additionalinfo.module.scss";
 
 function AdditionalInfo({ item }) {
@@ -41,22 +40,24 @@ function AdditionalInfo({ item }) {
   return (
     <div className={styles.additionalInfo}>
       <div id="head">
-        <h4
-          style={{
-            borderBottom: renderStyle("description")
-          }}
-          onClick={() => setSelected("description")}
-        >
-          Description
-        </h4>
-        <h4
-          style={{
-            borderBottom: renderStyle("info")
-          }}
-          onClick={() => setSelected("info")}
-        >
-          Info
-        </h4>
+        <button onClick={() => setSelected("description")}>
+          <h4
+            style={{
+              borderBottom: renderStyle("description")
+            }}
+          >
+            Description
+          </h4>
+        </button>
+        <button onClick={() => setSelected("info")}>
+          <h4
+            style={{
+              borderBottom: renderStyle("info")
+            }}
+          >
+            Info
+          </h4>
+        </button>
       </div>
       <hr />
       <div id="body">{renderBody()}</div>

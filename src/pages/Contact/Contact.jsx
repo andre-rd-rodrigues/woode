@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import ContactInfoRow from "./ContactInfoRow";
-import { fireNotification } from "store/ui/notifications";
 import { connect } from "react-redux";
+import { fireNotification } from "store/ui/notifications";
 import styles from "./contact.module.scss";
+import ContactInfoRow from "./ContactInfoRow";
 
 const Contact = ({ fireNotification }) => {
   const handleSubmit = (e) => {

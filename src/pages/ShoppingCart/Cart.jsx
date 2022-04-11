@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
 import FeatherIcon from "feather-icons-react";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
-import { removedItem, updatedAmount } from "store/entities/cart";
 import { Link } from "react-router-dom";
+import { removedItem, updatedAmount } from "store/entities/cart";
 import styles from "./cart.module.scss";
 
 function Cart({ cart, removeItem, updateAmount }) {

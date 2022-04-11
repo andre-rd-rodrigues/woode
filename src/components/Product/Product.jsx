@@ -1,8 +1,8 @@
 import React from "react";
+import FeatherIcon from "feather-icons-react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
-import FeatherIcon from "feather-icons-react";
 import styles from "./product.module.scss";
 
 function Product({ item, changeItemModal, changeCurrentItemSelected, size }) {

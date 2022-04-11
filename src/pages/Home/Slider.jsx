@@ -1,10 +1,10 @@
+import React from "react";
 import { ArrowIcon } from "assets/Icons";
 import Button from "components/Button/Button";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import React, { useState } from "react";
+import { home_slider } from "mocks/local_data";
 import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
-import { home_slider } from "mocks/local_data";
 import styles from "./slider.module.scss";
 
 function Slider() {

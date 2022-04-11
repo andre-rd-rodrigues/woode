@@ -1,6 +1,6 @@
 import React from "react";
+import { render, fireEvent, initialState, screen } from "utils/test-utils";
 import Cart from "../Cart";
-import { render, fireEvent, initialState } from "utils/test-utils";
 
 describe("Shopping cart", () => {
   let props;
@@ -16,9 +16,11 @@ describe("Shopping cart", () => {
   };
 
   it("should first render be with no items", () => {
-    const { getByText } = render(<Cart {...props} />, { initialState });
+    render(<Cart {...props} />, { initialState });
 
-    expect(getByText(/Your cart is currently empty./i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Your cart is currently empty./i)
+    ).toBeInTheDocument();
   });
 
   it("should show the new item, when new a item is added to cart", () => {
@@ -46,11 +48,11 @@ describe("Shopping cart", () => {
       }
     };
 
-    const { getByTestId } = render(<Cart {...props} />, {
+    render(<Cart {...props} />, {
       newState
     });
 
-    const inputElement = getByTestId("cart_amount_input");
+    const inputElement = screen.getByTestId("cart_amount_input");
 
     fireEvent.change(inputElement, { target: { value: "23" } });
 
@@ -82,16 +84,16 @@ describe("Shopping cart", () => {
       }
     };
 
-    const { getByTestId, getByText } = render(<Cart {...props} />, {
+    render(<Cart {...props} />, {
       initialState: newState
     });
 
-    const inputElement = getByTestId("cart_amount_input");
+    const inputElement = screen.getByTestId("cart_amount_input");
 
     fireEvent.change(inputElement, { target: { value: "2" } });
 
-    const price = getByText("$75");
-    const total = getByTestId("cart_total");
+    const price = screen.getByText("$75");
+    const total = screen.getByTestId("cart_total");
 
     expect(price).toBeInTheDocument();
     expect(total).toHaveTextContent("$150");

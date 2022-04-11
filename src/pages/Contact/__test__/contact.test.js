@@ -1,8 +1,7 @@
 import React from "react";
-import Contact from "../Contact";
 import renderer from "react-test-renderer";
-import userEvent from "@testing-library/user-event";
-import { render, ConnectedComponent } from "utils/test-utils";
+import { ConnectedComponent } from "utils/test-utils";
+import Contact from "../Contact";
 
 describe("Contact us", () => {
   it("should render correctly", () => {
