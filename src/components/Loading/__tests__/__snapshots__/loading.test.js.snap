@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div
+  className="loader"
+  style={
+    Object {
+      "height": 0,
+    }
+  }
+>
+  <span
+    className="css-1xdhyk6"
+  >
+    <span
+      className="css-1tbwygc"
+    />
+    <span
+      className="css-x31nw7"
+    />
+    <span
+      className="css-1en0n97"
+    />
+  </span>
+</div>
+`;
