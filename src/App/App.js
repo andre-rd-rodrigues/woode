@@ -4,6 +4,7 @@ import Navbar from "components/Navbar/Navbar";
 import NotificationNewsletter from "components/Notifications/NotificationNewsletter";
 import TopNotification from "components/Notifications/TopNotification";
 import AboutUs from "pages/AboutUs/AboutUs";
+import Checkout from "pages/Checkout/Checkout";
 import Contact from "pages/Contact/Contact";
 import Home from "pages/Home/Home";
 import Shop from "pages/Shop/Shop";
@@ -24,7 +25,8 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/shoppingCart" element={<Cart />} />
+        <Route path="/shopping-cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/shoppingItem:id" element={<ShoppingItem />} />
         <Route path="*" element={<Home />} />
       </Routes>

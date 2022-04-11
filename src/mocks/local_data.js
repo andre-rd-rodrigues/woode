@@ -1,5 +1,6 @@
 import uuid from "react-uuid";
 
+// Home
 const home_slider = [
   {
     title: "Modern.",
@@ -47,6 +48,8 @@ const imagesRow = [
     id: uuid()
   }
 ];
+
+// Triple preview
 const triple_view_content = [
   {
     id: 1,
@@ -68,6 +71,7 @@ const triple_view_content = [
   }
 ];
 
+// Team members
 const team_members = [
   {
     name: "Nicolette Ritonni",
@@ -94,4 +98,58 @@ const team_members = [
     id: uuid()
   }
 ];
-export { imagesRow, home_slider, triple_view_content, team_members };
+
+// About us
+let about_content = [
+  {
+    id: 1,
+    subtitle: "ABOUT OUR COLLECTIONS",
+    title: "Experience new way of designing",
+    body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
+    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-1.jpg"
+  },
+  {
+    id: 2,
+    subtitle: "ABOUT OUR SHOP",
+    title: "Experience the shop",
+    body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
+    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-2.jpg"
+  },
+  {
+    id: 3,
+    subtitle: "ABOUT USED MATERIALS",
+    title: "Experience wood-work items",
+    body: "Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet.",
+    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-3.jpg"
+  }
+];
+
+let about_reviews = [
+  {
+    id: 1,
+    subtitle: "Kevin Sundström",
+    title:
+      "Scelerisque viverra mauris in aliquam sem. Ornareusisa suspendisse sed nis."
+  },
+  {
+    id: 2,
+    subtitle: "Otto Pettersson",
+    title:
+      "Urnanuque cursrra meturis in aliquam sem. Ornareusisa suspendisse eleifend."
+  },
+  {
+    id: 3,
+    subtitle: "Georgia Longdenberg",
+    title:
+      "Ornareusisa maece mauris in blandit sem. Oramesacisa turpisedisse ege sed."
+  }
+];
+
+export {
+  imagesRow,
+  home_slider,
+  triple_view_content,
+  team_members,
+  about_content,
+  about_reviews
+};
