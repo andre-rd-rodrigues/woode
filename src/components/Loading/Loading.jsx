@@ -22,6 +22,7 @@ const Loading = ({
           style={{
             height
           }}
+          data-testid="sync_loader"
         >
           <SyncLoader color={color} loading={loading} size={size} />
         </div>

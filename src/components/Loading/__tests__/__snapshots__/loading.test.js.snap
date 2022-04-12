@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly 1`] = `
+exports[`Loader should render correctly 1`] = `
 <div
   className="loader"
+  data-testid="sync_loader"
   style={
     Object {
       "height": 0,
