@@ -4,9 +4,12 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./checkout.module.scss";
+import { Radio } from "react-radio-group";
+import { RadioGroup } from "react-radio-group";
 
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -151,28 +154,37 @@ const Checkout = ({ cart }) => {
                   <p data-testid="cart_total">${cart.totalPrice}</p>
                 </Col>
               </Row>
+
               <div id="checkout-payment">
-                <Form.Check
-                  type="radio"
-                  label="Direct bank transfer"
-                  name="form-shipping-radio"
-                  id="form-checkout-bank"
-                  defaultChecked
-                />
+                <RadioGroup
+                  name="checkout_payments"
+                  selectedValue={selectedValue}
+                  onChange={(e) => setSelectedValue(e)}
+                  className="form-check"
+                >
+                  <label htmlFor="Direct bank transfer">
+                    Direct bank transfer
+                  </label>
+                  <Radio
+                    className="form-check-input"
+                    value="Direct bank transfer"
+                    id="Direct bank transfer"
+                    checked
+                  />
+                  <label htmlFor="Check payment">Check payment</label>
+                  <Radio
+                    value="Check payment"
+                    id="Check payment"
+                    className="form-check-input"
+                  />
 
-                <Form.Check
-                  type="radio"
-                  label="Check payment"
-                  name="form-shipping-radio"
-                  id="form-checkout-check"
-                />
-
-                <Form.Check
-                  type="radio"
-                  label="Cash on delivery"
-                  name="form-shipping-radio"
-                  id="form-checkout-cash"
-                />
+                  <label htmlFor="Cash on delivery">Cash on delivery</label>
+                  <Radio
+                    id="Cash on delivery"
+                    value="Cash on delivery"
+                    className="form-check-input"
+                  />
+                </RadioGroup>
               </div>
             </div>
             <p id="checkout-data-security">
