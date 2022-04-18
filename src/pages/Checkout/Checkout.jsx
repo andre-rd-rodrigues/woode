@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import AppLoader from "components/Loading/Loading";
 import { Col, Container, Form, Row } from "react-bootstrap";
+import { Radio, RadioGroup } from "react-radio-group";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import styles from "./checkout.module.scss";
-import { Radio } from "react-radio-group";
-import { RadioGroup } from "react-radio-group";
 
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
