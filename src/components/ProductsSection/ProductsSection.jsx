@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
 import products from "mocks/products";
+import { Col, Row } from "react-bootstrap";
 import styles from "./products.module.scss";
 
 function ProductsSection() {
@@ -28,17 +29,17 @@ function ProductsSection() {
         <hr />
       </div>
       <div>
-        <div className={styles.row}>
-          {items &&
-            items.map((item) => (
+        <Row>
+          {items?.map((item) => (
+            <Col key={item.id} lg={3} md={6} sm={6}>
               <Product
-                key={item.id}
                 item={item}
                 changeItemModal={(value) => setItemModalShow(value)}
                 changeCurrentItemSelected={(item) => setCurrentItem(item)}
               />
-            ))}
-        </div>
+            </Col>
+          ))}
+        </Row>
       </div>
       <ItemModal
         item={currentItem}
