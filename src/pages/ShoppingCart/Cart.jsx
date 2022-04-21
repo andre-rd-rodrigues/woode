@@ -10,7 +10,7 @@ function Cart({ cart, removeItem, updateAmount }) {
   const NoItems = () => (
     <div id="cart-no-items">
       <p>Your cart is currently empty.</p>
-      <Link to="/home">
+      <Link to="/shop">
         <button>Return to shop</button>
       </Link>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AppModal from "components/AppModal/AppModal";
 import AppLoader from "components/Loading/Loading";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Radio, RadioGroup } from "react-radio-group";
@@ -8,11 +9,12 @@ import styles from "./checkout.module.scss";
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
+  const [modalShow, setModalShow] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log(e);
+    /*  setLoading(true); */
+    setModalShow(true);
   };
 
   return (
@@ -196,6 +198,11 @@ const Checkout = ({ cart }) => {
           </button>
         </form>
       </Container>
+      <AppModal
+        show={modalShow}
+        type="checkout_success"
+        onHide={() => setModalShow(false)}
+      />
     </div>
   );
 };
