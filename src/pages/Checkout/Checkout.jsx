@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppModal from "components/AppModal/AppModal";
 import AppLoader from "components/Loading/Loading";
 import { Col, Container, Form, Row } from "react-bootstrap";
@@ -13,9 +13,17 @@ const Checkout = ({ cart }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*  setLoading(true); */
-    setModalShow(true);
+    setLoading(true);
+
+    setTimeout(() => {
+      setModalShow(true);
+      setLoading(false);
+    }, 1500);
   };
+
+  useEffect(() => {
+    if (modalShow) return setTimeout(() => setModalShow(false), 4000);
+  }, [modalShow]);
 
   return (
     <div className={styles.checkout}>
