@@ -9,7 +9,7 @@ import styles from "./checkout.module.scss";
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const Checkout = ({ cart }) => {
     setTimeout(() => {
       setModalShow(true);
       setLoading(false);
-    }, 1500);
+    }, 1000);
   };
 
   useEffect(() => {

@@ -24,7 +24,12 @@ const AppModal = ({ show = false, onHide, type = "default" }) => {
       );
     case "checkout_success":
       return (
-        <Modal className={styles.appModalSuccess} show={show} onHide={onHide}>
+        <Modal
+          className={styles.appModalSuccess}
+          show={show}
+          onHide={onHide}
+          data-testid="checkout_success_modal"
+        >
           <Modal.Header>
             <Modal.Title></Modal.Title>
           </Modal.Header>
