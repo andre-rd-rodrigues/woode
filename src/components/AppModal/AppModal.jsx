@@ -4,16 +4,21 @@ import LottieAnimation from "components/LottieAnimation/LottieAnimation";
 import { Modal } from "react-bootstrap";
 import styles from "./appmodal.module.scss";
 
-const AppModal = ({ show = false, onHide, type = "default" }) => {
+const AppModal = ({
+  show = false,
+  onHide,
+  type = "default",
+  content = { title: "", body: "" }
+}) => {
   switch (type) {
     case "default":
       return (
         <Modal className={styles.appmodal} show={show} onHide={onHide}>
           <Modal.Header closeButton>
-            <Modal.Title></Modal.Title>
+            <Modal.Title>{content.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Woohoo, you&apos;re reading this text in a modal!</p>
+            <p>{content.body}</p>
           </Modal.Body>
           <Modal.Footer>
             <button variant="secondary" onClick={onHide}>
