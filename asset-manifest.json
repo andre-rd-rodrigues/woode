@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/woode/static/css/main.fd5e1a67.css",
-    "main.js": "/woode/static/js/main.40f32811.js",
+    "main.css": "/woode/static/css/main.5654bc72.css",
+    "main.js": "/woode/static/js/main.d87fd8a0.js",
     "static/js/787.dc7a4cc7.chunk.js": "/woode/static/js/787.dc7a4cc7.chunk.js",
     "static/media/quotes.png": "/woode/static/media/quotes.7594c73e7aab42b03b02.png",
     "static/media/logo.png": "/woode/static/media/logo.199f9030a0e7de0e8daa.png",
     "index.html": "/woode/index.html",
-    "main.fd5e1a67.css.map": "/woode/static/css/main.fd5e1a67.css.map",
-    "main.40f32811.js.map": "/woode/static/js/main.40f32811.js.map",
+    "main.5654bc72.css.map": "/woode/static/css/main.5654bc72.css.map",
+    "main.d87fd8a0.js.map": "/woode/static/js/main.d87fd8a0.js.map",
     "787.dc7a4cc7.chunk.js.map": "/woode/static/js/787.dc7a4cc7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd5e1a67.css",
-    "static/js/main.40f32811.js"
+    "static/css/main.5654bc72.css",
+    "static/js/main.d87fd8a0.js"
   ]
 }
