@@ -117,11 +117,7 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                       class="modal-body"
                     >
                       <div
-                        aria-label="animation"
-                        role="button"
-                        style="width: 200px; height: 200px; overflow: hidden; margin: 0px auto; outline: none;"
-                        tabindex="0"
-                        title=""
+                        style="width: 200px; height: 200px; margin: auto;"
                       >
                         <svg
                           height="512"
@@ -342,11 +338,7 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                     class="modal-body"
                   >
                     <div
-                      aria-label="animation"
-                      role="button"
-                      style="width: 200px; height: 200px; overflow: hidden; margin: 0px auto; outline: none;"
-                      tabindex="0"
-                      title=""
+                      style="width: 200px; height: 200px; margin: auto;"
                     >
                       <svg
                         height="512"
@@ -581,11 +573,7 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                             class="modal-body"
                           >
                             <div
-                              aria-label="animation"
-                              role="button"
-                              style="width: 200px; height: 200px; overflow: hidden; margin: 0px auto; outline: none;"
-                              tabindex="0"
-                              title=""
+                              style="width: 200px; height: 200px; margin: auto;"
                             >
                               <svg
                                 height="512"
@@ -766,7 +754,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                             <LottieAnimation
                               lottie={
                                 Object {
-                                  "__complete": true,
                                   "assets": Array [],
                                   "ddd": 0,
                                   "fr": 60,
@@ -776,7 +763,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                     Object {
                                       "ao": 0,
                                       "bm": 0,
-                                      "completed": true,
                                       "ddd": 0,
                                       "ind": 1,
                                       "ip": 0,
@@ -823,13 +809,11 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                       "op": 240,
                                       "shapes": Array [
                                         Object {
-                                          "_render": true,
                                           "bm": 0,
                                           "cix": 2,
                                           "hd": false,
                                           "it": Array [
                                             Object {
-                                              "_render": true,
                                               "hd": false,
                                               "ind": 0,
                                               "ix": 1,
@@ -840,30 +824,30 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                                   "c": false,
                                                   "i": Array [
                                                     Array [
-                                                      -82.5,
-                                                      4.5,
+                                                      0,
+                                                      0,
                                                     ],
                                                     Array [
-                                                      -31,
-                                                      55,
+                                                      0,
+                                                      0,
                                                     ],
                                                     Array [
-                                                      73,
-                                                      -52.5,
+                                                      0,
+                                                      0,
                                                     ],
                                                   ],
                                                   "o": Array [
                                                     Array [
-                                                      -82.5,
-                                                      4.5,
+                                                      0,
+                                                      0,
                                                     ],
                                                     Array [
-                                                      -31,
-                                                      55,
+                                                      0,
+                                                      0,
                                                     ],
                                                     Array [
-                                                      73,
-                                                      -52.5,
+                                                      0,
+                                                      0,
                                                     ],
                                                   ],
                                                   "v": Array [
@@ -887,7 +871,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "sh",
                                             },
                                             Object {
-                                              "_render": true,
                                               "e": Object {
                                                 "a": 1,
                                                 "ix": 2,
@@ -940,7 +923,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "tm",
                                             },
                                             Object {
-                                              "_render": true,
                                               "bm": 0,
                                               "c": Object {
                                                 "a": 0,
@@ -970,7 +952,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               },
                                             },
                                             Object {
-                                              "_render": true,
                                               "a": Object {
                                                 "a": 0,
                                                 "ix": 1,
@@ -1033,7 +1014,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                     Object {
                                       "ao": 0,
                                       "bm": 0,
-                                      "completed": true,
                                       "ddd": 0,
                                       "ind": 3,
                                       "ip": 0,
@@ -1117,13 +1097,11 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                       "op": 240,
                                       "shapes": Array [
                                         Object {
-                                          "_render": true,
                                           "bm": 0,
                                           "cix": 2,
                                           "hd": false,
                                           "it": Array [
                                             Object {
-                                              "_render": true,
                                               "d": 1,
                                               "hd": false,
                                               "mn": "ADBE Vector Shape - Ellipse",
@@ -1147,7 +1125,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "el",
                                             },
                                             Object {
-                                              "_render": true,
                                               "bm": 0,
                                               "c": Object {
                                                 "a": 0,
@@ -1171,7 +1148,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "fl",
                                             },
                                             Object {
-                                              "_render": true,
                                               "a": Object {
                                                 "a": 0,
                                                 "ix": 1,
@@ -1234,7 +1210,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                     Object {
                                       "ao": 0,
                                       "bm": 0,
-                                      "completed": true,
                                       "ddd": 0,
                                       "ind": 4,
                                       "ip": 0,
@@ -1411,13 +1386,11 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                       "op": 240,
                                       "shapes": Array [
                                         Object {
-                                          "_render": true,
                                           "bm": 0,
                                           "cix": 2,
                                           "hd": false,
                                           "it": Array [
                                             Object {
-                                              "_render": true,
                                               "d": 1,
                                               "hd": false,
                                               "mn": "ADBE Vector Shape - Ellipse",
@@ -1441,7 +1414,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "el",
                                             },
                                             Object {
-                                              "_render": true,
                                               "bm": 0,
                                               "c": Object {
                                                 "a": 0,
@@ -1472,7 +1444,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               },
                                             },
                                             Object {
-                                              "_render": true,
                                               "bm": 0,
                                               "c": Object {
                                                 "a": 0,
@@ -1496,7 +1467,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "fl",
                                             },
                                             Object {
-                                              "_render": true,
                                               "a": Object {
                                                 "a": 0,
                                                 "ix": 1,
@@ -1559,7 +1529,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                     Object {
                                       "ao": 0,
                                       "bm": 0,
-                                      "completed": true,
                                       "ddd": 0,
                                       "hidden": 0,
                                       "ind": 5,
@@ -1607,13 +1576,11 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                       "op": 240,
                                       "shapes": Array [
                                         Object {
-                                          "_render": true,
                                           "bm": 0,
                                           "cix": 2,
                                           "hd": false,
                                           "it": Array [
                                             Object {
-                                              "_render": true,
                                               "d": 1,
                                               "hd": false,
                                               "mn": "ADBE Vector Shape - Rect",
@@ -1642,7 +1609,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "rc",
                                             },
                                             Object {
-                                              "_render": true,
                                               "bm": 0,
                                               "c": Object {
                                                 "a": 0,
@@ -1666,7 +1632,6 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                               "ty": "fl",
                                             },
                                             Object {
-                                              "_render": true,
                                               "a": Object {
                                                 "a": 0,
                                                 "ix": 1,
@@ -1742,1019 +1707,998 @@ exports[`App Modal should render correct modal type according to prop 1`] = `
                                 }
                               }
                             >
-                              <Lottie
-                                ariaLabel="animation"
-                                ariaRole="button"
-                                eventListeners={Array []}
-                                height={200}
-                                isClickToPauseDisabled={false}
-                                isPaused={false}
-                                isStopped={false}
-                                options={
+                              <Component
+                                animationData={
                                   Object {
-                                    "animationData": Object {
-                                      "__complete": true,
-                                      "assets": Array [],
-                                      "ddd": 0,
-                                      "fr": 60,
-                                      "h": 512,
-                                      "ip": 0,
-                                      "layers": Array [
-                                        Object {
-                                          "ao": 0,
-                                          "bm": 0,
-                                          "completed": true,
-                                          "ddd": 0,
-                                          "ind": 1,
-                                          "ip": 0,
-                                          "ks": Object {
-                                            "a": Object {
-                                              "a": 0,
-                                              "ix": 1,
-                                              "k": Array [
-                                                0,
-                                                0,
-                                                0,
-                                              ],
-                                            },
-                                            "o": Object {
-                                              "a": 0,
-                                              "ix": 11,
-                                              "k": 100,
-                                            },
-                                            "p": Object {
-                                              "a": 0,
-                                              "ix": 2,
-                                              "k": Array [
-                                                256,
-                                                256,
-                                                0,
-                                              ],
-                                            },
-                                            "r": Object {
-                                              "a": 0,
-                                              "ix": 10,
-                                              "k": 0,
-                                            },
-                                            "s": Object {
-                                              "a": 0,
-                                              "ix": 6,
-                                              "k": Array [
-                                                100,
-                                                100,
-                                                100,
-                                              ],
-                                            },
+                                    "assets": Array [],
+                                    "ddd": 0,
+                                    "fr": 60,
+                                    "h": 512,
+                                    "ip": 0,
+                                    "layers": Array [
+                                      Object {
+                                        "ao": 0,
+                                        "bm": 0,
+                                        "ddd": 0,
+                                        "ind": 1,
+                                        "ip": 0,
+                                        "ks": Object {
+                                          "a": Object {
+                                            "a": 0,
+                                            "ix": 1,
+                                            "k": Array [
+                                              0,
+                                              0,
+                                              0,
+                                            ],
                                           },
-                                          "nm": "check",
-                                          "op": 240,
-                                          "shapes": Array [
-                                            Object {
-                                              "_render": true,
-                                              "bm": 0,
-                                              "cix": 2,
-                                              "hd": false,
-                                              "it": Array [
-                                                Object {
-                                                  "_render": true,
-                                                  "hd": false,
-                                                  "ind": 0,
-                                                  "ix": 1,
-                                                  "ks": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Object {
-                                                      "c": false,
-                                                      "i": Array [
-                                                        Array [
-                                                          -82.5,
-                                                          4.5,
-                                                        ],
-                                                        Array [
-                                                          -31,
-                                                          55,
-                                                        ],
-                                                        Array [
-                                                          73,
-                                                          -52.5,
-                                                        ],
-                                                      ],
-                                                      "o": Array [
-                                                        Array [
-                                                          -82.5,
-                                                          4.5,
-                                                        ],
-                                                        Array [
-                                                          -31,
-                                                          55,
-                                                        ],
-                                                        Array [
-                                                          73,
-                                                          -52.5,
-                                                        ],
-                                                      ],
-                                                      "v": Array [
-                                                        Array [
-                                                          -82.5,
-                                                          4.5,
-                                                        ],
-                                                        Array [
-                                                          -31,
-                                                          55,
-                                                        ],
-                                                        Array [
-                                                          73,
-                                                          -52.5,
-                                                        ],
-                                                      ],
-                                                    },
-                                                  },
-                                                  "mn": "ADBE Vector Shape - Group",
-                                                  "nm": "Path 1",
-                                                  "ty": "sh",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "e": Object {
-                                                    "a": 1,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      Object {
-                                                        "i": Object {
-                                                          "x": Array [
-                                                            0.667,
-                                                          ],
-                                                          "y": Array [
-                                                            1,
-                                                          ],
-                                                        },
-                                                        "o": Object {
-                                                          "x": Array [
-                                                            1,
-                                                          ],
-                                                          "y": Array [
-                                                            0.076,
-                                                          ],
-                                                        },
-                                                        "s": Array [
-                                                          0,
-                                                        ],
-                                                        "t": 60,
-                                                      },
-                                                      Object {
-                                                        "s": Array [
-                                                          100,
-                                                        ],
-                                                        "t": 85,
-                                                      },
-                                                    ],
-                                                  },
-                                                  "hd": false,
+                                          "o": Object {
+                                            "a": 0,
+                                            "ix": 11,
+                                            "k": 100,
+                                          },
+                                          "p": Object {
+                                            "a": 0,
+                                            "ix": 2,
+                                            "k": Array [
+                                              256,
+                                              256,
+                                              0,
+                                            ],
+                                          },
+                                          "r": Object {
+                                            "a": 0,
+                                            "ix": 10,
+                                            "k": 0,
+                                          },
+                                          "s": Object {
+                                            "a": 0,
+                                            "ix": 6,
+                                            "k": Array [
+                                              100,
+                                              100,
+                                              100,
+                                            ],
+                                          },
+                                        },
+                                        "nm": "check",
+                                        "op": 240,
+                                        "shapes": Array [
+                                          Object {
+                                            "bm": 0,
+                                            "cix": 2,
+                                            "hd": false,
+                                            "it": Array [
+                                              Object {
+                                                "hd": false,
+                                                "ind": 0,
+                                                "ix": 1,
+                                                "ks": Object {
+                                                  "a": 0,
                                                   "ix": 2,
-                                                  "m": 1,
-                                                  "mn": "ADBE Vector Filter - Trim",
-                                                  "nm": "Trim Paths 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": 0,
+                                                  "k": Object {
+                                                    "c": false,
+                                                    "i": Array [
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                    ],
+                                                    "o": Array [
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ],
+                                                    ],
+                                                    "v": Array [
+                                                      Array [
+                                                        -82.5,
+                                                        4.5,
+                                                      ],
+                                                      Array [
+                                                        -31,
+                                                        55,
+                                                      ],
+                                                      Array [
+                                                        73,
+                                                        -52.5,
+                                                      ],
+                                                    ],
                                                   },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 1,
-                                                    "k": 0,
-                                                  },
-                                                  "ty": "tm",
                                                 },
-                                                Object {
-                                                  "_render": true,
-                                                  "bm": 0,
-                                                  "c": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      1,
-                                                      1,
-                                                      1,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "hd": false,
-                                                  "lc": 2,
-                                                  "lj": 2,
-                                                  "mn": "ADBE Vector Graphic - Stroke",
-                                                  "nm": "Stroke 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 100,
-                                                  },
-                                                  "ty": "st",
-                                                  "w": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 30,
-                                                  },
+                                                "mn": "ADBE Vector Shape - Group",
+                                                "nm": "Path 1",
+                                                "ty": "sh",
+                                              },
+                                              Object {
+                                                "e": Object {
+                                                  "a": 1,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    Object {
+                                                      "i": Object {
+                                                        "x": Array [
+                                                          0.667,
+                                                        ],
+                                                        "y": Array [
+                                                          1,
+                                                        ],
+                                                      },
+                                                      "o": Object {
+                                                        "x": Array [
+                                                          1,
+                                                        ],
+                                                        "y": Array [
+                                                          0.076,
+                                                        ],
+                                                      },
+                                                      "s": Array [
+                                                        0,
+                                                      ],
+                                                      "t": 60,
+                                                    },
+                                                    Object {
+                                                      "s": Array [
+                                                        100,
+                                                      ],
+                                                      "t": 85,
+                                                    },
+                                                  ],
                                                 },
-                                                Object {
-                                                  "_render": true,
-                                                  "a": Object {
-                                                    "a": 0,
-                                                    "ix": 1,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "nm": "Transform",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 7,
-                                                    "k": 100,
-                                                  },
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "r": Object {
-                                                    "a": 0,
-                                                    "ix": 6,
-                                                    "k": 0,
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      100,
-                                                      100,
-                                                    ],
-                                                  },
-                                                  "sa": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 0,
-                                                  },
-                                                  "sk": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 0,
-                                                  },
-                                                  "ty": "tr",
+                                                "hd": false,
+                                                "ix": 2,
+                                                "m": 1,
+                                                "mn": "ADBE Vector Filter - Trim",
+                                                "nm": "Trim Paths 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": 0,
                                                 },
-                                              ],
-                                              "ix": 1,
-                                              "mn": "ADBE Vector Group",
-                                              "nm": "Shape 1",
-                                              "np": 4,
-                                              "ty": "gr",
-                                            },
-                                          ],
-                                          "sr": 1,
-                                          "st": 0,
-                                          "ty": 4,
-                                        },
-                                        Object {
-                                          "ao": 0,
-                                          "bm": 0,
-                                          "completed": true,
-                                          "ddd": 0,
-                                          "ind": 3,
-                                          "ip": 0,
-                                          "ks": Object {
-                                            "a": Object {
-                                              "a": 0,
-                                              "ix": 1,
-                                              "k": Array [
-                                                0,
-                                                0,
-                                                0,
-                                              ],
-                                            },
-                                            "o": Object {
-                                              "a": 0,
-                                              "ix": 11,
-                                              "k": 100,
-                                            },
-                                            "p": Object {
-                                              "a": 0,
-                                              "ix": 2,
-                                              "k": Array [
-                                                256,
-                                                257.86,
-                                                0,
-                                              ],
-                                            },
-                                            "r": Object {
-                                              "a": 0,
-                                              "ix": 10,
-                                              "k": 0,
-                                            },
-                                            "s": Object {
-                                              "a": 1,
-                                              "ix": 6,
-                                              "k": Array [
-                                                Object {
-                                                  "i": Object {
-                                                    "x": Array [
-                                                      0,
-                                                      0,
-                                                      0.833,
-                                                    ],
-                                                    "y": Array [
-                                                      0.98,
-                                                      0.98,
-                                                      -66.114,
-                                                    ],
-                                                  },
-                                                  "o": Object {
-                                                    "x": Array [
-                                                      0.656,
-                                                      0.656,
-                                                      0.167,
-                                                    ],
-                                                    "y": Array [
-                                                      0.872,
-                                                      0.872,
-                                                      67.114,
-                                                    ],
-                                                  },
-                                                  "s": Array [
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 1,
+                                                  "k": 0,
+                                                },
+                                                "ty": "tm",
+                                              },
+                                              Object {
+                                                "bm": 0,
+                                                "c": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    1,
+                                                    1,
+                                                    1,
+                                                    1,
+                                                  ],
+                                                },
+                                                "hd": false,
+                                                "lc": 2,
+                                                "lj": 2,
+                                                "mn": "ADBE Vector Graphic - Stroke",
+                                                "nm": "Stroke 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 100,
+                                                },
+                                                "ty": "st",
+                                                "w": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 30,
+                                                },
+                                              },
+                                              Object {
+                                                "a": Object {
+                                                  "a": 0,
+                                                  "ix": 1,
+                                                  "k": Array [
                                                     0,
                                                     0,
+                                                  ],
+                                                },
+                                                "nm": "Transform",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 7,
+                                                  "k": 100,
+                                                },
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "r": Object {
+                                                  "a": 0,
+                                                  "ix": 6,
+                                                  "k": 0,
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    100,
                                                     100,
                                                   ],
-                                                  "t": 20,
                                                 },
-                                                Object {
-                                                  "s": Array [
-                                                    150,
-                                                    150,
-                                                    100,
-                                                  ],
-                                                  "t": 60,
+                                                "sa": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 0,
                                                 },
-                                              ],
-                                            },
+                                                "sk": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 0,
+                                                },
+                                                "ty": "tr",
+                                              },
+                                            ],
+                                            "ix": 1,
+                                            "mn": "ADBE Vector Group",
+                                            "nm": "Shape 1",
+                                            "np": 4,
+                                            "ty": "gr",
                                           },
-                                          "nm": "Shape Layer 2",
-                                          "op": 240,
-                                          "shapes": Array [
-                                            Object {
-                                              "_render": true,
-                                              "bm": 0,
-                                              "cix": 2,
-                                              "hd": false,
-                                              "it": Array [
-                                                Object {
-                                                  "_render": true,
-                                                  "d": 1,
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Shape - Ellipse",
-                                                  "nm": "Ellipse Path 1",
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      236,
-                                                      236,
-                                                    ],
-                                                  },
-                                                  "ty": "el",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "bm": 0,
-                                                  "c": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": Array [
-                                                      0.172549019608,
-                                                      0.854901960784,
-                                                      0.580392156863,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Graphic - Fill",
-                                                  "nm": "Fill 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 100,
-                                                  },
-                                                  "r": 1,
-                                                  "ty": "fl",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "a": Object {
-                                                    "a": 0,
-                                                    "ix": 1,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "nm": "Transform",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 7,
-                                                    "k": 100,
-                                                  },
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      0,
-                                                      -3,
-                                                    ],
-                                                  },
-                                                  "r": Object {
-                                                    "a": 0,
-                                                    "ix": 6,
-                                                    "k": 0,
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      100,
-                                                      100,
-                                                    ],
-                                                  },
-                                                  "sa": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 0,
-                                                  },
-                                                  "sk": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 0,
-                                                  },
-                                                  "ty": "tr",
-                                                },
-                                              ],
-                                              "ix": 1,
-                                              "mn": "ADBE Vector Group",
-                                              "nm": "Ellipse 1",
-                                              "np": 3,
-                                              "ty": "gr",
-                                            },
-                                          ],
-                                          "sr": 1,
-                                          "st": 0,
-                                          "ty": 4,
-                                        },
-                                        Object {
-                                          "ao": 0,
-                                          "bm": 0,
-                                          "completed": true,
-                                          "ddd": 0,
-                                          "ind": 4,
-                                          "ip": 0,
-                                          "ks": Object {
-                                            "a": Object {
-                                              "a": 0,
-                                              "ix": 1,
-                                              "k": Array [
-                                                0,
-                                                0,
-                                                0,
-                                              ],
-                                            },
-                                            "o": Object {
-                                              "a": 1,
-                                              "ix": 11,
-                                              "k": Array [
-                                                Object {
-                                                  "i": Object {
-                                                    "x": Array [
-                                                      0.626,
-                                                    ],
-                                                    "y": Array [
-                                                      0.729,
-                                                    ],
-                                                  },
-                                                  "o": Object {
-                                                    "x": Array [
-                                                      0.912,
-                                                    ],
-                                                    "y": Array [
-                                                      0.073,
-                                                    ],
-                                                  },
-                                                  "s": Array [
-                                                    100,
-                                                  ],
-                                                  "t": 76,
-                                                },
-                                                Object {
-                                                  "s": Array [
-                                                    0,
-                                                  ],
-                                                  "t": 119,
-                                                },
-                                              ],
-                                            },
-                                            "p": Object {
-                                              "a": 0,
-                                              "ix": 2,
-                                              "k": Array [
-                                                256,
-                                                257.86,
-                                                0,
-                                              ],
-                                            },
-                                            "r": Object {
-                                              "a": 0,
-                                              "ix": 10,
-                                              "k": 0,
-                                            },
-                                            "s": Object {
-                                              "a": 1,
-                                              "ix": 6,
-                                              "k": Array [
-                                                Object {
-                                                  "i": Object {
-                                                    "x": Array [
-                                                      0,
-                                                      0,
-                                                      0.667,
-                                                    ],
-                                                    "y": Array [
-                                                      0.999,
-                                                      0.999,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "o": Object {
-                                                    "x": Array [
-                                                      0.477,
-                                                      0.477,
-                                                      0.333,
-                                                    ],
-                                                    "y": Array [
-                                                      0.587,
-                                                      0.587,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "s": Array [
-                                                    0,
-                                                    0,
-                                                    100,
-                                                  ],
-                                                  "t": 10,
-                                                },
-                                                Object {
-                                                  "i": Object {
-                                                    "x": Array [
-                                                      0.833,
-                                                      0.833,
-                                                      0.833,
-                                                    ],
-                                                    "y": Array [
-                                                      1,
-                                                      1,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "o": Object {
-                                                    "x": Array [
-                                                      0.167,
-                                                      0.167,
-                                                      0.167,
-                                                    ],
-                                                    "y": Array [
-                                                      0,
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "s": Array [
-                                                    150,
-                                                    150,
-                                                    100,
-                                                  ],
-                                                  "t": 50,
-                                                },
-                                                Object {
-                                                  "i": Object {
-                                                    "x": Array [
-                                                      0.833,
-                                                      0.833,
-                                                      0.833,
-                                                    ],
-                                                    "y": Array [
-                                                      1,
-                                                      1,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "o": Object {
-                                                    "x": Array [
-                                                      0.167,
-                                                      0.167,
-                                                      0.167,
-                                                    ],
-                                                    "y": Array [
-                                                      0,
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "s": Array [
-                                                    150,
-                                                    150,
-                                                    100,
-                                                  ],
-                                                  "t": 76,
-                                                },
-                                                Object {
-                                                  "s": Array [
-                                                    210,
-                                                    210,
-                                                    100,
-                                                  ],
-                                                  "t": 123,
-                                                },
-                                              ],
-                                            },
-                                          },
-                                          "nm": "Shape Layer 1",
-                                          "op": 240,
-                                          "shapes": Array [
-                                            Object {
-                                              "_render": true,
-                                              "bm": 0,
-                                              "cix": 2,
-                                              "hd": false,
-                                              "it": Array [
-                                                Object {
-                                                  "_render": true,
-                                                  "d": 1,
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Shape - Ellipse",
-                                                  "nm": "Ellipse Path 1",
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      236,
-                                                      236,
-                                                    ],
-                                                  },
-                                                  "ty": "el",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "bm": 0,
-                                                  "c": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      1,
-                                                      1,
-                                                      1,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "hd": false,
-                                                  "lc": 1,
-                                                  "lj": 1,
-                                                  "ml": 4,
-                                                  "mn": "ADBE Vector Graphic - Stroke",
-                                                  "nm": "Stroke 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 100,
-                                                  },
-                                                  "ty": "st",
-                                                  "w": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 2,
-                                                  },
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "bm": 0,
-                                                  "c": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": Array [
-                                                      0.783504889993,
-                                                      0.945098039216,
-                                                      0.880089314779,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Graphic - Fill",
-                                                  "nm": "Fill 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 100,
-                                                  },
-                                                  "r": 1,
-                                                  "ty": "fl",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "a": Object {
-                                                    "a": 0,
-                                                    "ix": 1,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "nm": "Transform",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 7,
-                                                    "k": 100,
-                                                  },
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      0,
-                                                      -3,
-                                                    ],
-                                                  },
-                                                  "r": Object {
-                                                    "a": 0,
-                                                    "ix": 6,
-                                                    "k": 0,
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      100,
-                                                      100,
-                                                    ],
-                                                  },
-                                                  "sa": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 0,
-                                                  },
-                                                  "sk": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 0,
-                                                  },
-                                                  "ty": "tr",
-                                                },
-                                              ],
-                                              "ix": 1,
-                                              "mn": "ADBE Vector Group",
-                                              "nm": "Ellipse 1",
-                                              "np": 3,
-                                              "ty": "gr",
-                                            },
-                                          ],
-                                          "sr": 1,
-                                          "st": 0,
-                                          "ty": 4,
-                                        },
-                                        Object {
-                                          "ao": 0,
-                                          "bm": 0,
-                                          "completed": true,
-                                          "ddd": 0,
-                                          "hidden": 0,
-                                          "ind": 5,
-                                          "ip": 240,
-                                          "ks": Object {
-                                            "a": Object {
-                                              "a": 0,
-                                              "ix": 1,
-                                              "k": Array [
-                                                0,
-                                                0,
-                                                0,
-                                              ],
-                                            },
-                                            "o": Object {
-                                              "a": 0,
-                                              "ix": 11,
-                                              "k": 100,
-                                            },
-                                            "p": Object {
-                                              "a": 0,
-                                              "ix": 2,
-                                              "k": Array [
-                                                256,
-                                                256,
-                                                0,
-                                              ],
-                                            },
-                                            "r": Object {
-                                              "a": 0,
-                                              "ix": 10,
-                                              "k": 0,
-                                            },
-                                            "s": Object {
-                                              "a": 0,
-                                              "ix": 6,
-                                              "k": Array [
-                                                100,
-                                                100,
-                                                100,
-                                              ],
-                                            },
-                                          },
-                                          "nm": "BG",
-                                          "op": 240,
-                                          "shapes": Array [
-                                            Object {
-                                              "_render": true,
-                                              "bm": 0,
-                                              "cix": 2,
-                                              "hd": false,
-                                              "it": Array [
-                                                Object {
-                                                  "_render": true,
-                                                  "d": 1,
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Shape - Rect",
-                                                  "nm": "Rectangle Path 1",
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "r": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 0,
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      554,
-                                                      556,
-                                                    ],
-                                                  },
-                                                  "ty": "rc",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "bm": 0,
-                                                  "c": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": Array [
-                                                      1,
-                                                      1,
-                                                      1,
-                                                      1,
-                                                    ],
-                                                  },
-                                                  "hd": false,
-                                                  "mn": "ADBE Vector Graphic - Fill",
-                                                  "nm": "Fill 1",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 100,
-                                                  },
-                                                  "r": 1,
-                                                  "ty": "fl",
-                                                },
-                                                Object {
-                                                  "_render": true,
-                                                  "a": Object {
-                                                    "a": 0,
-                                                    "ix": 1,
-                                                    "k": Array [
-                                                      0,
-                                                      0,
-                                                    ],
-                                                  },
-                                                  "nm": "Transform",
-                                                  "o": Object {
-                                                    "a": 0,
-                                                    "ix": 7,
-                                                    "k": 100,
-                                                  },
-                                                  "p": Object {
-                                                    "a": 0,
-                                                    "ix": 2,
-                                                    "k": Array [
-                                                      -1,
-                                                      6,
-                                                    ],
-                                                  },
-                                                  "r": Object {
-                                                    "a": 0,
-                                                    "ix": 6,
-                                                    "k": 0,
-                                                  },
-                                                  "s": Object {
-                                                    "a": 0,
-                                                    "ix": 3,
-                                                    "k": Array [
-                                                      100,
-                                                      100,
-                                                    ],
-                                                  },
-                                                  "sa": Object {
-                                                    "a": 0,
-                                                    "ix": 5,
-                                                    "k": 0,
-                                                  },
-                                                  "sk": Object {
-                                                    "a": 0,
-                                                    "ix": 4,
-                                                    "k": 0,
-                                                  },
-                                                  "ty": "tr",
-                                                },
-                                              ],
-                                              "ix": 1,
-                                              "mn": "ADBE Vector Group",
-                                              "nm": "Rectangle 1",
-                                              "np": 3,
-                                              "ty": "gr",
-                                            },
-                                          ],
-                                          "sr": 1,
-                                          "st": 0,
-                                          "ty": 4,
-                                        },
-                                      ],
-                                      "markers": Array [],
-                                      "meta": Object {
-                                        "a": "",
-                                        "d": "",
-                                        "g": "LottieFiles AE 1.0.0",
-                                        "k": "",
-                                        "tc": "",
+                                        ],
+                                        "sr": 1,
+                                        "st": 0,
+                                        "ty": 4,
                                       },
-                                      "nm": "HDFC Success",
-                                      "op": 130,
-                                      "v": "4.8.0",
-                                      "w": 512,
+                                      Object {
+                                        "ao": 0,
+                                        "bm": 0,
+                                        "ddd": 0,
+                                        "ind": 3,
+                                        "ip": 0,
+                                        "ks": Object {
+                                          "a": Object {
+                                            "a": 0,
+                                            "ix": 1,
+                                            "k": Array [
+                                              0,
+                                              0,
+                                              0,
+                                            ],
+                                          },
+                                          "o": Object {
+                                            "a": 0,
+                                            "ix": 11,
+                                            "k": 100,
+                                          },
+                                          "p": Object {
+                                            "a": 0,
+                                            "ix": 2,
+                                            "k": Array [
+                                              256,
+                                              257.86,
+                                              0,
+                                            ],
+                                          },
+                                          "r": Object {
+                                            "a": 0,
+                                            "ix": 10,
+                                            "k": 0,
+                                          },
+                                          "s": Object {
+                                            "a": 1,
+                                            "ix": 6,
+                                            "k": Array [
+                                              Object {
+                                                "i": Object {
+                                                  "x": Array [
+                                                    0,
+                                                    0,
+                                                    0.833,
+                                                  ],
+                                                  "y": Array [
+                                                    0.98,
+                                                    0.98,
+                                                    -66.114,
+                                                  ],
+                                                },
+                                                "o": Object {
+                                                  "x": Array [
+                                                    0.656,
+                                                    0.656,
+                                                    0.167,
+                                                  ],
+                                                  "y": Array [
+                                                    0.872,
+                                                    0.872,
+                                                    67.114,
+                                                  ],
+                                                },
+                                                "s": Array [
+                                                  0,
+                                                  0,
+                                                  100,
+                                                ],
+                                                "t": 20,
+                                              },
+                                              Object {
+                                                "s": Array [
+                                                  150,
+                                                  150,
+                                                  100,
+                                                ],
+                                                "t": 60,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                        "nm": "Shape Layer 2",
+                                        "op": 240,
+                                        "shapes": Array [
+                                          Object {
+                                            "bm": 0,
+                                            "cix": 2,
+                                            "hd": false,
+                                            "it": Array [
+                                              Object {
+                                                "d": 1,
+                                                "hd": false,
+                                                "mn": "ADBE Vector Shape - Ellipse",
+                                                "nm": "Ellipse Path 1",
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    236,
+                                                    236,
+                                                  ],
+                                                },
+                                                "ty": "el",
+                                              },
+                                              Object {
+                                                "bm": 0,
+                                                "c": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": Array [
+                                                    0.172549019608,
+                                                    0.854901960784,
+                                                    0.580392156863,
+                                                    1,
+                                                  ],
+                                                },
+                                                "hd": false,
+                                                "mn": "ADBE Vector Graphic - Fill",
+                                                "nm": "Fill 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 100,
+                                                },
+                                                "r": 1,
+                                                "ty": "fl",
+                                              },
+                                              Object {
+                                                "a": Object {
+                                                  "a": 0,
+                                                  "ix": 1,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "nm": "Transform",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 7,
+                                                  "k": 100,
+                                                },
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    0,
+                                                    -3,
+                                                  ],
+                                                },
+                                                "r": Object {
+                                                  "a": 0,
+                                                  "ix": 6,
+                                                  "k": 0,
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    100,
+                                                    100,
+                                                  ],
+                                                },
+                                                "sa": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 0,
+                                                },
+                                                "sk": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 0,
+                                                },
+                                                "ty": "tr",
+                                              },
+                                            ],
+                                            "ix": 1,
+                                            "mn": "ADBE Vector Group",
+                                            "nm": "Ellipse 1",
+                                            "np": 3,
+                                            "ty": "gr",
+                                          },
+                                        ],
+                                        "sr": 1,
+                                        "st": 0,
+                                        "ty": 4,
+                                      },
+                                      Object {
+                                        "ao": 0,
+                                        "bm": 0,
+                                        "ddd": 0,
+                                        "ind": 4,
+                                        "ip": 0,
+                                        "ks": Object {
+                                          "a": Object {
+                                            "a": 0,
+                                            "ix": 1,
+                                            "k": Array [
+                                              0,
+                                              0,
+                                              0,
+                                            ],
+                                          },
+                                          "o": Object {
+                                            "a": 1,
+                                            "ix": 11,
+                                            "k": Array [
+                                              Object {
+                                                "i": Object {
+                                                  "x": Array [
+                                                    0.626,
+                                                  ],
+                                                  "y": Array [
+                                                    0.729,
+                                                  ],
+                                                },
+                                                "o": Object {
+                                                  "x": Array [
+                                                    0.912,
+                                                  ],
+                                                  "y": Array [
+                                                    0.073,
+                                                  ],
+                                                },
+                                                "s": Array [
+                                                  100,
+                                                ],
+                                                "t": 76,
+                                              },
+                                              Object {
+                                                "s": Array [
+                                                  0,
+                                                ],
+                                                "t": 119,
+                                              },
+                                            ],
+                                          },
+                                          "p": Object {
+                                            "a": 0,
+                                            "ix": 2,
+                                            "k": Array [
+                                              256,
+                                              257.86,
+                                              0,
+                                            ],
+                                          },
+                                          "r": Object {
+                                            "a": 0,
+                                            "ix": 10,
+                                            "k": 0,
+                                          },
+                                          "s": Object {
+                                            "a": 1,
+                                            "ix": 6,
+                                            "k": Array [
+                                              Object {
+                                                "i": Object {
+                                                  "x": Array [
+                                                    0,
+                                                    0,
+                                                    0.667,
+                                                  ],
+                                                  "y": Array [
+                                                    0.999,
+                                                    0.999,
+                                                    1,
+                                                  ],
+                                                },
+                                                "o": Object {
+                                                  "x": Array [
+                                                    0.477,
+                                                    0.477,
+                                                    0.333,
+                                                  ],
+                                                  "y": Array [
+                                                    0.587,
+                                                    0.587,
+                                                    0,
+                                                  ],
+                                                },
+                                                "s": Array [
+                                                  0,
+                                                  0,
+                                                  100,
+                                                ],
+                                                "t": 10,
+                                              },
+                                              Object {
+                                                "i": Object {
+                                                  "x": Array [
+                                                    0.833,
+                                                    0.833,
+                                                    0.833,
+                                                  ],
+                                                  "y": Array [
+                                                    1,
+                                                    1,
+                                                    1,
+                                                  ],
+                                                },
+                                                "o": Object {
+                                                  "x": Array [
+                                                    0.167,
+                                                    0.167,
+                                                    0.167,
+                                                  ],
+                                                  "y": Array [
+                                                    0,
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "s": Array [
+                                                  150,
+                                                  150,
+                                                  100,
+                                                ],
+                                                "t": 50,
+                                              },
+                                              Object {
+                                                "i": Object {
+                                                  "x": Array [
+                                                    0.833,
+                                                    0.833,
+                                                    0.833,
+                                                  ],
+                                                  "y": Array [
+                                                    1,
+                                                    1,
+                                                    1,
+                                                  ],
+                                                },
+                                                "o": Object {
+                                                  "x": Array [
+                                                    0.167,
+                                                    0.167,
+                                                    0.167,
+                                                  ],
+                                                  "y": Array [
+                                                    0,
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "s": Array [
+                                                  150,
+                                                  150,
+                                                  100,
+                                                ],
+                                                "t": 76,
+                                              },
+                                              Object {
+                                                "s": Array [
+                                                  210,
+                                                  210,
+                                                  100,
+                                                ],
+                                                "t": 123,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                        "nm": "Shape Layer 1",
+                                        "op": 240,
+                                        "shapes": Array [
+                                          Object {
+                                            "bm": 0,
+                                            "cix": 2,
+                                            "hd": false,
+                                            "it": Array [
+                                              Object {
+                                                "d": 1,
+                                                "hd": false,
+                                                "mn": "ADBE Vector Shape - Ellipse",
+                                                "nm": "Ellipse Path 1",
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    236,
+                                                    236,
+                                                  ],
+                                                },
+                                                "ty": "el",
+                                              },
+                                              Object {
+                                                "bm": 0,
+                                                "c": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    1,
+                                                    1,
+                                                    1,
+                                                    1,
+                                                  ],
+                                                },
+                                                "hd": false,
+                                                "lc": 1,
+                                                "lj": 1,
+                                                "ml": 4,
+                                                "mn": "ADBE Vector Graphic - Stroke",
+                                                "nm": "Stroke 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 100,
+                                                },
+                                                "ty": "st",
+                                                "w": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 2,
+                                                },
+                                              },
+                                              Object {
+                                                "bm": 0,
+                                                "c": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": Array [
+                                                    0.783504889993,
+                                                    0.945098039216,
+                                                    0.880089314779,
+                                                    1,
+                                                  ],
+                                                },
+                                                "hd": false,
+                                                "mn": "ADBE Vector Graphic - Fill",
+                                                "nm": "Fill 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 100,
+                                                },
+                                                "r": 1,
+                                                "ty": "fl",
+                                              },
+                                              Object {
+                                                "a": Object {
+                                                  "a": 0,
+                                                  "ix": 1,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "nm": "Transform",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 7,
+                                                  "k": 100,
+                                                },
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    0,
+                                                    -3,
+                                                  ],
+                                                },
+                                                "r": Object {
+                                                  "a": 0,
+                                                  "ix": 6,
+                                                  "k": 0,
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    100,
+                                                    100,
+                                                  ],
+                                                },
+                                                "sa": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 0,
+                                                },
+                                                "sk": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 0,
+                                                },
+                                                "ty": "tr",
+                                              },
+                                            ],
+                                            "ix": 1,
+                                            "mn": "ADBE Vector Group",
+                                            "nm": "Ellipse 1",
+                                            "np": 3,
+                                            "ty": "gr",
+                                          },
+                                        ],
+                                        "sr": 1,
+                                        "st": 0,
+                                        "ty": 4,
+                                      },
+                                      Object {
+                                        "ao": 0,
+                                        "bm": 0,
+                                        "ddd": 0,
+                                        "hidden": 0,
+                                        "ind": 5,
+                                        "ip": 240,
+                                        "ks": Object {
+                                          "a": Object {
+                                            "a": 0,
+                                            "ix": 1,
+                                            "k": Array [
+                                              0,
+                                              0,
+                                              0,
+                                            ],
+                                          },
+                                          "o": Object {
+                                            "a": 0,
+                                            "ix": 11,
+                                            "k": 100,
+                                          },
+                                          "p": Object {
+                                            "a": 0,
+                                            "ix": 2,
+                                            "k": Array [
+                                              256,
+                                              256,
+                                              0,
+                                            ],
+                                          },
+                                          "r": Object {
+                                            "a": 0,
+                                            "ix": 10,
+                                            "k": 0,
+                                          },
+                                          "s": Object {
+                                            "a": 0,
+                                            "ix": 6,
+                                            "k": Array [
+                                              100,
+                                              100,
+                                              100,
+                                            ],
+                                          },
+                                        },
+                                        "nm": "BG",
+                                        "op": 240,
+                                        "shapes": Array [
+                                          Object {
+                                            "bm": 0,
+                                            "cix": 2,
+                                            "hd": false,
+                                            "it": Array [
+                                              Object {
+                                                "d": 1,
+                                                "hd": false,
+                                                "mn": "ADBE Vector Shape - Rect",
+                                                "nm": "Rectangle Path 1",
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "r": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 0,
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    554,
+                                                    556,
+                                                  ],
+                                                },
+                                                "ty": "rc",
+                                              },
+                                              Object {
+                                                "bm": 0,
+                                                "c": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": Array [
+                                                    1,
+                                                    1,
+                                                    1,
+                                                    1,
+                                                  ],
+                                                },
+                                                "hd": false,
+                                                "mn": "ADBE Vector Graphic - Fill",
+                                                "nm": "Fill 1",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 100,
+                                                },
+                                                "r": 1,
+                                                "ty": "fl",
+                                              },
+                                              Object {
+                                                "a": Object {
+                                                  "a": 0,
+                                                  "ix": 1,
+                                                  "k": Array [
+                                                    0,
+                                                    0,
+                                                  ],
+                                                },
+                                                "nm": "Transform",
+                                                "o": Object {
+                                                  "a": 0,
+                                                  "ix": 7,
+                                                  "k": 100,
+                                                },
+                                                "p": Object {
+                                                  "a": 0,
+                                                  "ix": 2,
+                                                  "k": Array [
+                                                    -1,
+                                                    6,
+                                                  ],
+                                                },
+                                                "r": Object {
+                                                  "a": 0,
+                                                  "ix": 6,
+                                                  "k": 0,
+                                                },
+                                                "s": Object {
+                                                  "a": 0,
+                                                  "ix": 3,
+                                                  "k": Array [
+                                                    100,
+                                                    100,
+                                                  ],
+                                                },
+                                                "sa": Object {
+                                                  "a": 0,
+                                                  "ix": 5,
+                                                  "k": 0,
+                                                },
+                                                "sk": Object {
+                                                  "a": 0,
+                                                  "ix": 4,
+                                                  "k": 0,
+                                                },
+                                                "ty": "tr",
+                                              },
+                                            ],
+                                            "ix": 1,
+                                            "mn": "ADBE Vector Group",
+                                            "nm": "Rectangle 1",
+                                            "np": 3,
+                                            "ty": "gr",
+                                          },
+                                        ],
+                                        "sr": 1,
+                                        "st": 0,
+                                        "ty": 4,
+                                      },
+                                    ],
+                                    "markers": Array [],
+                                    "meta": Object {
+                                      "a": "",
+                                      "d": "",
+                                      "g": "LottieFiles AE 1.0.0",
+                                      "k": "",
+                                      "tc": "",
                                     },
-                                    "autoplay": true,
-                                    "loop": false,
-                                    "rendererSettings": Object {
-                                      "preserveAspectRatio": "xMidYMid slice",
-                                    },
+                                    "nm": "HDFC Success",
+                                    "op": 130,
+                                    "v": "4.8.0",
+                                    "w": 512,
                                   }
                                 }
+                                audioFactory={null}
+                                direction={1}
+                                goTo={null}
+                                loop={false}
+                                onComplete={[Function]}
+                                onEnterFrame={[Function]}
+                                onLoad={[Function]}
+                                onLoopComplete={[Function]}
+                                onSegmentStart={[Function]}
+                                path={null}
+                                play={true}
+                                renderer="svg"
+                                rendererSettings={
+                                  Object {
+                                    "preserveAspectRatio": "xMidYMid slice",
+                                  }
+                                }
+                                segments={null}
                                 speed={1}
-                                title=""
-                                width={200}
+                                style={
+                                  Object {
+                                    "height": 200,
+                                    "margin": "auto",
+                                    "width": 200,
+                                  }
+                                }
                               >
                                 <div
-                                  aria-label="animation"
-                                  onClick={[Function]}
-                                  role="button"
                                   style={
                                     Object {
-                                      "height": "200px",
-                                      "margin": "0 auto",
-                                      "outline": "none",
-                                      "overflow": "hidden",
-                                      "width": "200px",
+                                      "height": 200,
+                                      "margin": "auto",
+                                      "width": 200,
                                     }
                                   }
-                                  tabIndex="0"
-                                  title=""
                                 />
-                              </Lottie>
+                              </Component>
                             </LottieAnimation>
                             <p>
                               Thank you for your order! 
