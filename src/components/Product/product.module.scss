@@ -3,7 +3,6 @@
   justify-content: space-between;
   margin-bottom: 50px;
   cursor: pointer;
-  max-width: 300px;
   & img {
     width: 100%;
   }
@@ -30,8 +29,6 @@
   }
   & div[id="productImageDiv"] {
     position: relative;
-
-    max-height: 300px;
     &:hover {
       & div[id="productHoverDiv"] {
         opacity: 1;

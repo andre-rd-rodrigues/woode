@@ -10,7 +10,7 @@ function Cart({ cart, removeItem, updateAmount }) {
   const NoItems = () => (
     <div id="cart-no-items">
       <p>Your cart is currently empty.</p>
-      <Link to="/home">
+      <Link to="/shop">
         <button>Return to shop</button>
       </Link>
     </div>
@@ -122,27 +122,6 @@ function Cart({ cart, removeItem, updateAmount }) {
                 <Link to="/checkout">Proceed to checkout</Link>
               </button>
             </div>
-            <Form>
-              <Form.Check
-                type="radio"
-                label="Free shipping"
-                name="form-shipping-radio"
-                id="form-freeShipping"
-                defaultChecked
-              />
-              <Form.Check
-                type="radio"
-                label="Flat rate"
-                name="form-shipping-radio"
-                id="form-freeRate"
-              />
-              <Form.Check
-                type="radio"
-                label="Local pickup"
-                name="form-shipping-radio"
-                id="form-local"
-              />
-            </Form>
           </>
         ) : (
           <NoItems />

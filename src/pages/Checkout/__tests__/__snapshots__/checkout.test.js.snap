@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly 1`] = `
+exports[`Checkout should render correctly 1`] = `
 <div
   className="checkout"
 >
@@ -281,57 +281,48 @@ exports[`should render correctly 1`] = `
             <div
               className="form-check"
             >
-              <input
-                className="form-check-input"
-                defaultChecked={true}
-                disabled={false}
-                id="form-checkout-bank"
-                name="form-shipping-radio"
-                type="radio"
-              />
               <label
-                className="form-check-label"
-                htmlFor="form-checkout-bank"
-                title=""
+                htmlFor="Direct bank transfer"
               >
                 Direct bank transfer
               </label>
-            </div>
-            <div
-              className="form-check"
-            >
               <input
+                checked={true}
                 className="form-check-input"
-                disabled={false}
-                id="form-checkout-check"
-                name="form-shipping-radio"
+                id="Direct bank transfer"
+                name="checkout_payments"
+                onChange={[Function]}
                 type="radio"
+                value="Direct bank transfer"
               />
               <label
-                className="form-check-label"
-                htmlFor="form-checkout-check"
-                title=""
+                htmlFor="Check payment"
               >
                 Check payment
               </label>
-            </div>
-            <div
-              className="form-check"
-            >
               <input
+                checked={false}
                 className="form-check-input"
-                disabled={false}
-                id="form-checkout-cash"
-                name="form-shipping-radio"
+                id="Check payment"
+                name="checkout_payments"
+                onChange={[Function]}
                 type="radio"
+                value="Check payment"
               />
               <label
-                className="form-check-label"
-                htmlFor="form-checkout-cash"
-                title=""
+                htmlFor="Cash on delivery"
               >
                 Cash on delivery
               </label>
+              <input
+                checked={false}
+                className="form-check-input"
+                id="Cash on delivery"
+                name="checkout_payments"
+                onChange={[Function]}
+                type="radio"
+                value="Cash on delivery"
+              />
             </div>
           </div>
         </div>

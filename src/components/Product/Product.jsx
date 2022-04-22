@@ -11,7 +11,11 @@ function Product({ item, changeItemModal, changeCurrentItemSelected, size }) {
   return (
     <div className={styles.product}>
       <div id="productImageDiv">
-        <img src={item.src} alt="Woode product" style={{ width: 100 * size }} />
+        <img
+          src={item.src}
+          alt="Woode product"
+          style={{ width: `${100 * size}` }}
+        />
         <div id="productHoverDiv">
           <Link to={`/shoppingItem:${item.id}`} state={{ item }} />
           <FeatherIcon
