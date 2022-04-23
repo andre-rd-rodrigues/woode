@@ -15,7 +15,7 @@ function AppNavbar({ cart }) {
     setAmount(cart.amount);
   }, [cart]);
   return (
-    <motion.navbar
+    <motion.nav
       className={`${styles.navbar} navbar navbar-expand-lg navbar-light fixed-top`}
       variants={verticalEntrance}
       initial="hidden"
@@ -52,7 +52,7 @@ function AppNavbar({ cart }) {
           <FeatherIcon icon="user" /> Login
         </Nav.Link>
       </Container>
-    </motion.navbar>
+    </motion.nav>
   );
 }
 
