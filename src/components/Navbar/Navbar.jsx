@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import logo from "assets/images/logo.png";
 import FeatherIcon from "feather-icons-react";
+import { motion } from "framer-motion";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { verticalEntrance } from "styles/motion/motionVariants";
 import styles from "./navbar.module.scss";
 
 function AppNavbar({ cart }) {
@@ -13,7 +15,12 @@ function AppNavbar({ cart }) {
     setAmount(cart.amount);
   }, [cart]);
   return (
-    <Navbar expand="lg" fixed="top" className={styles.navbar}>
+    <motion.navbar
+      className={`${styles.navbar} navbar navbar-expand-lg navbar-light fixed-top`}
+      variants={verticalEntrance}
+      initial="hidden"
+      animate="visible"
+    >
       <Container>
         <Navbar.Brand as={Link} href="/home" to="/home">
           <img src={logo} alt="Woode Furniture" />
@@ -45,7 +52,7 @@ function AppNavbar({ cart }) {
           <FeatherIcon icon="user" /> Login
         </Nav.Link>
       </Container>
-    </Navbar>
+    </motion.navbar>
   );
 }
 

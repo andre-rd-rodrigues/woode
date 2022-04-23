@@ -45,6 +45,7 @@ const NotificationNewsletter = ({
 
   useEffect(() => {
     getStateFromLocalStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
