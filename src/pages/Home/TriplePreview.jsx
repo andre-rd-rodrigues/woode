@@ -5,6 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   containerVariant,
+  noRepeat,
   verticalEntrance
 } from "styles/motion/motionVariants";
 import styles from "./triplepreview.module.scss";
@@ -15,6 +16,7 @@ function TriplePreview() {
       variants={containerVariant}
       whileInView="visible"
       initial="hidden"
+      viewport={noRepeat}
     >
       <Row className="my-5" sm={1} md={3}>
         {triple_view_content.map((item) => (

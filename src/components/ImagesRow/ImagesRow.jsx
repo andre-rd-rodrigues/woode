@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Col, Container } from "react-bootstrap";
-import { containerVariant, scaleEntrance } from "styles/motion/motionVariants";
+import {
+  containerVariant,
+  noRepeat,
+  scaleEntrance
+} from "styles/motion/motionVariants";
 import styles from "./imagesrow.module.scss";
 
 function ImagesRow({ images = [] }) {
@@ -11,6 +15,7 @@ function ImagesRow({ images = [] }) {
         variants={containerVariant}
         whileInView="visible"
         initial="hidden"
+        viewport={noRepeat}
         className={`${styles.imagesRow} row`}
       >
         {images.map((image) => (

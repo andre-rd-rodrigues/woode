@@ -7,7 +7,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
 import {
   horizontalEntrance,
-  containerVariant
+  containerVariant,
+  noRepeat
 } from "styles/motion/motionVariants";
 import styles from "./slider.module.scss";
 
@@ -33,6 +34,7 @@ function Slider() {
                   variants={containerVariant}
                   initial="hidden"
                   animate="visible"
+                  viewport={noRepeat}
                 >
                   <motion.p variants={horizontalEntrance}>FURNITURE</motion.p>
                   <motion.h1 variants={horizontalEntrance}>
