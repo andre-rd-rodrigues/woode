@@ -1,24 +1,42 @@
 import React, { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { connect } from "react-redux";
 import { hideNotification } from "store/ui/notifications";
 import styles from "./notifications.module.scss";
 
-function TopNotification({ notificationState, hideNotificationAction }) {
+const TopNotification = ({ notificationState, hideNotificationAction }) => {
+  //Lifecycle
   useEffect(() => {
     if (notificationState.active)
       return setTimeout(() => {
         hideNotificationAction();
       }, 2000);
-  }, [notificationState.active]);
+  }, [notificationState.active, hideNotificationAction]);
 
-  if (notificationState.active)
-    return (
-      <div className={styles.notification} data-testid="top_notification">
-        {notificationState.message}
-      </div>
-    );
-  return null;
-}
+  const variants = {
+    hidden: { opacity: 0, y: -70 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  //Render
+  return (
+    <AnimatePresence>
+      {notificationState.active && (
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          exit="hidden"
+          animate="visible"
+          className={styles.notification}
+          data-testid="top_notification"
+        >
+          {notificationState.message}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const mapStateToProps = (state) => {
   return {
     notificationState: state.ui.notifications.topNotification

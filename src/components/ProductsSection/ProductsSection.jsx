@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
+import { motion } from "framer-motion";
 import products from "mocks/products";
 import { Col, Row } from "react-bootstrap";
+import {
+  verticalEntrance,
+  containerVariant
+} from "styles/motion/motionVariants";
 import styles from "./products.module.scss";
 
-function ProductsSection() {
+const ProductsSection = () => {
   const [itemModalShow, setItemModalShow] = useState(false);
   const [items, setItems] = useState(undefined);
   const [currentItem, setCurrentItem] = useState({
@@ -22,32 +27,36 @@ function ProductsSection() {
   }, []);
 
   return (
-    <>
-      <div className={styles.title}>
+    <motion.div
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+    >
+      <motion.div variants={verticalEntrance} className={styles.title}>
         <p>BROWSE OUR ITEMS</p>
         <h2>Ideal for your home</h2>
         <hr />
-      </div>
-      <div>
-        <Row>
-          {items?.map((item) => (
-            <Col key={item.id} lg={3} md={6} sm={6}>
+      </motion.div>
+      <Row>
+        {items?.map((item) => (
+          <Col key={item.id} lg={3} md={6} sm={6}>
+            <motion.div variants={verticalEntrance}>
               <Product
                 item={item}
                 changeItemModal={(value) => setItemModalShow(value)}
                 changeCurrentItemSelected={(item) => setCurrentItem(item)}
               />
-            </Col>
-          ))}
-        </Row>
-      </div>
+            </motion.div>
+          </Col>
+        ))}
+      </Row>
       <ItemModal
         item={currentItem}
         show={itemModalShow}
         onClose={() => setItemModalShow(false)}
       />
-    </>
+    </motion.div>
   );
-}
+};
 
 export default ProductsSection;

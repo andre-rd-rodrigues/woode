@@ -1,10 +1,14 @@
 import React from "react";
 import { ArrowIcon } from "assets/Icons";
 import Button from "components/Button/Button";
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { home_slider } from "mocks/local_data";
 import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
+import {
+  horizontalEntrance,
+  containerVariant
+} from "styles/motion/motionVariants";
 import styles from "./slider.module.scss";
 
 function Slider() {
@@ -25,10 +29,22 @@ function Slider() {
           <Container>
             <Row>
               <Col>
-                <p>FURNITURE</p>
-                <h1>{slide.title}</h1>
-                <p className="mb-5">{slide.description}</p>
-                <Button />
+                <motion.div
+                  variants={containerVariant}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.p variants={horizontalEntrance}>FURNITURE</motion.p>
+                  <motion.h1 variants={horizontalEntrance}>
+                    {slide.title}
+                  </motion.h1>
+                  <motion.p variants={horizontalEntrance} className="mb-5">
+                    {slide.description}
+                  </motion.p>
+                  <motion.div variants={horizontalEntrance}>
+                    <Button />
+                  </motion.div>
+                </motion.div>
               </Col>
               <Col></Col>
             </Row>
