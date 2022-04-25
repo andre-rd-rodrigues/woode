@@ -4,6 +4,7 @@ import { team_members } from "mocks/local_data";
 import { Container, Row } from "react-bootstrap";
 import {
   containerVariant,
+  noRepeat,
   verticalEntrance
 } from "styles/motion/motionVariants";
 import styles from "./team.module.scss";
@@ -14,6 +15,7 @@ function Team() {
       variants={containerVariant}
       whileInView="visible"
       initial="hidden"
+      viewport={noRepeat}
       className={styles.team}
     >
       <motion.div variants={verticalEntrance} className={styles.teamTitle}>

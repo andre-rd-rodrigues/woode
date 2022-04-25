@@ -6,7 +6,8 @@ import products from "mocks/products";
 import { Col, Row } from "react-bootstrap";
 import {
   verticalEntrance,
-  containerVariant
+  containerVariant,
+  noRepeat
 } from "styles/motion/motionVariants";
 import styles from "./products.module.scss";
 
@@ -31,6 +32,7 @@ const ProductsSection = () => {
       variants={containerVariant}
       initial="hidden"
       whileInView="visible"
+      viewport={noRepeat}
     >
       <motion.div variants={verticalEntrance} className={styles.title}>
         <p>BROWSE OUR ITEMS</p>

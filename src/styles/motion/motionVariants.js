@@ -35,7 +35,8 @@ const verticalEntrance = {
     transition: {
       type: "spring"
     }
-  }
+  },
+  viewport: { once: true }
 };
 
 const scaleEntrance = {
@@ -52,9 +53,11 @@ const scaleEntrance = {
   }
 };
 
+const noRepeat = { once: true };
 export {
   containerVariant,
   horizontalEntrance,
   verticalEntrance,
-  scaleEntrance
+  scaleEntrance,
+  noRepeat
 };
