@@ -13,6 +13,11 @@ exports[`About renders correctly 1`] = `
     <div
       className="row"
       id="aboutUs_first_section"
+      style={
+        Object {
+          "opacity": 0,
+        }
+      }
     >
       <div
         className="text-center order-lg-1 order-md-1 order-sm-1 col"
@@ -20,6 +25,12 @@ exports[`About renders correctly 1`] = `
         <img
           alt="Experience Woode"
           src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-1.jpg"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         />
       </div>
       <div
@@ -27,6 +38,12 @@ exports[`About renders correctly 1`] = `
       >
         <div
           id="aboutUs_first_section_text"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         >
           <h6>
             ABOUT OUR COLLECTIONS
@@ -43,6 +60,11 @@ exports[`About renders correctly 1`] = `
     <div
       className="row"
       id="aboutUs_first_section"
+      style={
+        Object {
+          "opacity": 0,
+        }
+      }
     >
       <div
         className="text-center order-lg-2 order-md-2 order-sm-2 col"
@@ -50,6 +72,12 @@ exports[`About renders correctly 1`] = `
         <img
           alt="Experience Woode"
           src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-2.jpg"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         />
       </div>
       <div
@@ -57,6 +85,12 @@ exports[`About renders correctly 1`] = `
       >
         <div
           id="aboutUs_first_section_text"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         >
           <h6>
             ABOUT OUR SHOP
@@ -73,6 +107,11 @@ exports[`About renders correctly 1`] = `
     <div
       className="row"
       id="aboutUs_first_section"
+      style={
+        Object {
+          "opacity": 0,
+        }
+      }
     >
       <div
         className="text-center order-lg-1 order-md-1 order-sm-1 col"
@@ -80,6 +119,12 @@ exports[`About renders correctly 1`] = `
         <img
           alt="Experience Woode"
           src="https://umea.qodeinteractive.com/wp-content/uploads/2020/12/p1-img-3.jpg"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         />
       </div>
       <div
@@ -87,6 +132,12 @@ exports[`About renders correctly 1`] = `
       >
         <div
           id="aboutUs_first_section_text"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         >
           <h6>
             ABOUT USED MATERIALS
@@ -106,6 +157,11 @@ exports[`About renders correctly 1`] = `
   />
   <div
     className="comments"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
   >
     <div
       aria-roledescription="carousel"
@@ -141,10 +197,24 @@ exports[`About renders correctly 1`] = `
               }
             >
               <div>
-                <p>
+                <p
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Kevin Sundström
                 </p>
-                <h3>
+                <h3
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Scelerisque viverra mauris in aliquam sem. Ornareusisa suspendisse sed nis.
                 </h3>
               </div>
@@ -161,10 +231,24 @@ exports[`About renders correctly 1`] = `
               }
             >
               <div>
-                <p>
+                <p
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Otto Pettersson
                 </p>
-                <h3>
+                <h3
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Urnanuque cursrra meturis in aliquam sem. Ornareusisa suspendisse eleifend.
                 </h3>
               </div>
@@ -181,10 +265,24 @@ exports[`About renders correctly 1`] = `
               }
             >
               <div>
-                <p>
+                <p
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Georgia Longdenberg
                 </p>
-                <h3>
+                <h3
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transform": "translateY(-90px) translateZ(0)",
+                    }
+                  }
+                >
                   Ornareusisa maece mauris in blandit sem. Oramesacisa turpisedisse ege sed.
                 </h3>
               </div>
@@ -196,6 +294,12 @@ exports[`About renders correctly 1`] = `
     <img
       alt="Best comments"
       src="quotes.png"
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateY(-90px) translateZ(0)",
+        }
+      }
     />
   </div>
 </div>
