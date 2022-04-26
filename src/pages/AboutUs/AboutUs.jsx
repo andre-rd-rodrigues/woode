@@ -1,13 +1,13 @@
 import React from "react";
 import quotes from "assets/images/quotes.png";
 import { motion } from "framer-motion";
+import { about_content, about_reviews } from "mocks/local_data";
+import { Col, Container } from "react-bootstrap";
+import { Fade } from "react-slideshow-image";
 import {
   containerVariant,
   verticalEntrance
 } from "styles/motion/motionVariants";
-import { about_content, about_reviews } from "mocks/local_data";
-import { Col, Container, Row } from "react-bootstrap";
-import { Fade } from "react-slideshow-image";
 import styles from "./aboutus.module.scss";
 
 function AboutUs() {
