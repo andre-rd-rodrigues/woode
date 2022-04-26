@@ -1,5 +1,10 @@
 import React from "react";
 import quotes from "assets/images/quotes.png";
+import { motion } from "framer-motion";
+import {
+  containerVariant,
+  verticalEntrance
+} from "styles/motion/motionVariants";
 import { about_content, about_reviews } from "mocks/local_data";
 import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-slideshow-image";
@@ -21,14 +26,25 @@ function AboutUs() {
       <div className={styles.jumbotron}></div>
       <Container>
         {about_content.map((item) => (
-          <Row id="aboutUs_first_section" key={item.id}>
+          <motion.div
+            variants={containerVariant}
+            whileInView="visible"
+            initial="hidden"
+            className="row"
+            id="aboutUs_first_section"
+            key={item.id}
+          >
             <Col
               className="text-center"
               sm={orderSection(item).image}
               md={orderSection(item).image}
               lg={orderSection(item).image}
             >
-              <img src={item.src} alt="Experience Woode" />
+              <motion.img
+                variants={verticalEntrance}
+                src={item.src}
+                alt="Experience Woode"
+              />
             </Col>
             <Col
               className="d-flex justify-content-center flex-column align-items-center"
@@ -36,28 +52,40 @@ function AboutUs() {
               md={orderSection(item).text}
               lg={orderSection(item).text}
             >
-              <div id="aboutUs_first_section_text">
+              <motion.div
+                variants={verticalEntrance}
+                id="aboutUs_first_section_text"
+              >
                 <h6>{item.subtitle}</h6>
                 <h2>{item.title}</h2>
                 <p>{item.body}</p>
                 {/* <Button /> */}
-              </div>
+              </motion.div>
             </Col>
-          </Row>
+          </motion.div>
         ))}
       </Container>
       <div className={styles.video}></div>
-      <div className={styles.comments}>
+      <motion.div
+        variants={containerVariant}
+        whileInView="visible"
+        initial="hidden"
+        className={styles.comments}
+      >
         <Fade autoplay arrows={false} duration={2000} className={styles.slider}>
           {about_reviews.map((slide) => (
             <div key={slide.id}>
-              <p>{slide.subtitle}</p>
-              <h3>{slide.title}</h3>
+              <motion.p variants={verticalEntrance}>{slide.subtitle}</motion.p>
+              <motion.h3 variants={verticalEntrance}>{slide.title}</motion.h3>
             </div>
           ))}
         </Fade>
-        <img src={quotes} alt="Best comments" />
-      </div>
+        <motion.img
+          variants={verticalEntrance}
+          src={quotes}
+          alt="Best comments"
+        />
+      </motion.div>
     </div>
   );
 }
