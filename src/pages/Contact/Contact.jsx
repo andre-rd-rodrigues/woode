@@ -1,8 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fireNotification } from "store/ui/notifications";
-import { motion } from "framer-motion";
 import {
   containerVariant,
   verticalEntrance

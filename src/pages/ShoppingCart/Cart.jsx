@@ -1,16 +1,16 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
+import { motion } from "framer-motion";
 import { Col, Container, Form, Row } from "react-bootstrap";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { removedItem, updatedAmount } from "store/entities/cart";
 import {
   containerVariant,
   verticalEntrance,
   noRepeat,
   horizontalEntrance
 } from "styles/motion/motionVariants";
-import { motion } from "framer-motion";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { removedItem, updatedAmount } from "store/entities/cart";
 import styles from "./cart.module.scss";
 
 function Cart({ cart, removeItem, updateAmount }) {
