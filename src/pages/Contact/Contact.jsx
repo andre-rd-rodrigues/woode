@@ -1,7 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fireNotification } from "store/ui/notifications";
+import {
+  containerVariant,
+  verticalEntrance
+} from "styles/motion/motionVariants";
 import styles from "./contact.module.scss";
 import ContactInfoRow from "./ContactInfoRow";
 
@@ -14,12 +19,17 @@ const Contact = ({ fireNotification }) => {
   };
 
   return (
-    <div className={styles.contact}>
-      <h1>Contact us</h1>
+    <motion.div
+      variants={containerVariant}
+      animate="visible"
+      initial="hidden"
+      className={styles.contact}
+    >
+      <motion.h1 variants={verticalEntrance}>Contact us</motion.h1>
       <Container>
         <Row>
           <Col className="contact_first_layer_col">
-            <form onSubmit={handleSubmit}>
+            <motion.form variants={verticalEntrance} onSubmit={handleSubmit}>
               <textarea
                 data-testid="contact_textarea"
                 required
@@ -36,26 +46,26 @@ const Contact = ({ fireNotification }) => {
                 </Col>
               </Row>
               <button type="submit">Submit</button>
-            </form>
+            </motion.form>
           </Col>
           <Col className="contact_first_layer_col">
-            <h2>Send us a message</h2>
-            <p>
+            <motion.h2 variants={verticalEntrance}>Send us a message</motion.h2>
+            <motion.p variants={verticalEntrance}>
               Lorem ipsum dolor sit amet, comp uting of ore et dolore ma antemo
               enim. Quam quisq ue id diam.
-            </p>
-            <div>
+            </motion.p>
+            <motion.div variants={verticalEntrance}>
               <ContactInfoRow text="woode@example.com" icon="mail" />
               <ContactInfoRow
                 text="Mäster Samuelsgatan 10A, Finland"
                 icon="home"
               />
               <ContactInfoRow text="+ 668 66 448 6452 99" icon="headphones" />
-            </div>
+            </motion.div>
           </Col>
         </Row>
       </Container>
-    </div>
+    </motion.div>
   );
 };
 const mapDispatchToProps = (dispatch) => {

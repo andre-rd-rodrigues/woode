@@ -1,19 +1,26 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
+import { motion } from "framer-motion";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { removedItem, updatedAmount } from "store/entities/cart";
+import {
+  containerVariant,
+  verticalEntrance,
+  noRepeat,
+  horizontalEntrance
+} from "styles/motion/motionVariants";
 import styles from "./cart.module.scss";
 
 function Cart({ cart, removeItem, updateAmount }) {
   const NoItems = () => (
-    <div id="cart-no-items">
+    <motion.div variants={horizontalEntrance} id="cart-no-items">
       <p>Your cart is currently empty.</p>
       <Link to="/shop">
         <button>Return to shop</button>
       </Link>
-    </div>
+    </motion.div>
   );
 
   const handleChangeAmount = (e, item) => {
@@ -25,10 +32,16 @@ function Cart({ cart, removeItem, updateAmount }) {
       });
   };
   return (
-    <div className={styles.shoppingCart}>
+    <motion.div
+      variants={containerVariant}
+      whileInView="visible"
+      initial="hidden"
+      viewport={noRepeat}
+      className={styles.shoppingCart}
+    >
       <div id="cart-title-background" />
       <Container>
-        <h1>Your cart</h1>
+        <motion.h1 variants={horizontalEntrance}>Your cart</motion.h1>
 
         {cart.items.length > 0 ? (
           <>
@@ -127,7 +140,7 @@ function Cart({ cart, removeItem, updateAmount }) {
           <NoItems />
         )}
       </Container>
-    </div>
+    </motion.div>
   );
 }
 

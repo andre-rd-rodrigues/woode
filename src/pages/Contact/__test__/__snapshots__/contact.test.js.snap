@@ -3,8 +3,20 @@
 exports[`Contact us should render correctly 1`] = `
 <div
   className="contact"
+  style={
+    Object {
+      "opacity": 0,
+    }
+  }
 >
-  <h1>
+  <h1
+    style={
+      Object {
+        "opacity": 0,
+        "transform": "translateY(-90px) translateZ(0)",
+      }
+    }
+  >
     Contact us
   </h1>
   <div
@@ -18,6 +30,12 @@ exports[`Contact us should render correctly 1`] = `
       >
         <form
           onSubmit={[Function]}
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
         >
           <textarea
             cols="30"
@@ -58,13 +76,34 @@ exports[`Contact us should render correctly 1`] = `
       <div
         className="contact_first_layer_col col"
       >
-        <h2>
+        <h2
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
+        >
           Send us a message
         </h2>
-        <p>
+        <p
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
+        >
           Lorem ipsum dolor sit amet, comp uting of ore et dolore ma antemo enim. Quam quisq ue id diam.
         </p>
-        <div>
+        <div
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-90px) translateZ(0)",
+            }
+          }
+        >
           <div
             className="contactInfoRow"
           >

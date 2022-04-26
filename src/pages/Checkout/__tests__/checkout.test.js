@@ -7,6 +7,7 @@ const {
   initialState
 } = require("utils/test-utils");
 const { default: Checkout } = require("../Checkout");
+global.scrollTo = jest.fn();
 
 describe("Checkout", () => {
   it("should render correctly", () => {
