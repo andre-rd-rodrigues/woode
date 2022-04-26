@@ -5,24 +5,32 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import { Radio, RadioGroup } from "react-radio-group";
 import { connect } from "react-redux";
 import styles from "./checkout.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
   const [modalShow, setModalShow] = useState(false);
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+    window.scrollTo(0, 0);
     setTimeout(() => {
       setModalShow(true);
       setLoading(false);
     }, 1000);
   };
 
+  const closeModal = () => {
+    setModalShow(false);
+    navigate(`/shop`);
+    return window.location.reload();
+  };
+
   useEffect(() => {
-    if (modalShow) return setTimeout(() => setModalShow(false), 4000);
+    if (modalShow) return setTimeout(() => closeModal(), 4000);
   }, [modalShow]);
 
   return (
@@ -206,11 +214,7 @@ const Checkout = ({ cart }) => {
           </button>
         </form>
       </Container>
-      <AppModal
-        show={modalShow}
-        type="checkout_success"
-        onHide={() => setModalShow(false)}
-      />
+      <AppModal show={modalShow} type="checkout_success" onHide={closeModal} />
     </div>
   );
 };
