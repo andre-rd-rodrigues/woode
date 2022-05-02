@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { triple_view_content } from "mocks/local_data";
+import { home_triple_view_content } from "mocks/local_data";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -19,7 +19,7 @@ function TriplePreview() {
       viewport={noRepeat}
     >
       <Row className="my-5" sm={1} md={3}>
-        {triple_view_content.map((item) => (
+        {home_triple_view_content.map((item) => (
           <Col className={styles.col} key={item.id}>
             <Link to="/shop">
               <motion.div

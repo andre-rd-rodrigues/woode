@@ -6,6 +6,13 @@ exports[`About renders correctly 1`] = `
 >
   <div
     className="jumbotron"
+    style={
+      Object {
+        "backgroundImage": "url(https://umea.qodeinteractive.com/wp-content/uploads/2021/03/p1-title-area-img.jpg)",
+        "height": "750px",
+        "styling": undefined,
+      }
+    }
   />
   <div
     className="container"

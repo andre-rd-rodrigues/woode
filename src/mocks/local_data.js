@@ -50,7 +50,7 @@ const imagesRow = [
 ];
 
 // Triple preview
-const triple_view_content = [
+const home_triple_view_content = [
   {
     id: 1,
     label: "special offer",
@@ -188,7 +188,7 @@ const locations = [
 export {
   imagesRow,
   home_slider,
-  triple_view_content,
+  home_triple_view_content,
   team_members,
   about_content,
   about_reviews,

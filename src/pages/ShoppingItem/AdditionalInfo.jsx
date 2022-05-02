@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "./additionalinfo.module.scss";
 
 function AdditionalInfo({ item }) {
   const [selected, setSelected] = useState("description");
 
-  const renderBody = () => {
+  const contentRendered = () => {
     if (selected === "description")
       return (
-        <p>
+        <motion.p
+          variants={variants}
+          initial="hidden"
+          exit="hidden"
+          animate="visible"
+        >
           Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
           Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
           Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
@@ -16,10 +22,16 @@ function AdditionalInfo({ item }) {
           amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel,
           luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
           tincidunt tempus. Donec vitae sapien ut libero venenatis.
-        </p>
+        </motion.p>
       );
     return (
-      <div className="info-row">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        exit="hidden"
+        animate="visible"
+        className="info-row"
+      >
         <div>
           <p>WEIGHT:</p>
           <p>DIMENSIONS:</p>
@@ -30,13 +42,19 @@ function AdditionalInfo({ item }) {
           <p>{item.dimensions}</p>
           <p>{item.sizes}</p>
         </div>
-      </div>
+      </motion.div>
     );
   };
   const renderStyle = (type) => {
     if (type === selected) return "1px solid black";
     return null;
   };
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+
   return (
     <div className={styles.additionalInfo}>
       <div id="head">
@@ -60,7 +78,9 @@ function AdditionalInfo({ item }) {
         </button>
       </div>
       <hr />
-      <div id="body">{renderBody()}</div>
+      <div id="body">
+        <AnimatePresence>{contentRendered()}</AnimatePresence>
+      </div>
     </div>
   );
 }
