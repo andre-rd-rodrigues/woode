@@ -145,11 +145,52 @@ let about_reviews = [
   }
 ];
 
+const locations = [
+  {
+    id: 1,
+    title: "Norrköping Store",
+    description:
+      "Lorem ipsum dolor sit amet, comp uting of ore et dolore ma antemo enim. Quam quisque id diam.",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2162.598658755749!2d15.130214316018991!3d57.17810688863238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46576a1b609cb4bb%3A0x48b2ea37fdef7a0e!2sSweden%20Zipline!5e0!3m2!1spt-PT!2suk!4v1651232133932!5m2!1spt-PT!2suk",
+    contact: {
+      email: "something@woode.com",
+      address: "Källvindsgatan 5 602 40, Sweden",
+      phone: "+668 66 448 6452 99"
+    }
+  },
+  {
+    id: 2,
+    title: "Konungsund Store",
+    description:
+      "Lorem ipsum dolor sit amet, comp uting of ore et dolore ma antemo enim. Quam quisque id diam.",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8318.894848833188!2d16.374578247734295!3d58.58334338746981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465925a3ba262d4d%3A0xb171281d2d414e54!2s610%2033%20Konungsund%2C%20Su%C3%A9cia!5e0!3m2!1spt-PT!2suk!4v1651232276865!5m2!1spt-PT!2suk",
+    contact: {
+      email: "something@woode.com",
+      address: "Konungsund 5 602 40, Sweden",
+      phone: "+668 66 448 6452 99"
+    }
+  },
+
+  {
+    id: 3,
+    title: "Stokholm Store",
+    description:
+      "Lorem ipsum dolor sit amet, comp uting of ore et dolore ma antemo enim. Quam quisque id diam.",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2126.256593256721!2d14.139161216038861!3d57.79699503996014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465a6e77c6e42ee3%3A0x3ca384da472a0411!2zU3dlZGVuYm9yZ3NnYXRhbiwgNTU0IDQ4IErDtm5rw7ZwaW5nLCBTdcOpY2lh!5e0!3m2!1spt-PT!2suk!4v1651232224315!5m2!1spt-PT!2suk",
+    contact: {
+      email: "something@woode.com",
+      address: "Stokholm 5 602 40, Sweden",
+      phone: "+668 66 448 6452 99"
+    }
+  }
+];
+
 export {
   imagesRow,
   home_slider,
   triple_view_content,
   team_members,
   about_content,
-  about_reviews
+  about_reviews,
+  locations
 };

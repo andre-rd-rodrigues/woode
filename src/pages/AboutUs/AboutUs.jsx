@@ -9,6 +9,7 @@ import {
   verticalEntrance
 } from "styles/motion/motionVariants";
 import styles from "./aboutus.module.scss";
+import Jumbotron from "components/Jumbotron/Jumbotron";
 
 function AboutUs() {
   let orderSection = (item) => {
@@ -23,7 +24,7 @@ function AboutUs() {
   };
   return (
     <div className={styles.aboutUs}>
-      <div className={styles.jumbotron}></div>
+      <Jumbotron url="https://umea.qodeinteractive.com/wp-content/uploads/2021/03/p1-title-area-img.jpg" />
       <Container>
         {about_content.map((item) => (
           <motion.div

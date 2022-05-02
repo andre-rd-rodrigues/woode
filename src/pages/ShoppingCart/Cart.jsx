@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { removedItem, updatedAmount } from "store/entities/cart";
 import {
   containerVariant,
-  verticalEntrance,
   noRepeat,
   horizontalEntrance
 } from "styles/motion/motionVariants";

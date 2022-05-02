@@ -7,6 +7,7 @@ import AboutUs from "pages/AboutUs/AboutUs";
 import Checkout from "pages/Checkout/Checkout";
 import Contact from "pages/Contact/Contact";
 import Home from "pages/Home/Home";
+import Locations from "pages/Locations/Locations";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/ShoppingCart/Cart";
 import ShoppingItem from "pages/ShoppingItem/ShoppingItem";
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/locations" element={<Locations />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shopping-cart" element={<Cart />} />
