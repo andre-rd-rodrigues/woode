@@ -1,0 +1,107 @@
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  font-weight: 300;
+  flex-direction: column;
+}
+
+.loginForm {
+  width: 400px;
+  padding: 40px;
+  border-radius: 0;
+  background-color: #fff;
+  & input:placeholder-shown {
+    font-weight: 300;
+    opacity: 0.6;
+    font-style: italic;
+  }
+}
+
+.button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.link {
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s ease;
+  &:hover {
+    color: inherit;
+    opacity: 0.7;
+  }
+}
+
+.formGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.additionalLinks {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: grey;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background-color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+  & img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}

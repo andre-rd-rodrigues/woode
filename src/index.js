@@ -7,15 +7,20 @@ import { HashRouter } from "react-router-dom";
 import configureStore from "./configureStore";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const store = configureStore();
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
   <HashRouter>
-    <Provider store={store}>
-      <ScrollTop />
-      <App />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <ScrollTop />
+        <App />
+      </Provider>
+    </QueryClientProvider>
   </HashRouter>,
   document.getElementById("root")
 );
