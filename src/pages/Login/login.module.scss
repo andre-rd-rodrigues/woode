@@ -1,6 +1,14 @@
 .header {
   text-align: center;
   margin-bottom: 20px;
+
+  img {
+    width: 60px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
 }
 
 .loginContainer {
@@ -11,6 +19,11 @@
   background-color: #f8f9fa;
   font-weight: 300;
   flex-direction: column;
+  font-size: 0.9rem;
+  h4 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+  }
 }
 
 .loginForm {
@@ -18,10 +31,15 @@
   padding: 40px;
   border-radius: 0;
   background-color: #fff;
+  & label {
+    font-weight: 400;
+  }
+
   & input:placeholder-shown {
     font-weight: 300;
     opacity: 0.6;
     font-style: italic;
+    font-size: 0.9rem;
   }
 }
 

@@ -1,26 +1,25 @@
-import React from "react";
+import googleIcon from "assets/Icons/google.png";
+import logo from "assets/images/logo.png";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
-import googleIcon from "assets/Icons/google.png";
-import logo from "assets/images/logo.png";
 
 function Login() {
   return (
     <div className={styles.loginContainer}>
       <div className={styles.header}>
         <img src={logo} alt="Woode Furniture" />
-        <h1>Woode.</h1>
+        <h1>Login</h1>
       </div>
 
       <Form className={styles.loginForm}>
         <Form.Group controlId="form-email">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Email*</Form.Label>
           <Form.Control type="email" placeholder="name@email.com" />
         </Form.Group>
 
         <Form.Group controlId="form-password" className="mt-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Password*</Form.Label>
           <Form.Control type="password" placeholder="password" />
         </Form.Group>
 
