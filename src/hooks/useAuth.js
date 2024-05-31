@@ -8,7 +8,7 @@ export const useLogin = () => {
 
   return useMutation(login, {
     onSuccess: (data) => {
-      dispatch(setUser(data.user));
+      dispatch(setUser(data));
     }
   });
 };

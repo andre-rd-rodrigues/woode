@@ -8,12 +8,13 @@ import { Link } from "react-router-dom";
 import { verticalEntrance } from "styles/motion/motionVariants";
 import styles from "./navbar.module.scss";
 
-function AppNavbar({ cart }) {
+function AppNavbar({ cart, user }) {
   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     setAmount(cart.amount);
   }, [cart]);
+
   return (
     <motion.nav
       className={`${styles.navbar} navbar navbar-expand-lg navbar-light fixed-top`}
@@ -48,16 +49,29 @@ function AppNavbar({ cart }) {
         <Nav.Link as={Link} href="/shopping-cart" to="/shopping-cart">
           Cart <FeatherIcon icon="shopping-bag" /> {amount}
         </Nav.Link>
-        <Nav.Link as={Link} href="/login" to="/login">
-          <FeatherIcon icon="user" /> Login
-        </Nav.Link>
+        {!user.isAuthenticated && (
+          <Nav.Link as={Link} href="/login" to="/login">
+            Login <FeatherIcon icon="user" />
+          </Nav.Link>
+        )}
+        {user.isAuthenticated && (
+          <Nav.Item>
+            {user.name} <FeatherIcon icon="user" />
+          </Nav.Item>
+        )}
       </Container>
     </motion.nav>
   );
 }
 
 const mapStateToProps = (state) => {
-  return { cart: state.entities.cart };
+  return {
+    cart: state.entities.cart,
+    user: {
+      isAuthenticated: state.entities.auth.isAuthenticated,
+      name: state.entities.auth.user.name
+    }
+  };
 };
 
 export default connect(mapStateToProps)(AppNavbar);

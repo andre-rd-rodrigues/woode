@@ -8,8 +8,15 @@ const authSlice = createSlice({
   },
   reducers: {
     setUser: (state, action) => {
-      state.user = action.payload;
+      const { user, token } = action.payload;
+
+      state.user = user;
       state.isAuthenticated = true;
+
+      localStorage.setItem(
+        process.env.REACT_APP_STORAGE_TOKEN_KEY,
+        JSON.stringify(token)
+      );
     },
     logout: (state) => {
       state.user = null;

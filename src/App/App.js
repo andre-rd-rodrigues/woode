@@ -11,13 +11,21 @@ import Login from "pages/Login/Login";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/ShoppingCart/Cart";
 import ShoppingItem from "pages/ShoppingItem/ShoppingItem";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Route, Routes, useLocation } from "react-router";
 import "react-slideshow-image/dist/styles.css";
+import { updateRoute } from "store/entities/navigation";
 import "styles/global.scss";
 
 function App() {
+  const dispatch = useDispatch();
   const { pathname } = useLocation();
   const isAuthPage = pathname === "/login" || pathname === "/register";
+
+  useEffect(() => {
+    dispatch(updateRoute(pathname));
+  }, [pathname]);
 
   return (
     <>

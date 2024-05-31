@@ -3,14 +3,20 @@ import logo from "assets/images/logo.png";
 import { useLogin } from "hooks/useAuth";
 import { Form } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 
 import { notify } from "components/ToastNotification";
 import styles from "./login.module.scss";
+import { useSelector } from "react-redux";
 
 function Login() {
   const { isLoading, mutate } = useLogin();
+  const navigate = useNavigate();
+
+  const previousRoute = useSelector(
+    (state) => state.entities.navigation.previousRoute
+  );
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
@@ -20,8 +26,8 @@ function Login() {
     mutate(
       { email, password },
       {
-        onSuccess: (data) => {
-          console.log(data);
+        onSuccess: () => {
+          previousRoute ? navigate(previousRoute) : navigate("/");
         },
         onError: ({ response }) => {
           notify("error", response.data.message);
