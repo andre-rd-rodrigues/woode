@@ -2,14 +2,21 @@ import React, { useState, useEffect } from "react";
 import logo from "assets/images/logo.png";
 import FeatherIcon from "feather-icons-react";
 import { motion } from "framer-motion";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { verticalEntrance } from "styles/motion/motionVariants";
 import styles from "./navbar.module.scss";
+import { logout } from "store/entities/auth";
 
-function AppNavbar({ cart, user }) {
+function AppNavbar({ cart, user, logout }) {
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   useEffect(() => {
     setAmount(cart.amount);
@@ -55,9 +62,16 @@ function AppNavbar({ cart, user }) {
           </Nav.Link>
         )}
         {user.isAuthenticated && (
-          <Nav.Item>
-            {user.name} <FeatherIcon icon="user" />
-          </Nav.Item>
+          <Dropdown className={styles.dropdown}>
+            <Dropdown.Toggle as={Nav.Link}>
+              {user.name} <FeatherIcon icon="user" />
+            </Dropdown.Toggle>
+            <Dropdown.Menu className={styles.dropdownMenu}>
+              <Dropdown.Item onClick={handleLogout}>
+                <FeatherIcon icon="log-out" size={20} /> Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         )}
       </Container>
     </motion.nav>
@@ -69,9 +83,15 @@ const mapStateToProps = (state) => {
     cart: state.entities.cart,
     user: {
       isAuthenticated: state.entities.auth.isAuthenticated,
-      name: state.entities.auth.user.name
+      name: state.entities.auth.user?.name
     }
   };
 };
 
-export default connect(mapStateToProps)(AppNavbar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppNavbar);

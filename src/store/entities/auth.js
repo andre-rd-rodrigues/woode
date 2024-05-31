@@ -21,6 +21,10 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.isAuthenticated = false;
+      localStorage.setItem(
+        process.env.REACT_APP_STORAGE_TOKEN_KEY,
+        JSON.stringify(null)
+      );
     }
   }
 });
