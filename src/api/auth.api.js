@@ -1,8 +1,11 @@
-import { API_URL_LOGIN, API_URL_REGISTER } from "./api.constants";
 import axios from "axios";
+import { API_URL_LOGIN, API_URL_REGISTER } from "./api.constants";
 
 export const login = async (credentials) => {
-  const response = await axios.post(`${API_URL_LOGIN}/login`, credentials);
+  const response = await axios.post(
+    `${process.env.REACT_APP_API_URL}${API_URL_LOGIN}`,
+    credentials
+  );
   return response.data;
 };
 

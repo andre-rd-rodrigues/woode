@@ -54,7 +54,9 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 

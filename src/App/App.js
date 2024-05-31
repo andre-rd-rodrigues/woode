@@ -1,19 +1,19 @@
-import React from "react";
 import Footer from "components/Footer/Footer";
 import Navbar from "components/Navbar/Navbar";
 import NotificationNewsletter from "components/Notifications/NotificationNewsletter";
 import TopNotification from "components/Notifications/TopNotification";
+import ToastNotification from "components/ToastNotification";
 import AboutUs from "pages/AboutUs/AboutUs";
 import Checkout from "pages/Checkout/Checkout";
 import Contact from "pages/Contact/Contact";
 import Home from "pages/Home/Home";
+import Login from "pages/Login/Login";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/ShoppingCart/Cart";
 import ShoppingItem from "pages/ShoppingItem/ShoppingItem";
 import { Route, Routes, useLocation } from "react-router";
 import "react-slideshow-image/dist/styles.css";
 import "styles/global.scss";
-import Login from "pages/Login/Login";
 
 function App() {
   const { pathname } = useLocation();
@@ -40,6 +40,7 @@ function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       {!isAuthPage && <Footer />}
+      <ToastNotification />
     </>
   );
 }
