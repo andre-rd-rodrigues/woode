@@ -2,6 +2,9 @@
 export const API_URL_LOGIN = "/auth/login";
 export const API_URL_REGISTER = "/auth/register";
 
+// User
+export const API_URL_USER = "/user";
+
 // Cart
 export const API_URL_CART = "/cart";
 

@@ -10,6 +10,7 @@ import configureStore from "./configureStore";
 import reportWebVitals from "./reportWebVitals";
 
 const store = configureStore();
+store.dispatch({ type: "INIT_SESSION" });
 
 ReactDOM.render(
   <HashRouter>

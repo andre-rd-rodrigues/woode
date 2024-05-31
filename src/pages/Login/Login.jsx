@@ -66,7 +66,7 @@ function Login() {
           className={`mt-3 ${styles.formGroup}`}
           controlId="formBasicCheckbox"
         >
-          <Form.Check type="checkbox" label="Remember me" />
+          <Form.Check type="checkbox" label="Remember me" defaultChecked />
           <Link to="/forgot-password" className={styles.link}>
             Reset password
           </Link>

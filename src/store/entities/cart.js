@@ -18,7 +18,7 @@ const updatedTotalPrice = (state) =>
   );
 
 //Slice
-const slice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
@@ -54,10 +54,16 @@ const slice = createSlice({
       //Update cart amount & total
       cart.amount = updateAmountTotal(cart);
       cart.totalPrice = updatedTotalPrice(cart);
+    },
+    updateCart: (cart, { payload }) => {
+      cart.items = payload.items;
+      cart.amount = payload.amount;
+      cart.totalPrice = payload.totalPrice;
     }
   }
 });
 
-export const { addedItem, updatedAmount, removedItem } = slice.actions;
+export const { addedItem, updatedAmount, removedItem, updateCart } =
+  cartSlice.actions;
 
-export default slice.reducer;
+export default cartSlice.reducer;

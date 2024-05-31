@@ -2,6 +2,7 @@ import Footer from "components/Footer/Footer";
 import Navbar from "components/Navbar/Navbar";
 import NotificationNewsletter from "components/Notifications/NotificationNewsletter";
 import TopNotification from "components/Notifications/TopNotification";
+import ProtectedRoute from "components/ProtectedRoute";
 import ToastNotification from "components/ToastNotification";
 import AboutUs from "pages/AboutUs/AboutUs";
 import Checkout from "pages/Checkout/Checkout";
@@ -21,6 +22,7 @@ import "styles/global.scss";
 function App() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+
   const isAuthPage = pathname === "/login" || pathname === "/register";
 
   useEffect(() => {
@@ -43,7 +45,14 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shopping-cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/shoppingItem:id" element={<ShoppingItem />} />
         <Route path="*" element={<Home />} />
       </Routes>

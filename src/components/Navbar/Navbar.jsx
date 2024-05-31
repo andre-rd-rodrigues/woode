@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
 import logo from "assets/images/logo.png";
 import FeatherIcon from "feather-icons-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "store/entities/auth";
 import { verticalEntrance } from "styles/motion/motionVariants";
 import styles from "./navbar.module.scss";
-import { logout } from "store/entities/auth";
 
 function AppNavbar({ cart, user, logout }) {
   const [amount, setAmount] = useState(0);
