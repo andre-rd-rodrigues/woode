@@ -4,9 +4,11 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
 import styles from "./itemmodal.module.scss";
+import { useCart } from "hooks/useCart";
 
 function ItemModal({ item, show, onClose }) {
   const [amount, setAmount] = useState(1);
+  const { addItem } = useCart();
 
   const { category, name, price, src } = item;
 
@@ -16,8 +18,11 @@ function ItemModal({ item, show, onClose }) {
   //Add to cart
   const handleSubmit = (e) => {
     e.preventDefault();
+    addItem({ productId: item.id, quantity: amount });
+
     return dispatch(addedItem({ item: { ...item, amount } }));
   };
+
   return (
     <Modal
       centered
