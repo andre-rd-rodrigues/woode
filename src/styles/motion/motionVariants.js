@@ -54,6 +54,7 @@ const scaleEntrance = {
 };
 
 const noRepeat = { once: true };
+
 export {
   containerVariant,
   horizontalEntrance,

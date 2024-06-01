@@ -12,7 +12,7 @@ function Product({ item, changeItemModal, changeCurrentItemSelected, size }) {
     <div className={styles.product}>
       <div id="productImageDiv">
         <img
-          src={item.src}
+          src={item.images_url[0]}
           alt="Woode product"
           style={{ width: `${100 * size}` }}
         />

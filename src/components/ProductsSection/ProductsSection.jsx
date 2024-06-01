@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from "react";
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
 import { motion } from "framer-motion";
-import products from "mocks/products";
+import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { connect } from "react-redux";
+import { ClipLoader } from "react-spinners";
 import {
-  verticalEntrance,
+  fetchProductsThunk,
+  selectProductsState
+} from "store/entities/products";
+import {
   containerVariant,
-  noRepeat
+  noRepeat,
+  verticalEntrance
 } from "styles/motion/motionVariants";
 import styles from "./products.module.scss";
 
-const ProductsSection = () => {
+const ProductsSection = ({
+  getProducts,
+  products,
+  isLoading,
+  error,
+  isSuccess
+}) => {
   const [itemModalShow, setItemModalShow] = useState(false);
-  const [items, setItems] = useState(undefined);
-  const [currentItem, setCurrentItem] = useState({
+  const [selectedItem, setSelectedItem] = useState({
     id: 1,
     name: "Cupholder",
     category: "decoration",
@@ -24,41 +34,74 @@ const ProductsSection = () => {
 
   //Lifecycle
   useEffect(() => {
-    setItems(products);
+    getProducts();
   }, []);
 
   return (
-    <motion.div
-      variants={containerVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={noRepeat}
-    >
-      <motion.div variants={verticalEntrance} className={styles.title}>
+    <div>
+      <motion.div
+        variants={verticalEntrance}
+        initial="hidden"
+        whileInView="visible"
+        viewport={noRepeat}
+        className={styles.title}
+      >
         <p>BROWSE OUR ITEMS</p>
         <h2>Ideal for your home</h2>
         <hr />
       </motion.div>
-      <Row>
-        {items?.map((item) => (
-          <Col key={item.id} lg={3} md={6} sm={6}>
-            <motion.div variants={verticalEntrance}>
-              <Product
-                item={item}
-                changeItemModal={(value) => setItemModalShow(value)}
-                changeCurrentItemSelected={(item) => setCurrentItem(item)}
-              />
-            </motion.div>
-          </Col>
-        ))}
-      </Row>
+      {isLoading && (
+        <div className="d-block text-center">
+          <ClipLoader color={"black"} loading={isLoading} size={50} />
+        </div>
+      )}
+      {error && <p className="text-center">Something went wrong...</p>}
+
+      {isSuccess && (
+        <motion.div
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={noRepeat}
+        >
+          <Row>
+            {products?.map((item) => (
+              <Col key={item.id} lg={3} md={6} sm={6}>
+                <motion.div variants={verticalEntrance}>
+                  <Product
+                    item={item}
+                    changeItemModal={(value) => setItemModalShow(value)}
+                    changeCurrentItemSelected={(item) => setSelectedItem(item)}
+                  />
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </motion.div>
+      )}
+
       <ItemModal
-        item={currentItem}
+        item={selectedItem}
         show={itemModalShow}
         onClose={() => setItemModalShow(false)}
       />
-    </motion.div>
+    </div>
   );
 };
 
-export default ProductsSection;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProducts: () => dispatch(fetchProductsThunk())
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    products: selectProductsState(state).items,
+    isLoading: selectProductsState(state).isLoading,
+    error: selectProductsState(state).error,
+    isSuccess: selectProductsState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsSection);

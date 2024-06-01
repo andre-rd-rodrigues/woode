@@ -1,4 +1,5 @@
 import { getUser } from "api/auth.api";
+import { getProducts } from "api/products.api";
 
 import { setUser } from "store/entities/auth";
 import { updateCart } from "store/entities/cart";
