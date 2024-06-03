@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
 import styles from "./product.module.scss";
 
-function Product({ item, changeItemModal, changeCurrentItemSelected, size }) {
+function Product({ item, onChangeItemSelected, size }) {
   const dispatch = useDispatch();
 
   return (
@@ -27,8 +27,7 @@ function Product({ item, changeItemModal, changeCurrentItemSelected, size }) {
           <FeatherIcon
             icon="search"
             onClick={() => {
-              changeCurrentItemSelected(item);
-              changeItemModal(true);
+              onChangeItemSelected(item);
             }}
           />
         </div>

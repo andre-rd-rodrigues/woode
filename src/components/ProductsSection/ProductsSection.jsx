@@ -23,14 +23,7 @@ const ProductsSection = ({
   error,
   isSuccess
 }) => {
-  const [itemModalShow, setItemModalShow] = useState(false);
-  const [selectedItem, setSelectedItem] = useState({
-    id: 1,
-    name: "Cupholder",
-    category: "decoration",
-    price: 45.0,
-    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/shop-img15.jpg"
-  });
+  const [selectedItem, setSelectedItem] = useState(() => products[0] || null);
 
   //Lifecycle
   useEffect(() => {
@@ -70,8 +63,7 @@ const ProductsSection = ({
                 <motion.div variants={verticalEntrance}>
                   <Product
                     item={item}
-                    changeItemModal={(value) => setItemModalShow(value)}
-                    changeCurrentItemSelected={(item) => setSelectedItem(item)}
+                    onChangeItemSelected={(item) => setSelectedItem(item)}
                   />
                 </motion.div>
               </Col>
@@ -82,8 +74,8 @@ const ProductsSection = ({
 
       <ItemModal
         item={selectedItem}
-        show={itemModalShow}
-        onClose={() => setItemModalShow(false)}
+        show={!!selectedItem}
+        onClose={() => setSelectedItem(null)}
       />
     </div>
   );

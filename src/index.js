@@ -9,8 +9,7 @@ import { HashRouter } from "react-router-dom";
 import configureStore from "./configureStore";
 import reportWebVitals from "./reportWebVitals";
 
-const store = configureStore();
-store.dispatch({ type: "INIT_SESSION" });
+export const store = configureStore();
 
 ReactDOM.render(
   <HashRouter>

@@ -13,21 +13,25 @@ import Shop from "pages/Shop/Shop";
 import Cart from "pages/ShoppingCart/Cart";
 import ShoppingItem from "pages/ShoppingItem/ShoppingItem";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { Route, Routes, useLocation } from "react-router";
 import "react-slideshow-image/dist/styles.css";
+import { fetchUserThunk } from "store/entities/auth";
 import { updateRoute } from "store/entities/navigation";
 import "styles/global.scss";
 
-function App() {
-  const dispatch = useDispatch();
+function App({ getUser, updateRoute }) {
   const { pathname } = useLocation();
 
   const isAuthPage = pathname === "/login" || pathname === "/register";
 
   useEffect(() => {
-    dispatch(updateRoute(pathname));
+    updateRoute(pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <>
@@ -62,4 +66,11 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateRoute: (route) => dispatch(updateRoute(route)),
+    getUser: () => dispatch(fetchUserThunk())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);
