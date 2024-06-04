@@ -8,12 +8,15 @@ import styles from "./product.module.scss";
 function Product({ item, onChangeItemSelected, size }) {
   const dispatch = useDispatch();
 
+  const discount = item.pricing.discount.amount;
+
   return (
     <div className={styles.product}>
       <div id="productImageDiv">
+        {!!discount && <div className={styles.discount}>-{discount}%</div>}
         <img
           src={item.images_url[0]}
-          alt="Woode product"
+          alt={item.name}
           style={{ width: `${100 * size}` }}
         />
         <div id="productHoverDiv">
@@ -34,9 +37,25 @@ function Product({ item, onChangeItemSelected, size }) {
       </div>
       <div id="productDiv">
         <h5>{item.name}</h5>
-        <p>$ {item.price}</p>
+        {discount ? (
+          <div className="flex">
+            <span className={styles.basePrice}>
+              {item.pricing.base_price.toFixed(2)}€
+            </span>
+            <span className={styles.inlineDiscount}>-{discount}%</span>
+          </div>
+        ) : (
+          <p>{item.pricing.total_price.toFixed(2)}€</p>
+        )}
       </div>
-      <p id="productCategory">{item.category.toUpperCase()}</p>
+      <div className="d-flex justify-content-between align-items-end">
+        <p id="productCategory">{item.category.toUpperCase()}</p>
+        {!!discount && (
+          <p className={styles.totalPrice}>
+            {item.pricing.total_price.toFixed(2)}€
+          </p>
+        )}
+      </div>
     </div>
   );
 }
