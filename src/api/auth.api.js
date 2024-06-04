@@ -1,27 +1,17 @@
-import axios from "axios";
-import { API_URL_LOGIN, API_URL_REGISTER, API_URL_USER } from "./api.constants";
+import { API_URL_LOGIN, API_URL_USER } from "./api.constants";
+import apiClient from "./axios-instance";
 
 export const login = async (credentials) => {
-  const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}${API_URL_LOGIN}`,
-    credentials
-  );
+  const response = await apiClient.post(API_URL_LOGIN, credentials);
   return response.data;
 };
 
 /* export const register = async (credentials) => {
-  const response = await axios.post(`${API_URL_REGISTER}/register`, credentials);
+  const response = await apiClient.post(`${API_URL_REGISTER}/register`, credentials);
   return response.data;
 }; */
 
-export const getUser = async (token) => {
-  const response = await axios.get(
-    `${process.env.REACT_APP_API_URL}${API_URL_USER}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }
-  );
+export const getUser = async () => {
+  const response = await apiClient.get(API_URL_USER);
   return response.data;
 };

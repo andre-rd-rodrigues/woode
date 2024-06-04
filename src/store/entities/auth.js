@@ -6,16 +6,12 @@ import { store } from "index";
 export const fetchUserThunk = createAsyncThunk(
   "auth/fetchUser",
   async (_, { rejectWithValue }) => {
-    const token = JSON.parse(
-      localStorage.getItem(process.env.REACT_APP_STORAGE_TOKEN_KEY)
-    );
-
     try {
-      const user = await getUser(token);
+      const user = await getUser();
       store.dispatch(updateCart({ ...user.cart }));
       return user;
     } catch (error) {
-      localStorage.removeItem(process.env.REACT_APP_STORAGE_TOKEN_KEY);
+      /*   localStorage.removeItem(process.env.REACT_APP_STORAGE_TOKEN_KEY); */
       return rejectWithValue(error.response.data);
     }
   }

@@ -1,11 +1,11 @@
+import { useCart } from "hooks/useCart";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { connect } from "react-redux";
-import { addedItem } from "store/entities/cart";
 import styles from "./mainsection.module.scss";
 
-const MainSection = ({ item, addItemToCart }) => {
+const MainSection = ({ item }) => {
   const [inputValue, setInputValue] = useState(1);
+  const { addItem } = useCart();
 
   const { category, name, description, pricing, images_url, additional_info } =
     item || {};
@@ -17,7 +17,7 @@ const MainSection = ({ item, addItemToCart }) => {
   //Add to cart
   const handleSubmit = (e) => {
     e.preventDefault();
-    return addItemToCart(item, inputValue);
+    addItem.mutate({ productId: item.id, quantity: inputValue });
   };
 
   return (
@@ -74,10 +74,4 @@ const MainSection = ({ item, addItemToCart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItemToCart: (item, inputValue) =>
-      dispatch(addedItem({ item: { ...item, amount: inputValue } }))
-  };
-};
-export default connect(null, mapDispatchToProps)(MainSection);
+export default MainSection;
