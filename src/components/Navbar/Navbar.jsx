@@ -53,7 +53,7 @@ function AppNavbar({ cart, user, logout }) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Link as={Link} href="/shopping-cart" to="/shopping-cart">
+        <Nav.Link as={Link} href="/cart" to="/cart">
           Cart <FeatherIcon icon="shopping-bag" /> {amount}
         </Nav.Link>
         {!user.isAuthenticated && (

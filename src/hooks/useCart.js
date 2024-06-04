@@ -1,9 +1,10 @@
 import {
   addItemToCart,
+  getCart,
   removeItemFromCart,
   updateCartItem
 } from "api/cart.api";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useDispatch } from "react-redux";
 import { updateCart } from "store/entities/cart";
 
@@ -34,5 +35,7 @@ export const useCart = () => {
     }
   });
 
-  return { addItem, removeItem, updateItem };
+  const getUserCart = useQuery("cart", getCart);
+
+  return { addItem, removeItem, updateItem, getUserCart };
 };

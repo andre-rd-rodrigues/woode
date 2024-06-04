@@ -12,7 +12,9 @@ export const removeItemFromCart = async (itemId) => {
 };
 
 export const updateCartItem = async ({ itemId, quantity }) => {
-  const response = await apiClient.put(`${API_URL_CART}/${itemId}`, quantity);
+  const response = await apiClient.put(`${API_URL_CART}/${itemId}`, {
+    quantity
+  });
   return response.data;
 };
 

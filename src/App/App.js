@@ -48,7 +48,7 @@ function App({ getUser, updateRoute }) {
         <Route path="/shop" element={<Shop />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/shopping-cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="/checkout"
           element={

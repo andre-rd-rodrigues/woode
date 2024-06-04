@@ -8,7 +8,7 @@ export const fetchUserThunk = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const user = await getUser();
-      store.dispatch(updateCart({ ...user.cart }));
+      store.dispatch(updateCart({ data: user.cart }));
       return user;
     } catch (error) {
       /*   localStorage.removeItem(process.env.REACT_APP_STORAGE_TOKEN_KEY); */

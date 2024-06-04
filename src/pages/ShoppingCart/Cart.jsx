@@ -7,29 +7,20 @@ import { Link } from "react-router-dom";
 import { removedItem, updatedAmount } from "store/entities/cart";
 import {
   containerVariant,
-  verticalEntrance,
   noRepeat,
   horizontalEntrance
 } from "styles/motion/motionVariants";
 import styles from "./cart.module.scss";
+import { useCart } from "hooks/useCart";
 
-function Cart({ cart, removeItem, updateAmount }) {
-  const NoItems = () => (
-    <div id="cart-no-items">
-      <p>Your cart is currently empty.</p>
-      <Link to="/shop">
-        <button>Return to shop</button>
-      </Link>
-    </div>
-  );
+function Cart({ cart, removeItem }) {
+  const { updateItem } = useCart();
+
+  const { items, totalPrice } = cart;
 
   const handleChangeAmount = (e, item) => {
     const amount = parseInt(e.target.value);
-    if (amount > 0)
-      return updateAmount({
-        id: item.id,
-        amount
-      });
+    updateItem.mutate({ itemId: item._id, quantity: amount });
   };
 
   return (
@@ -44,7 +35,7 @@ function Cart({ cart, removeItem, updateAmount }) {
       <Container>
         <motion.h1 variants={horizontalEntrance}>Your cart</motion.h1>
 
-        {cart.items.length ? (
+        {items.length ? (
           <>
             <table>
               <thead>
@@ -56,27 +47,35 @@ function Cart({ cart, removeItem, updateAmount }) {
                 </tr>
               </thead>
               <tbody>
-                {cart.items.map((item) => (
-                  <tr key={item.id}>
+                {items.map((item) => (
+                  <tr key={item._id}>
                     <td id="product-cell">
                       <FeatherIcon
                         icon="x"
-                        onClick={() => removeItem({ id: item.id })}
+                        onClick={() => removeItem({ id: item._id })}
                       />
-                      <img src={item.src} alt="Woode furniture" />
-                      <p>{item.name}</p>
+                      <img
+                        src={item.product.images_url[0]}
+                        alt={item.product.name}
+                      />
+                      <p>{item.product.name}</p>
                     </td>
-                    <td>${item.price}</td>
+                    <td>{item.product.pricing.total_price.toFixed(2)}€</td>
                     <td>
                       <input
                         min={1}
                         type="number"
-                        defaultValue={item.amount}
+                        defaultValue={item.quantity}
                         onChange={(e) => handleChangeAmount(e, item)}
                         data-testid="cart_amount_input"
                       />
                     </td>
-                    <td>${item.price * item.amount}</td>
+                    <td>
+                      {(
+                        item.product.pricing.total_price * item.quantity
+                      ).toFixed(2)}
+                      €
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -89,7 +88,7 @@ function Cart({ cart, removeItem, updateAmount }) {
                     <p className="cart-total-titles">SUBTOTAL</p>
                   </Col>
                   <Col>
-                    <p>${cart.totalPrice}</p>
+                    <p>{totalPrice}€</p>
                   </Col>
                 </Row>
                 <hr />
@@ -127,7 +126,7 @@ function Cart({ cart, removeItem, updateAmount }) {
                     <p className="cart-total-titles">TOTAL</p>
                   </Col>
                   <Col>
-                    <p data-testid="cart_total">${cart.totalPrice}</p>
+                    <p data-testid="cart_total">{totalPrice}€</p>
                   </Col>
                 </Row>
               </div>
@@ -144,6 +143,15 @@ function Cart({ cart, removeItem, updateAmount }) {
     </motion.div>
   );
 }
+
+const NoItems = () => (
+  <div id="cart-no-items">
+    <p>Your cart is currently empty.</p>
+    <Link to="/shop">
+      <button>Return to shop</button>
+    </Link>
+  </div>
+);
 
 const mapStateToProps = (state) => {
   return { cart: state.entities.cart };
