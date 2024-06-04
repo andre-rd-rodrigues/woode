@@ -2,20 +2,14 @@ import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { ClipLoader } from "react-spinners";
 import {
   fetchProductsThunk,
   selectProductsState
 } from "store/entities/products";
 import styles from "./relatedproducts.module.scss";
 
-function RelatedProducts({
-  item,
-  getProducts,
-  products,
-  isLoading,
-  error,
-  isSuccess
-}) {
+function RelatedProducts({ item, getProducts, products, isLoading, error }) {
   const [selectedItem, setSelectedItem] = useState(undefined);
 
   const relatedProducts = products.filter(
@@ -29,6 +23,12 @@ function RelatedProducts({
   return (
     <div className={styles.relatedProducts}>
       <h3>Related products</h3>
+      {isLoading && (
+        <div className="d-block text-center">
+          <ClipLoader color={"black"} loading={isLoading} size={50} />
+        </div>
+      )}
+      {error && <p className="text-center">Something went wrong...</p>}
       <div className="products-row">
         {relatedProducts?.map((item) => (
           <Product

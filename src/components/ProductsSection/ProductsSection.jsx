@@ -23,7 +23,7 @@ const ProductsSection = ({
   error,
   isSuccess
 }) => {
-  const [selectedItem, setSelectedItem] = useState(() => products[0] || null);
+  const [selectedItem, setSelectedItem] = useState(undefined);
 
   //Lifecycle
   useEffect(() => {
