@@ -14,6 +14,7 @@ export const useCart = () => {
   const addItem = useMutation(addItemToCart, {
     onSuccess: (data) => {
       dispatch(updateCart(data));
+      dispatch({ type: "cart/addedItem" });
       queryClient.invalidateQueries("cart");
     }
   });
@@ -21,6 +22,7 @@ export const useCart = () => {
   const removeItem = useMutation(removeItemFromCart, {
     onSuccess: (data) => {
       dispatch(updateCart(data));
+      dispatch({ type: "cart/removeItem" });
       queryClient.invalidateQueries("cart");
     }
   });

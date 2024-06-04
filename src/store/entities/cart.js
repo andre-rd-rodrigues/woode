@@ -26,35 +26,6 @@ const cartSlice = createSlice({
     totalPrice: 0
   },
   reducers: {
-    addedItem: (cart, { payload }) => {
-      if (isAlreadyAdded(cart, payload)) {
-        const index = cart.items.findIndex(
-          (item) => item.id === payload.item.id
-        );
-        cart.items[index].amount += payload.item.amount;
-      } else {
-        cart.items.push(payload.item);
-      }
-      //Update cart amount & total
-      cart.amount = updateAmountTotal(cart);
-      cart.totalPrice = updatedTotalPrice(cart);
-    },
-    updatedAmount: (cart, { payload }) => {
-      const index = cart.items.findIndex((item) => item.id === payload.id);
-      if (payload.amount >= 0) {
-        cart.items[index].amount = payload.amount;
-        //Update cart amount & total
-        cart.amount = updateAmountTotal(cart);
-        cart.totalPrice = updatedTotalPrice(cart);
-      }
-    },
-    removedItem: (cart, { payload }) => {
-      const index = cart.items.findIndex((item) => item.id === payload.id);
-      cart.items.splice(index, 1);
-      //Update cart amount & total
-      cart.amount = updateAmountTotal(cart);
-      cart.totalPrice = updatedTotalPrice(cart);
-    },
     updateCart: (cart, { payload }) => {
       cart.items = payload.items;
       cart.amount = payload.amount;

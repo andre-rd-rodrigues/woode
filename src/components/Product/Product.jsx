@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
 import styles from "./product.module.scss";
+import { useCart } from "hooks/useCart";
 
 function Product({ item, onChangeItemSelected, size }) {
-  const dispatch = useDispatch();
+  const { addItem } = useCart();
 
   const discount = item.pricing.discount.amount;
 
@@ -23,9 +24,7 @@ function Product({ item, onChangeItemSelected, size }) {
           <Link to={`/product/${item.id}`} state={{ item }} />
           <FeatherIcon
             icon="shopping-bag"
-            onClick={() =>
-              dispatch(addedItem({ item: { ...item, amount: 1 } }))
-            }
+            onClick={() => addItem.mutate({ productId: item.id, quantity: 1 })}
           />
           <FeatherIcon
             icon="search"

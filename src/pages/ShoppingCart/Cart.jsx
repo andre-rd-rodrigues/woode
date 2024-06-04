@@ -15,12 +15,12 @@ import styles from "./cart.module.scss";
 
 function Cart({ cart, removeItem, updateAmount }) {
   const NoItems = () => (
-    <motion.div variants={horizontalEntrance} id="cart-no-items">
+    <div id="cart-no-items">
       <p>Your cart is currently empty.</p>
       <Link to="/shop">
         <button>Return to shop</button>
       </Link>
-    </motion.div>
+    </div>
   );
 
   const handleChangeAmount = (e, item) => {
@@ -31,6 +31,7 @@ function Cart({ cart, removeItem, updateAmount }) {
         amount
       });
   };
+
   return (
     <motion.div
       variants={containerVariant}
@@ -43,7 +44,7 @@ function Cart({ cart, removeItem, updateAmount }) {
       <Container>
         <motion.h1 variants={horizontalEntrance}>Your cart</motion.h1>
 
-        {cart.items.length > 0 ? (
+        {cart.items.length ? (
           <>
             <table>
               <thead>
