@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useCart } from "hooks/useCart";
 import { Col, Modal, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addedItem } from "store/entities/cart";
 import styles from "./itemmodal.module.scss";
-import { useCart } from "hooks/useCart";
 
 function ItemModal({ item, show, onClose }) {
   const [amount, setAmount] = useState(1);
   const { addItem } = useCart();
 
   const { category, name, description, pricing, images_url } = item || {};
-  const { base_price, discount, total_price, currency } = pricing || {};
+  const { base_price, discount, total_price } = pricing || {};
   const discountAmount = discount?.amount; // percentage
 
   //Redux

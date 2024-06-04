@@ -20,7 +20,7 @@ function Product({ item, onChangeItemSelected, size }) {
           style={{ width: `${100 * size}` }}
         />
         <div id="productHoverDiv">
-          <Link to={`/shoppingItem:${item.id}`} state={{ item }} />
+          <Link to={`/product/${item.id}`} state={{ item }} />
           <FeatherIcon
             icon="shopping-bag"
             onClick={() =>
@@ -38,12 +38,9 @@ function Product({ item, onChangeItemSelected, size }) {
       <div id="productDiv">
         <h5>{item.name}</h5>
         {discount ? (
-          <div className="flex">
-            <span className={styles.basePrice}>
-              {item.pricing.base_price.toFixed(2)}€
-            </span>
-            <span className={styles.inlineDiscount}>-{discount}%</span>
-          </div>
+          <span className={styles.basePrice}>
+            {item.pricing.base_price.toFixed(2)}€
+          </span>
         ) : (
           <p>{item.pricing.total_price.toFixed(2)}€</p>
         )}

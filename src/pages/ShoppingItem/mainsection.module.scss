@@ -45,3 +45,25 @@
     }
   }
 }
+
+.pricing {
+  margin-top: 30px;
+  .basePriceWithDiscount {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .discount {
+    color: rgb(247, 95, 95);
+    margin-left: 10px;
+    font-size: 0.9rem;
+  }
+
+  .totalPrice {
+    display: block;
+    font-weight: 400;
+    color: black;
+    font-size: 1.2rem;
+  }
+}

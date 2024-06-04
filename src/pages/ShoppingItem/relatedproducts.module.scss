@@ -4,7 +4,11 @@
   }
   & div[class="products-row"] {
     display: flex;
-    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
+    flex-wrap: wrap;
+    div {
+      max-width: 200px;
+    }
   }
 }

@@ -9,11 +9,12 @@ function ShoppingItem() {
   //Get item params
   const location = useLocation();
   const { item } = location.state;
+
   return (
     <Container>
       <MainSection item={item} />
       <AdditionalInfo item={item} />
-      <RelatedProducts />
+      <RelatedProducts item={item} />
     </Container>
   );
 }

@@ -1,47 +1,66 @@
-import React, { useEffect, useState } from "react";
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
-import productsJSON from "mocks/products";
+import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import {
+  fetchProductsThunk,
+  selectProductsState
+} from "store/entities/products";
 import styles from "./relatedproducts.module.scss";
 
-function RelatedProducts() {
-  const [products, setProducts] = useState(undefined);
-  const [itemModalShow, setItemModalShow] = useState(false);
-  const [currentItem, setCurrentItem] = useState({
-    id: 1,
-    name: "Cupholder",
-    category: "decoration",
-    price: 45.0,
-    src: "https://umea.qodeinteractive.com/wp-content/uploads/2020/11/shop-img15.jpg"
-  });
+function RelatedProducts({
+  item,
+  getProducts,
+  products,
+  isLoading,
+  error,
+  isSuccess
+}) {
+  const [selectedItem, setSelectedItem] = useState(undefined);
 
-  //Lifecycle
+  const relatedProducts = products.filter(
+    (product) => product.category === item.category && product.id !== item.id
+  );
+
   useEffect(() => {
-    setProducts(productsJSON.slice(0, 5));
+    getProducts();
   }, []);
 
   return (
     <div className={styles.relatedProducts}>
       <h3>Related products</h3>
       <div className="products-row">
-        {products &&
-          products.map((item) => (
-            <Product
-              key={item.id}
-              item={item}
-              changeItemModal={(value) => setItemModalShow(value)}
-              changeCurrentItemSelected={(item) => setCurrentItem(item)}
-              size={2}
-            />
-          ))}
+        {relatedProducts?.map((item) => (
+          <Product
+            key={item.id}
+            item={item}
+            onChangeItemSelected={(item) => setSelectedItem(item)}
+            size={2}
+          />
+        ))}
       </div>
       <ItemModal
-        item={currentItem}
-        show={itemModalShow}
-        onClose={() => setItemModalShow(false)}
+        item={selectedItem}
+        show={!!selectedItem}
+        onClose={() => setSelectedItem(null)}
       />
     </div>
   );
 }
 
-export default RelatedProducts;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProducts: () => dispatch(fetchProductsThunk())
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    products: selectProductsState(state).items,
+    isLoading: selectProductsState(state).isLoading,
+    error: selectProductsState(state).error,
+    isSuccess: selectProductsState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RelatedProducts);

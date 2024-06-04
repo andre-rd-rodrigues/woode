@@ -57,7 +57,7 @@ function App({ getUser, updateRoute }) {
             </ProtectedRoute>
           }
         />
-        <Route path="/shoppingItem:id" element={<ShoppingItem />} />
+        <Route path="/product/:id" element={<ShoppingItem />} />
         <Route path="*" element={<Home />} />
       </Routes>
       {!isAuthPage && <Footer />}
