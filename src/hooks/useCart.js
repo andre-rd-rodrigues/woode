@@ -23,7 +23,7 @@ export const useCart = () => {
   const removeItem = useMutation(removeItemFromCart, {
     onSuccess: (data) => {
       dispatch(updateCart(data));
-      dispatch({ type: "cart/removeItem" });
+      dispatch({ type: "cart/removedItem" });
       queryClient.invalidateQueries("cart");
     }
   });

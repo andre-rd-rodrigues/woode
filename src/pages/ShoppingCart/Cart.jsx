@@ -1,20 +1,18 @@
-import React from "react";
 import FeatherIcon from "feather-icons-react";
 import { motion } from "framer-motion";
+import { useCart } from "hooks/useCart";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { removedItem, updatedAmount } from "store/entities/cart";
 import {
   containerVariant,
-  noRepeat,
-  horizontalEntrance
+  horizontalEntrance,
+  noRepeat
 } from "styles/motion/motionVariants";
 import styles from "./cart.module.scss";
-import { useCart } from "hooks/useCart";
 
-function Cart({ cart, removeItem }) {
-  const { updateItem } = useCart();
+function Cart({ cart }) {
+  const { updateItem, removeItem } = useCart();
 
   const { items, totalPrice } = cart;
 
@@ -52,7 +50,7 @@ function Cart({ cart, removeItem }) {
                     <td id="product-cell">
                       <FeatherIcon
                         icon="x"
-                        onClick={() => removeItem({ id: item._id })}
+                        onClick={() => removeItem.mutate(item._id)}
                       />
                       <img
                         src={item.product.images_url[0]}
@@ -157,11 +155,4 @@ const mapStateToProps = (state) => {
   return { cart: state.entities.cart };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeItem: (obj) => dispatch(removedItem(obj)),
-    updateAmount: (obj) => dispatch(updatedAmount(obj))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps)(Cart);

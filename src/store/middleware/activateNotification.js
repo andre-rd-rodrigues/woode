@@ -7,7 +7,7 @@ const activateNotification = () => (next) => (action) => {
   } else if (action.type === "cart/removedItem") {
     next({
       type: "notifications/fireNotification",
-      payload: { message: "Removed 1 item from cart" }
+      payload: { message: "Removed item from cart" }
     });
   }
 
