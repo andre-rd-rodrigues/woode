@@ -37,19 +37,15 @@ function Product({ item, onChangeItemSelected, size }) {
       <div id="productDiv">
         <h5>{item.name}</h5>
         {discount ? (
-          <span className={styles.basePrice}>
-            {item.pricing.base_price.toFixed(2)}€
-          </span>
+          <span className={styles.basePrice}>{item.pricing.base_price}€</span>
         ) : (
-          <p>{item.pricing.total_price.toFixed(2)}€</p>
+          <p>{item.pricing.total_price}€</p>
         )}
       </div>
       <div className="d-flex justify-content-between align-items-end">
         <p id="productCategory">{item.category.toUpperCase()}</p>
         {!!discount && (
-          <p className={styles.totalPrice}>
-            {item.pricing.total_price.toFixed(2)}€
-          </p>
+          <p className={styles.totalPrice}>{item.pricing.total_price}€</p>
         )}
       </div>
     </div>

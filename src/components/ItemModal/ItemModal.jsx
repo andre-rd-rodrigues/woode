@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { useCart } from "hooks/useCart";
+import { useState } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addedItem } from "store/entities/cart";
 import styles from "./itemmodal.module.scss";
 
 function ItemModal({ item, show, onClose }) {
@@ -14,15 +12,10 @@ function ItemModal({ item, show, onClose }) {
   const { base_price, discount, total_price } = pricing || {};
   const discountAmount = discount?.amount; // percentage
 
-  //Redux
-  const dispatch = useDispatch();
-
   //Add to cart
   const handleSubmit = (e) => {
     e.preventDefault();
     addItem({ productId: item.id, quantity: amount });
-
-    return dispatch(addedItem({ item: { ...item, amount } }));
   };
 
   return (
@@ -58,7 +51,7 @@ function ItemModal({ item, show, onClose }) {
                       {`-${discountAmount}%`}
                     </span>
                     <span className={styles.totalPrice}>
-                      {`${total_price.toFixed(2)} €`}
+                      {`${total_price} €`}
                     </span>
                   </>
                 )}

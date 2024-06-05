@@ -1,12 +1,13 @@
 import {
   addItemToCart,
+  checkoutCart,
   getCart,
   removeItemFromCart,
   updateCartItem
 } from "api/cart.api";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useDispatch } from "react-redux";
-import { updateCart } from "store/entities/cart";
+import { resetCart, updateCart } from "store/entities/cart";
 
 export const useCart = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,14 @@ export const useCart = () => {
     }
   });
 
+  const checkout = useMutation(checkoutCart, {
+    onSuccess: () => {
+      dispatch(resetCart());
+      queryClient.invalidateQueries("cart");
+    }
+  });
+
   const getUserCart = useQuery("cart", getCart);
 
-  return { addItem, removeItem, updateItem, getUserCart };
+  return { addItem, removeItem, updateItem, getUserCart, checkout };
 };

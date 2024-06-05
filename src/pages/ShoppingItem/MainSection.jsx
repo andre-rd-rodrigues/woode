@@ -45,7 +45,7 @@ const MainSection = ({ item }) => {
                     {`-${discountAmount}%`}
                   </span>
                   <span className={styles.totalPrice}>
-                    {`${total_price.toFixed(2)} €`}
+                    {`${total_price} €`}
                   </span>
                 </>
               )}

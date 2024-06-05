@@ -6,17 +6,23 @@ import { Radio, RadioGroup } from "react-radio-group";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styles from "./checkout.module.scss";
+import { useCart } from "hooks/useCart";
 
 const Checkout = ({ cart }) => {
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
   const [modalShow, setModalShow] = useState(false);
-  let navigate = useNavigate();
+
+  const navigate = useNavigate();
+  const { checkout } = useCart();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setLoading(true);
+
     window.scrollTo(0, 0);
+
     setTimeout(() => {
       setModalShow(true);
       setLoading(false);
@@ -25,8 +31,9 @@ const Checkout = ({ cart }) => {
 
   const closeModal = () => {
     setModalShow(false);
+    checkout.mutate();
+
     navigate(`/shop`);
-    return window.location.reload();
   };
 
   useEffect(() => {
@@ -114,14 +121,14 @@ const Checkout = ({ cart }) => {
                 </Col>
               </Row>
               {cart.items.map((item) => (
-                <Row className="align-items-center" key={item.id}>
+                <Row className="align-items-center" key={item._id}>
                   <Col>
                     <p className="checkout-product-name">
-                      {item.name} x {item.amount}
+                      {item.product.name} x {item.quantity}
                     </p>
                   </Col>
                   <Col>
-                    <p>${cart.totalPrice}</p>
+                    <p>{cart.totalPrice}€</p>
                   </Col>
                 </Row>
               ))}
@@ -131,7 +138,7 @@ const Checkout = ({ cart }) => {
                   <p className="checkout-titles">SUBTOTAL</p>
                 </Col>
                 <Col>
-                  <p>${cart.totalPrice}</p>
+                  <p>{cart.totalPrice}€</p>
                 </Col>
               </Row>
               <hr />
@@ -167,7 +174,7 @@ const Checkout = ({ cart }) => {
                   <p className="checkout-titles">TOTAL</p>
                 </Col>
                 <Col>
-                  <p data-testid="cart_total">${cart.totalPrice}</p>
+                  <p data-testid="cart_total">{cart.totalPrice}€</p>
                 </Col>
               </Row>
 
@@ -218,7 +225,9 @@ const Checkout = ({ cart }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return { cart: state.entities.cart };
+
+const mapStateToProps = ({ entities }) => {
+  return { cart: entities.cart };
 };
+
 export default connect(mapStateToProps)(Checkout);

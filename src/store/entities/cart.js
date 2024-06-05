@@ -15,11 +15,15 @@ const cartSlice = createSlice({
       cart.items = items;
       cart.amount = amount;
       cart.totalPrice = totalPrice;
+    },
+    resetCart: (cart) => {
+      cart.items = [];
+      cart.amount = 0;
+      cart.totalPrice = 0;
     }
   }
 });
 
-export const { addedItem, updatedAmount, removedItem, updateCart } =
-  cartSlice.actions;
+export const { updateCart, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
