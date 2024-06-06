@@ -1,14 +1,11 @@
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { ClipLoader } from "react-spinners";
-import {
-  fetchProductsThunk,
-  selectProductsState
-} from "store/entities/products";
+import { selectProductsState } from "store/entities/products";
 import {
   containerVariant,
   noRepeat,
@@ -16,19 +13,8 @@ import {
 } from "styles/motion/motionVariants";
 import styles from "./products.module.scss";
 
-const ProductsSection = ({
-  getProducts,
-  products,
-  isLoading,
-  error,
-  isSuccess
-}) => {
+const ProductsSection = ({ products, isLoading, error, isSuccess }) => {
   const [selectedItem, setSelectedItem] = useState(undefined);
-
-  //Lifecycle
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
     <div>
@@ -81,12 +67,6 @@ const ProductsSection = ({
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getProducts: () => dispatch(fetchProductsThunk())
-  };
-};
-
 const mapStateToProps = (state) => {
   return {
     products: selectProductsState(state).items,
@@ -96,4 +76,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsSection);
+export default connect(mapStateToProps, null)(ProductsSection);

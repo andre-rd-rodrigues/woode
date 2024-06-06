@@ -6,15 +6,15 @@ import { Radio, RadioGroup } from "react-radio-group";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styles from "./checkout.module.scss";
-import { useCart } from "hooks/useCart";
+import { selectCartState } from "store/entities/cart";
+import { checkoutCartThunk } from "store/thunks/cart.thunks";
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, cartCheckout }) => {
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Direct bank transfer");
   const [modalShow, setModalShow] = useState(false);
 
   const navigate = useNavigate();
-  const { checkout } = useCart();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ const Checkout = ({ cart }) => {
 
   const closeModal = () => {
     setModalShow(false);
-    checkout.mutate();
+    cartCheckout();
 
     navigate(`/shop`);
   };
@@ -226,8 +226,19 @@ const Checkout = ({ cart }) => {
   );
 };
 
-const mapStateToProps = ({ entities }) => {
-  return { cart: entities.cart };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    cartCheckout: () => dispatch(checkoutCartThunk())
+  };
 };
 
-export default connect(mapStateToProps)(Checkout);
+const mapStateToProps = (state) => {
+  return {
+    cart: selectCartState(state).cart,
+    isCartLoading: selectCartState(state).isLoading,
+    isCartError: selectCartState(state).error,
+    isCartSuccess: selectCartState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

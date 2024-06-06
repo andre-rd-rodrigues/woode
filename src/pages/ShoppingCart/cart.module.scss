@@ -92,17 +92,6 @@
       }
     }
   }
-  & button[id="checkout-button"] {
-    @include squared-button(black);
-    margin-top: 40px;
-    & a {
-      color: black;
-      text-decoration: none;
-      &:hover {
-        color: white;
-      }
-    }
-  }
 
   & div[id="cart-no-items"] {
     text-align: center;
@@ -111,4 +100,11 @@
       @include squared-button(black);
     }
   }
+}
+
+.checkoutBtn {
+  display: inline-block;
+  @include squared-button(black);
+  margin-top: 40px;
+  text-decoration: none;
 }

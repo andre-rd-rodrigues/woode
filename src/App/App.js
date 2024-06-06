@@ -18,9 +18,11 @@ import { Route, Routes, useLocation } from "react-router";
 import "react-slideshow-image/dist/styles.css";
 import { fetchUserThunk } from "store/entities/auth";
 import { updateRoute } from "store/entities/navigation";
+import { fetchCartThunk } from "store/thunks/cart.thunks";
+import { fetchProductsThunk } from "store/thunks/products.thunks";
 import "styles/global.scss";
 
-function App({ getUser, updateRoute }) {
+function App({ getUser, updateRoute, getCart, getProducts }) {
   const { pathname } = useLocation();
 
   const isAuthPage = pathname === "/login" || pathname === "/register";
@@ -31,6 +33,8 @@ function App({ getUser, updateRoute }) {
 
   useEffect(() => {
     getUser();
+    getCart();
+    getProducts();
   }, []);
 
   return (
@@ -69,7 +73,9 @@ function App({ getUser, updateRoute }) {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateRoute: (route) => dispatch(updateRoute(route)),
-    getUser: () => dispatch(fetchUserThunk())
+    getUser: () => dispatch(fetchUserThunk()),
+    getCart: () => dispatch(fetchCartThunk()),
+    getProducts: () => dispatch(fetchProductsThunk())
   };
 };
 

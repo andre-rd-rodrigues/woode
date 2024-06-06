@@ -1,9 +1,10 @@
 import FeatherIcon from "feather-icons-react";
 import { motion } from "framer-motion";
-import { useCart } from "hooks/useCart";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectCartState } from "store/entities/cart";
+import { removeItemThunk, updateCartItemThunk } from "store/thunks/cart.thunks";
 import {
   containerVariant,
   horizontalEntrance,
@@ -11,14 +12,12 @@ import {
 } from "styles/motion/motionVariants";
 import styles from "./cart.module.scss";
 
-function Cart({ cart }) {
-  const { updateItem, removeItem } = useCart();
-
+function Cart({ cart, removeItemFromCart, updateCartItem }) {
   const { items, totalPrice } = cart;
 
   const handleChangeAmount = (e, item) => {
     const amount = parseInt(e.target.value);
-    updateItem.mutate({ itemId: item._id, quantity: amount });
+    updateCartItem({ itemId: item._id, quantity: amount });
   };
 
   return (
@@ -50,7 +49,7 @@ function Cart({ cart }) {
                     <td id="product-cell">
                       <FeatherIcon
                         icon="x"
-                        onClick={() => removeItem.mutate(item._id)}
+                        onClick={() => removeItemFromCart(item._id)}
                       />
                       <img
                         src={item.product.images_url[0]}
@@ -129,9 +128,9 @@ function Cart({ cart }) {
                 </Row>
               </div>
 
-              <button id="checkout-button">
-                <Link to="/checkout">Proceed to checkout</Link>
-              </button>
+              <Link to="/checkout" className={styles.checkoutBtn}>
+                Proceed to checkout
+              </Link>
             </div>
           </>
         ) : (
@@ -151,8 +150,20 @@ const NoItems = () => (
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return { cart: state.entities.cart };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateCartItem: (item) => dispatch(updateCartItemThunk(item)),
+    removeItemFromCart: (item) => dispatch(removeItemThunk(item))
+  };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapStateToProps = (state) => {
+  return {
+    cart: selectCartState(state).cart,
+    isCartLoading: selectCartState(state).isLoading,
+    isCartError: selectCartState(state).error,
+    isCartSuccess: selectCartState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

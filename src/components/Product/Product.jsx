@@ -1,20 +1,18 @@
-import React from "react";
 import FeatherIcon from "feather-icons-react";
-import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { addedItem } from "store/entities/cart";
+import { addItemThunk, selectCartState } from "store/entities/cart";
 import styles from "./product.module.scss";
-import { useCart } from "hooks/useCart";
 
-function Product({ item, onChangeItemSelected, size }) {
-  const { addItem } = useCart();
-
+function Product({ item, onChangeItemSelected, size, addItem }) {
   const discount = item.pricing.discount.amount;
 
   return (
     <div className={styles.product}>
       <div id="productImageDiv">
-        {!!discount && <div className={styles.discount}>-{discount}%</div>}
+        {!!discount && (
+          <div className={styles.discount}>-{discount.toFixed(2)}%</div>
+        )}
         <img
           src={item.images_url[0]}
           alt={item.name}
@@ -24,7 +22,7 @@ function Product({ item, onChangeItemSelected, size }) {
           <Link to={`/product/${item.id}`} state={{ item }} />
           <FeatherIcon
             icon="shopping-bag"
-            onClick={() => addItem.mutate({ productId: item.id, quantity: 1 })}
+            onClick={() => addItem({ productId: item.id, quantity: 1 })}
           />
           <FeatherIcon
             icon="search"
@@ -39,17 +37,33 @@ function Product({ item, onChangeItemSelected, size }) {
         {discount ? (
           <span className={styles.basePrice}>{item.pricing.base_price}€</span>
         ) : (
-          <p>{item.pricing.total_price}€</p>
+          <p>{item.pricing.total_price.toFixed(2)}€</p>
         )}
       </div>
       <div className="d-flex justify-content-between align-items-end">
         <p id="productCategory">{item.category.toUpperCase()}</p>
         {!!discount && (
-          <p className={styles.totalPrice}>{item.pricing.total_price}€</p>
+          <p className={styles.totalPrice}>
+            {item.pricing.total_price.toFixed(2)}€
+          </p>
         )}
       </div>
     </div>
   );
 }
 
-export default Product;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: (item) => dispatch(addItemThunk(item))
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isCartLoading: selectCartState(state).isLoading,
+    isCartError: selectCartState(state).error,
+    isCartSuccess: selectCartState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

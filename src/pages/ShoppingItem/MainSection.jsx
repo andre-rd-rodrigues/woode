@@ -1,11 +1,11 @@
-import { useCart } from "hooks/useCart";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { connect } from "react-redux";
+import { addItemThunk } from "store/thunks/cart.thunks";
 import styles from "./mainsection.module.scss";
 
-const MainSection = ({ item }) => {
+const MainSection = ({ item, addItem }) => {
   const [inputValue, setInputValue] = useState(1);
-  const { addItem } = useCart();
 
   const { category, name, description, pricing, images_url, additional_info } =
     item || {};
@@ -17,7 +17,7 @@ const MainSection = ({ item }) => {
   //Add to cart
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem.mutate({ productId: item.id, quantity: inputValue });
+    addItem({ productId: item.id, quantity: inputValue });
   };
 
   return (
@@ -74,4 +74,9 @@ const MainSection = ({ item }) => {
   );
 };
 
-export default MainSection;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: (item) => dispatch(addItemThunk(item))
+  };
+};
+export default connect(null, mapDispatchToProps)(MainSection);

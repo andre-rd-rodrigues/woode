@@ -1,18 +1,18 @@
-import { useCart } from "hooks/useCart";
 import { useState } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { addItemThunk, selectCartState } from "store/entities/cart";
 import styles from "./itemmodal.module.scss";
 
-function ItemModal({ item, show, onClose }) {
+function ItemModal({ item, show, onClose, addItem, isLoading }) {
   const [amount, setAmount] = useState(1);
-  const { addItem } = useCart();
 
   const { category, name, description, pricing, images_url } = item || {};
   const { base_price, discount, total_price } = pricing || {};
   const discountAmount = discount?.amount; // percentage
 
-  //Add to cart
+  // Add item to cart
   const handleSubmit = (e) => {
     e.preventDefault();
     addItem({ productId: item.id, quantity: amount });
@@ -65,8 +65,11 @@ function ItemModal({ item, show, onClose }) {
                   min={1}
                   max={10}
                   onChange={(e) => setAmount(parseInt(e.target.value))}
+                  disabled={isLoading}
                 />
-                <button type="submit">Add to cart</button>
+                <button type="submit" disabled={isLoading}>
+                  Add to cart
+                </button>
               </form>
               <div className="item-modal-additional-info">
                 <p>SKU: 030</p>
@@ -83,4 +86,19 @@ function ItemModal({ item, show, onClose }) {
   );
 }
 
-export default ItemModal;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: (item) => dispatch(addItemThunk(item))
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    cart: selectCartState(state).cart,
+    isLoading: selectCartState(state).isLoading,
+    error: selectCartState(state).error,
+    isSuccess: selectCartState(state).isSuccess
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemModal);

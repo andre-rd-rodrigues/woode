@@ -1,24 +1,17 @@
 import ItemModal from "components/ItemModal/ItemModal";
 import Product from "components/Product/Product";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { connect } from "react-redux";
 import { ClipLoader } from "react-spinners";
-import {
-  fetchProductsThunk,
-  selectProductsState
-} from "store/entities/products";
+import { selectProductsState } from "store/entities/products";
 import styles from "./relatedproducts.module.scss";
 
-function RelatedProducts({ item, getProducts, products, isLoading, error }) {
+function RelatedProducts({ item, products, isLoading, error }) {
   const [selectedItem, setSelectedItem] = useState(undefined);
 
   const relatedProducts = products.filter(
     (product) => product.category === item.category && product.id !== item.id
   );
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
     <div className={styles.relatedProducts}>
@@ -48,12 +41,6 @@ function RelatedProducts({ item, getProducts, products, isLoading, error }) {
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getProducts: () => dispatch(fetchProductsThunk())
-  };
-};
-
 const mapStateToProps = (state) => {
   return {
     products: selectProductsState(state).items,
@@ -63,4 +50,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedProducts);
+export default connect(mapStateToProps, null)(RelatedProducts);

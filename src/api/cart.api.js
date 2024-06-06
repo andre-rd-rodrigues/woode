@@ -18,12 +18,12 @@ export const updateCartItem = async ({ itemId, quantity }) => {
   return response.data;
 };
 
-export const getCart = async () => {
-  const response = await apiClient.get(API_URL_CART);
+export const checkoutCart = async () => {
+  const response = await apiClient.post(`${API_URL_CART}/checkout`);
   return response.data;
 };
 
-export const checkoutCart = async () => {
-  const response = await apiClient.post(`${API_URL_CART}/checkout`);
+export const getCart = async () => {
+  const response = await apiClient.get(API_URL_CART);
   return response.data;
 };
