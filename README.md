@@ -1,29 +1,68 @@
-# Woode - Where Furniture and Art meet 🎨
+# Woode - Where Furniture and Art Meet 🛋️
 
-This project was meant to practice React, React Router, and Redux integration, including Unit Testing and Integration Testing.
-Essentially, Woode is a furniture e-commerce website, where you can navigate, interact, add to your shopping cart and finish purchases. The project has basic website pages like About Us, Contact, etc, to mimic a typical e-commerce platform, but some of them are not available, because they didn't fall inside the project objectives scope.
+Welcome to **Woode**, the coolest furniture e-commerce app on the block! This project is a full-stack **MERN** (**MongoDB, Express, React, Node.js**) showcase designed to display full-stack skills. It’s packed with custom-built features, including a custom **API**, a **JWT-based authentication system**, and a sleek UI.
 
-Website: https://andre-rd-rodrigues.github.io/woode/
+[Woode - Live Demo](https://andre-rd-rodrigues.github.io/woode/)
 
-## Structure
+## What’s Woode All About?
 
-This project is composed by:
+Woode is your go-to online store for stylish furniture. Browse through a variety of furniture pieces, add your favorites to the cart, and complete your purchase—all while experiencing the seamless integration of **React**, **React Router**, and **Redux**.
 
-- 8 pages (main components);
+![Woode - Homepage](/public/preview.png)
 
-Redux:
+### Key Features
 
-- 3 reducers: entitiesReducer, uiReducer, rootReducer
-- 1 middleware: activateNotifications
+- **Full MERN Stack**: **MongoDB**, **Express**, **React**, and **Node.js** working together harmoniously.
+- **Custom API**: Calls to my very own custom node API for managing products, orders, authentication, and more. Check the [woode API here](https://github.com/andre-rd-rodrigues/woode-api).
+- **JWT Authentication**: Secure login system using **JSON Web Tokens**.
+- **Redux for State Management**: Efficient state management with **Redux**, including reducers and middleware.
+- **Testing with RTL and Jest**: Robust unit and integration testing to ensure everything works smoothly.
 
-Testing (RTL and Jest):
+### 🏗️ App Structure
 
-- Unit Testing
-- Integration Testing
-- Snapshots
-- utils/test-utils.jsx
+#### Store Structure
 
-### Hosting
+Here's the breakdown of the Redux store structure:
 
-Hosted with github pages, from gh-pages branch.
-Website: https://andre-rd-rodrigues.github.io/woode/
+```
+store
+├── entities
+│ ├── auth.js
+│ ├── cart.js
+│ ├── entitiesReducer.js
+│ ├── navigation.js
+│ ├── products.js
+├── middleware
+│ └── activateNotification.js
+├── thunks
+│ ├── auth.thunks.js
+│ ├── cart.thunks.js
+│ ├── products.thunks.js
+│ ├── user.thunks.js
+└── ui
+├── notifications.js
+├── uiReducer.js
+└── rootReducer.js`
+```
+
+### 🌟 Features
+
+- **Add Items to Cart**: Easily add your favorite furniture items to the shopping cart.
+- **Remove Items**: Change your mind? Quickly remove items from the cart.
+- **Update Items**: Adjust quantities or update items in the cart as needed.
+- **Checkout**: Smooth checkout process to complete your purchase.
+- **Authentication**: Secure login and registration using JWT and OAuth.
+
+### 🧪 Testing
+
+Comprehensive testing with **React Testing Library (RTL)** and **Jest**:
+
+- **Unit Testing**: Ongoing effort to ensure each component works correctly.
+- **Integration Testing**
+- **Snapshots**
+
+### 🌐 Hosting
+
+The app is hosted on Netlify, making it super easy to access and demo. Check it out:
+
+[Woode - Live Demo](https://andre-rd-rodrigues.github.io/woode/)
