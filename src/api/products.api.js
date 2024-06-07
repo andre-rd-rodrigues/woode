@@ -5,3 +5,8 @@ export const getProducts = async () => {
   const response = await apiClient.get(API_URL_PRODUCTS);
   return response.data;
 };
+
+export const getProduct = async (id) => {
+  const response = await apiClient.get(`${API_URL_PRODUCTS}/${id}`);
+  return response.data;
+};
