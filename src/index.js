@@ -1,9 +1,7 @@
 import App from "App/App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollTop from "components/ScrollTop/ScrollTop";
-import queryClient from "queryClient";
 import ReactDOM from "react-dom";
-import { QueryClientProvider } from "react-query";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import configureStore from "./configureStore";
@@ -13,12 +11,10 @@ export const store = configureStore();
 
 ReactDOM.render(
   <HashRouter>
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <ScrollTop />
-        <App />
-      </Provider>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <ScrollTop />
+      <App />
+    </Provider>
   </HashRouter>,
   document.getElementById("root")
 );

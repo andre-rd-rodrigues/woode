@@ -1,21 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getUser } from "api/auth.api";
-import { updateCart } from "./cart";
-import { store } from "index";
-
-export const fetchUserThunk = createAsyncThunk(
-  "auth/fetchUser",
-  async (_, { rejectWithValue }) => {
-    try {
-      const user = await getUser();
-      store.dispatch(updateCart({ data: user.cart }));
-      return user;
-    } catch (error) {
-      /*   localStorage.removeItem(process.env.REACT_APP_STORAGE_TOKEN_KEY); */
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import { loginThunk } from "store/thunks/auth.thunks";
+import { fetchUserThunk } from "store/thunks/user.thunks";
 
 const authSlice = createSlice({
   name: "auth",
@@ -26,17 +11,6 @@ const authSlice = createSlice({
     error: null
   },
   reducers: {
-    setUser: (state, action) => {
-      const { user, token } = action.payload;
-      state.user = user;
-      state.isAuthenticated = true;
-
-      localStorage.setItem(
-        process.env.REACT_APP_STORAGE_TOKEN_KEY,
-        JSON.stringify(token)
-      );
-    },
-
     logout: (state) => {
       state.user = null;
       state.isAuthenticated = false;
@@ -59,15 +33,34 @@ const authSlice = createSlice({
       .addCase(fetchUserThunk.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
+      }) // Login
+      .addCase(loginThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(loginThunk.fulfilled, (state, action) => {
+        state.status = "succeeded";
+
+        const { user, token } = action.payload;
+        state.user = user;
+        state.isAuthenticated = true;
+
+        localStorage.setItem(
+          process.env.REACT_APP_STORAGE_TOKEN_KEY,
+          JSON.stringify(token)
+        );
+      })
+      .addCase(loginThunk.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
       });
   }
 });
 
-export const selectUserState = (state) => ({
+export const selectAuthState = (state) => ({
   isLoading: state.auth?.status === "loading",
   isError: state.auth?.status === "failed",
   isSuccess: state.auth?.status === "succeeded",
-  user: state.auth.user,
+  user: state.auth?.user,
   error: state.auth?.error
 });
 

@@ -15,7 +15,6 @@ const fetchCartThunk = createAsyncThunk(
       const cart = await getCart();
       return cart;
     } catch (error) {
-      notify("error", "Something went wrong. Please try again later.");
       return rejectWithValue(error.response.data);
     }
   }
@@ -28,7 +27,10 @@ const addItemThunk = createAsyncThunk(
       const data = await addItemToCart({ productId, quantity });
       return data;
     } catch (error) {
-      notify("error", "Something went wrong. Please try again later.");
+      notify(
+        "error",
+        "Item could not be added to the cart. Please try again later."
+      );
       return rejectWithValue(error.response.data);
     }
   }
@@ -42,7 +44,10 @@ const removeItemThunk = createAsyncThunk(
       const data = await removeItemFromCart(itemId);
       return data;
     } catch (error) {
-      notify("error", "Something went wrong. Please try again later.");
+      notify(
+        "error",
+        "Item could not be removed from the cart. Please try again later."
+      );
       return rejectWithValue(error.response.data);
     }
   }
@@ -56,7 +61,7 @@ const updateCartItemThunk = createAsyncThunk(
       const data = await updateCartItem({ itemId, quantity });
       return data;
     } catch (error) {
-      notify("error", "Something went wrong. Please try again later.");
+      notify("error", "Item could not be updated. Please try again later.");
       return rejectWithValue(error.response.data);
     }
   }
@@ -70,7 +75,7 @@ const checkoutCartThunk = createAsyncThunk(
       const data = await checkoutCart();
       return data;
     } catch (error) {
-      notify("error", "Something went wrong. Please try again later.");
+      notify("error", "Cart could not be checked out. Please try again later.");
       return rejectWithValue(error.response.data);
     }
   }

@@ -16,10 +16,11 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { Route, Routes, useLocation } from "react-router";
 import "react-slideshow-image/dist/styles.css";
-import { fetchUserThunk } from "store/entities/auth";
+
 import { updateRoute } from "store/entities/navigation";
 import { fetchCartThunk } from "store/thunks/cart.thunks";
 import { fetchProductsThunk } from "store/thunks/products.thunks";
+import { fetchUserThunk } from "store/thunks/user.thunks";
 import "styles/global.scss";
 
 function App({ getUser, updateRoute, getCart, getProducts }) {
@@ -33,8 +34,11 @@ function App({ getUser, updateRoute, getCart, getProducts }) {
 
   useEffect(() => {
     getUser();
-    getCart();
-    getProducts();
+
+    if (!isAuthPage) {
+      getCart();
+      getProducts();
+    }
   }, []);
 
   return (

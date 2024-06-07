@@ -1,17 +1,17 @@
 import googleIcon from "assets/Icons/google.png";
 import logo from "assets/images/logo.png";
-import { useLogin } from "hooks/useAuth";
 import { Form } from "react-bootstrap";
 
 import { Link, useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 
-import { notify } from "components/ToastNotification";
+import { useEffect } from "react";
+import { connect, useSelector } from "react-redux";
+import { selectAuthState } from "store/entities/auth";
+import { loginThunk } from "store/thunks/auth.thunks";
 import styles from "./login.module.scss";
-import { useSelector } from "react-redux";
 
-function Login() {
-  const { isLoading, mutate } = useLogin();
+function Login({ login, isLoading, isSuccess }) {
   const navigate = useNavigate();
 
   const previousRoute = useSelector(
@@ -23,18 +23,14 @@ function Login() {
     const email = event.target[0].value;
     const password = event.target[1].value;
 
-    mutate(
-      { email, password },
-      {
-        onSuccess: () => {
-          previousRoute ? navigate(previousRoute) : navigate("/");
-        },
-        onError: ({ response }) => {
-          notify("error", response.data.message);
-        }
-      }
-    );
+    login({ email, password });
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate(previousRoute || "/");
+    }
+  }, [isSuccess, navigate, previousRoute]);
 
   return (
     <div className={styles.loginContainer}>
@@ -104,4 +100,18 @@ function Login() {
   );
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (credentials) => dispatch(loginThunk(credentials))
+  };
+};
+
+const mapStateToProps = ({ entities }) => {
+  return {
+    isSuccess: selectAuthState(entities).isSuccess,
+    isLoading: selectAuthState(entities).isLoading,
+    error: selectAuthState(entities).error
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
