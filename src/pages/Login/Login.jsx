@@ -106,11 +106,11 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const mapStateToProps = ({ entities }) => {
+const mapStateToProps = (state) => {
   return {
-    isSuccess: selectAuthState(entities).isSuccess,
-    isLoading: selectAuthState(entities).isLoading,
-    error: selectAuthState(entities).error
+    isSuccess: selectAuthState(state).isSuccess,
+    isLoading: selectAuthState(state).isLoading,
+    error: selectAuthState(state).error
   };
 };
 

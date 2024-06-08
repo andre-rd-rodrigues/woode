@@ -59,11 +59,11 @@ const authSlice = createSlice({
 });
 
 export const selectAuthState = (state) => ({
-  isLoading: state.auth?.status === "loading",
-  isError: state.auth?.status === "failed",
-  isSuccess: state.auth?.status === "succeeded",
-  user: state.auth?.user,
-  error: state.auth?.error
+  isLoading: state.entities.auth?.status === "loading",
+  isError: state.entities.auth?.status === "failed",
+  isSuccess: state.entities.auth?.status === "succeeded",
+  user: state.entities.auth?.user,
+  error: state.entities.auth?.error
 });
 
 export const { setUser, logout } = authSlice.actions;

@@ -3,9 +3,7 @@ import Product from "components/Product/Product";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { connect } from "react-redux";
 import { ClipLoader } from "react-spinners";
-import { selectProductsState } from "store/entities/products";
 import {
   containerVariant,
   noRepeat,
