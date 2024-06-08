@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginThunk } from "store/thunks/auth.thunks";
+import { loginThunk, registerThunk } from "store/thunks/auth.thunks";
 import { fetchUserThunk } from "store/thunks/user.thunks";
 
 const authSlice = createSlice({
@@ -54,6 +54,26 @@ const authSlice = createSlice({
       .addCase(loginThunk.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
+      })
+      // Register
+      .addCase(registerThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(registerThunk.fulfilled, (state, action) => {
+        state.status = "succeeded";
+
+        const { user, token } = action.payload;
+        state.user = user;
+        state.isAuthenticated = true;
+
+        localStorage.setItem(
+          process.env.REACT_APP_STORAGE_TOKEN_KEY,
+          JSON.stringify(token)
+        );
+      })
+      .addCase(registerThunk.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
       });
   }
 });
@@ -63,7 +83,8 @@ export const selectAuthState = (state) => ({
   isError: state.entities.auth?.status === "failed",
   isSuccess: state.entities.auth?.status === "succeeded",
   user: state.entities.auth?.user,
-  error: state.entities.auth?.error
+  error: state.entities.auth?.error,
+  isAuthenticated: state.entities.auth?.isAuthenticated
 });
 
 export const { setUser, logout } = authSlice.actions;
