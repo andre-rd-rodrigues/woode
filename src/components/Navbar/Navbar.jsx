@@ -16,6 +16,7 @@ function AppNavbar({ cart, user, logout }) {
   const handleLogout = () => {
     logout();
     navigate("/login");
+    window.location.reload();
   };
 
   useEffect(() => {

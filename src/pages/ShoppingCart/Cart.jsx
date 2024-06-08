@@ -11,6 +11,8 @@ import {
   noRepeat
 } from "styles/motion/motionVariants";
 import styles from "./cart.module.scss";
+import { useEffect } from "react";
+import { getCart } from "api/cart.api";
 
 function Cart({ cart, removeItemFromCart, updateCartItem }) {
   const { items, totalPrice } = cart;

@@ -67,13 +67,4 @@ const ProductsSection = ({ products, isLoading, error, isSuccess }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    products: selectProductsState(state).items,
-    isLoading: selectProductsState(state).isLoading,
-    error: selectProductsState(state).error,
-    isSuccess: selectProductsState(state).isSuccess
-  };
-};
-
-export default connect(mapStateToProps, null)(ProductsSection);
+export default ProductsSection;
