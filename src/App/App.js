@@ -35,11 +35,8 @@ function App({ getUser, updateRoute, getCart, getProducts }) {
 
   useEffect(() => {
     getUser();
-
-    if (!isAuthPage) {
-      getCart();
-      getProducts();
-    }
+    getCart();
+    getProducts();
   }, []);
 
   return (
